@@ -57,7 +57,7 @@ const Header = () => {
     <div className="main-wrapper">
       <div className="header">
         <div className="header-left">
-          <Link to="/admin-dashboard" className="logo">
+          <Link to="/admin/dashboard" className="logo">
             <img src={logo} width={35} height={35} alt="" />{" "}
             <span>Pre Clinic</span>
           </Link>
