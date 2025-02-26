@@ -25,14 +25,12 @@ import BillingAndcashiering from "./pages/reception/billingAndcashiering";
 import DischargeSummary from "./pages/reception/dischargeSummary";
 
 function Approuter() {
-
-
   return (
-  
+
     <>
       <BrowserRouter basename="/">
         <Routes>
-     
+
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
@@ -48,10 +46,10 @@ function Approuter() {
           <Route path="/gallery" element={<GalleryImage />} />
 
 
-        {/* admin */}
+          {/* admin */}
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/outpatient" element={<Outpatient />} />
-          
+
 
           {/* pharmacy */}
           <Route path="/pharmacy/inventory" element={<Inventory />} />
@@ -59,13 +57,13 @@ function Approuter() {
 
 
 
-        {/* doctor */}
+          {/* doctor */}
           <Route path="/doctor/schedule" element={<Schedule />}></Route>
           <Route path="/doctor/consultation" element={<Consultation />}></Route>
 
           {/* reception */}
-          <Route path="/reception/billing" element={<BillingAndcashiering/>}/>
-          <Route path="/reception/discharge" element={<DischargeSummary/>}/>
+          <Route path="/reception/billing" element={<BillingAndcashiering />} />
+          <Route path="/reception/discharge" element={<DischargeSummary />} />
 
         </Routes>
       </BrowserRouter>
