@@ -254,6 +254,32 @@ const Sidebar = (props) => {
                     </li>
                   </ul>
                 </li>
+                
+                <li className='submenu'>
+                  <Link to="#" id="blood-menu-item" onClick={(e) => {
+                    handleClick(e, "blood-menu-item", "blood-menu-items")
+                  }}>
+                    <span className="menu-side">
+                      <img src={dashboard} alt="" />
+                    </span>{" "}
+                    <span> BloodBank </span> <span className="menu-arrow" />
+                  </Link>
+                  <ul style={{ display: sidebar === 'BloodBank' ? 'block' : "none" }} className='blood-menu-items'>
+                    <li>
+                      <Link className={props?.activeClassName === 'BloodGroup' ? 'active' : ''} to="/blood/bloodGroup">BloodGroup</Link>
+                    </li>
+                    <li>
+                      <Link className={props?.activeClassName === 'BloodDonor' ? 'active' : ''} to="/blood/bloodDonor">BloodDonorDetails</Link>
+                    </li>
+
+                    <li>
+                      <Link className={props?.activeClassName === 'BloodIssue' ? 'active' : ''} to="/blood/bloodIssue">BloodIssueDetails</Link>
+                    </li>
+                    <li>
+                      <Link className={props?.activeClassName === 'ComponentIssue' ? 'active' : ''} to="/blood/componentIssue">ComponentIssueDetails</Link>
+                    </li>
+                  </ul>
+                </li>
               </ul>
 
 

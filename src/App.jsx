@@ -36,13 +36,21 @@ import Emergency from "./pages/FrontOffice/Emergency";
 import Query from "./pages/FrontOffice/Query";
 import AddPatient from "./components/FrontOffice/Patients/Add";
 import AddOPD from "./components/FrontOffice/Outpatient/Add";
+import BloodGroup from "./pages/bloodBank/BloodGroup";
+import BloodDonor from "./pages/bloodBank/BloodDonor";
+import AddBloodDonar from "./pages/bloodBank/AddBloodDonor";
+import BloodIssue from "./pages/bloodBank/BloodIssue";
+import AddBloodIssue from "./pages/bloodBank/AddBloodIssue";
+import ComponentIssue from "./pages/bloodBank/ComponentIssue";
+import AddComponentIssue from "./pages/bloodBank/AddComponentIssue";
+
 function Approuter() {
   return (
-  
+
     <>
       <BrowserRouter basename="/">
         <Routes>
-     
+
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
@@ -57,10 +65,11 @@ function Approuter() {
           <Route path="/blankpage" element={<BlankPage />} />
           <Route path="/gallery" element={<GalleryImage />} />
 
+
           {/* admin */}
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/outpatient" element={<Outpatient />} />
-          
+
 
           {/* pharmacy */}
           <Route path="/pharmacy/inventory" element={<Inventory />} />
@@ -73,13 +82,30 @@ function Approuter() {
 
 
 
-        {/* doctor */}
+          {/* doctor */}
           <Route path="/doctor/schedule" element={<Schedule />}></Route>
           <Route path="/doctor/consultation" element={<Consultation />}></Route>
 
           {/* reception */}
-          <Route path="/reception/billing" element={<BillingAndcashiering/>}/>
-          <Route path="/reception/discharge" element={<DischargeSummary/>}/>
+          <Route path="/reception/billing" element={<BillingAndcashiering />} />
+          <Route path="/reception/discharge" element={<DischargeSummary />} />
+
+          {/* Blood Bank */}
+          <Route path="/blood/bloodGroup" element={<BloodGroup />} />
+          <Route path="/blood/bloodDonor" element={<BloodDonor/>} />
+          <Route path="/blood/bloodDonor/add" element={<AddBloodDonar/>} />
+          <Route path="/blood/bloodIssue" element={<BloodIssue/>} />
+          <Route path="/blood/bloodIssue/add" element={<AddBloodIssue/>} />
+          <Route path="/blood/componentIssue" element={<ComponentIssue/>}   />
+          <Route path="/blood/componentIssue/add" element={<AddComponentIssue/>} />
+
+
+
+
+
+
+
+
 
           {/* front office */}
           <Route path="/outpatient" element={<Outpatient />} />
