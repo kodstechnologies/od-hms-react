@@ -109,7 +109,7 @@ const Sidebar = (props) => {
                       <Link className={props?.activeClassName === 'inventory' ? 'active' : ''} to="/pharmacy/inventory">Inventory</Link>
                     </li>
                     <li>
-                      <Link className={props?.activeClassName === 'outpatient' ? 'active' : ''} to="/admin/outpatient">Outpatient</Link>
+                      <Link className={props?.activeClassName === 'prescriptions' ? 'active' : ''} to="/pharmacy/prescriptions">Prescriptions(RX)</Link>
                     </li>
                   </ul>
                 </li>

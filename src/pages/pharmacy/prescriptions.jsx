@@ -22,9 +22,9 @@ import {
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
-import InventoryData from "../../assets/json/Inventory";
+import PrescriptionList from "../../assets/json/PrescriptionList";
 
-const Inventory = () => {
+const Prescriptions = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
   const onSelectChange = (newSelectedRowKeys) => {
@@ -40,44 +40,44 @@ const Inventory = () => {
     // console.log(date, dateString);
   };
 
-  const datasource = InventoryData.Data;
+  const datasource = PrescriptionList.Data;
   const columns = [
     {
-      title: "ItemCode",
-      dataIndex: "ItemCode",
+      title: "OrderId",
+      dataIndex: "OrderId",
       render: (text, record) => (
         <>
           <h2 className="profile-image">
-            <Link to="#">{record.ItemCode}</Link>
+            <Link to="#">{record.OrderId}</Link>
           </h2>
         </>
       ),
-      sorter: (a, b) => a.ItemCode.length - b.ItemCode.length,
+      sorter: (a, b) => a.OrderId.length - b.OrderId.length,
     },
     {
-      title: "Name",
-      dataIndex: "Name",
-      sorter: (a, b) => a.Name.length - b.Name.length,
+      title: "Patient",
+      dataIndex: "Patient",
+      sorter: (a, b) => a.Patient.length - b.Patient.length,
     },
     {
-      title: "Type",
-      dataIndex: "Type",
-      sorter: (a, b) => a.Type.length - b.Type.length,
+      title: "Doctor",
+      dataIndex: "Doctor",
+      sorter: (a, b) => a.Doctor.length - b.Doctor.length,
     },
     {
-      title: "Quantity",
-      dataIndex: "Quantity",
-      sorter: (a, b) => a.Quantity.length - b.Quantity.length,
+      title: "Dept",
+      dataIndex: "Dept",
+      sorter: (a, b) => a.Dept.length - b.Dept.length,
     },
     {
       title: "Status",
       dataIndex: "Status",
       render: (text, record) => (
         <div>
-          {text === "Good Stock" && (
+          {text === "Pending" && (
             <span className="custom-badge status-green">{text}</span>
           )}
-          {text === "Low Stock" && (
+          {text === "Completed" && (
             <span className="custom-badge status-red">{text}</span>
           )}
         </div>
@@ -99,25 +99,13 @@ const Inventory = () => {
                 <i className="fas fa-ellipsis-v" />
               </Link>
               <div className="dropdown-menu dropdown-menu-end">
-                <Link className="dropdown-item" to="add-stock">
+                <Link className="dropdown-item" to="create">
                   <i className="far fa-plus me-2" />
-                  Add Stock
+                  Create
                 </Link>
-                <Link className="dropdown-item" to="stock-history">
+                <Link className="dropdown-item" to="view">
                   <i className="far fa-bar-chart me-2" />
-                  Stock History
-                </Link>
-                <Link className="dropdown-item" to="#">
-                  <i className="far fa-edit me-2" />
-                  Edit
-                </Link>
-                <Link
-                  className="dropdown-item"
-                  to="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#delete_patient"
-                >
-                  <i className="fa fa-trash-alt m-r-5"></i> Delete
+                  View
                 </Link>
               </div>
             </div>
@@ -133,7 +121,7 @@ const Inventory = () => {
       <Sidebar
         id="pharmacy-menu-item"
         id1="pharmacy-menu-items"
-        activeClassName="inventory"
+        activeClassName="prescriptions"
       />
       <>
         <div className="page-wrapper">
@@ -151,7 +139,7 @@ const Inventory = () => {
                         <FeatherIcon icon="chevron-right" />
                       </i>
                     </li>
-                    <li className="breadcrumb-item active">Inventory List</li>
+                    <li className="breadcrumb-item active">Prescription List</li>
                   </ul>
                 </div>
               </div>
@@ -166,7 +154,7 @@ const Inventory = () => {
                       <div className="row align-items-center">
                         <div className="col">
                           <div className="doctor-table-blk">
-                            <h3>Inventory List</h3>
+                            <h3>Prescription List</h3>
                             <div className="doctor-search-blk">
                               <div className="top-nav-search table-search-blk">
                                 <form>
@@ -181,12 +169,6 @@ const Inventory = () => {
                                 </form>
                               </div>
                               <div className="add-group">
-                                <Link
-                                  to="add"
-                                  className="btn btn-primary add-pluss ms-2"
-                                >
-                                  <img src={plusicon} alt="#" />
-                                </Link>
                                 <Link
                                   to="#"
                                   className="btn btn-primary doctor-refresh ms-2"
@@ -237,63 +219,9 @@ const Inventory = () => {
             </div>
           </div>
         </div>
-        <div
-          id="delete_patient"
-          className="modal fade delete-modal"
-          role="dialog"
-        >
-          <div className="modal-dialog modal-dialog-centered">
-            <div className="modal-content">
-              <div className="modal-body text-center">
-                <img src={imagesend} alt="#" width={50} height={46} />
-                <h3>Are you sure want to delete this ?</h3>
-                <div className="m-t-20">
-                  {" "}
-                  <Link
-                    to="#"
-                    className="btn btn-white me-2"
-                    data-bs-dismiss="modal"
-                  >
-                    Close
-                  </Link>
-                  <button type="submit" className="btn btn-danger">
-                    Delete
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            id="delete_patient"
-            className="modal fade delete-modal"
-            role="dialog"
-          >
-            <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-body text-center">
-                  <img src={imagesend} alt="#" width={50} height={46} />
-                  <h3>Are you sure want to delete this ?</h3>
-                  <div className="m-t-20">
-                    {" "}
-                    <Link
-                      to="#"
-                      className="btn btn-white me-2"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </Link>
-                    <button type="submit" className="btn btn-danger">
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </>
     </>
   );
 };
 
-export default Inventory;
+export default Prescriptions;
