@@ -69,6 +69,27 @@ const Sidebar = (props) => {
                     </li>
                   </ul>
                 </li>
+
+
+                <li className="submenu" >
+                  <Link to="#" id="pharmacy-menu-item" onClick={(e) => {
+                    handleClick(e, "pharmacy-menu-item", "pharmacy-menu-items")
+                  }}>
+                    <span className="menu-side">
+                      <img src={dashboard} alt="" />
+                    </span>{" "}
+                    <span> Pharmacy </span> <span className="menu-arrow" />
+                  </Link>
+                  <ul style={{ display: sidebar === 'Pharmacy' ? 'block' : "none" }} className='pharmacy-menu-items'>
+                    <li>
+                      <Link className={props?.activeClassName === 'inventory' ? 'active' : ''} to="/pharmacy/inventory">Inventory</Link>
+                    </li>
+                    <li>
+                      <Link className={props?.activeClassName === 'outpatient' ? 'active' : ''} to="/admin/outpatient">Outpatient</Link>
+                    </li>
+                  </ul>
+                </li>
+                
               </ul>
 
               <div className="logout-btn">
