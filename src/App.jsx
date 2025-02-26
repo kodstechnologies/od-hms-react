@@ -18,6 +18,9 @@ import Dashboard from "./pages/admin/dashboard";
 import Outpatient from "./pages/admin/outPatient";
 import Inventory from "./pages/pharmacy/inventory";
 import AddInventory from "./pages/pharmacy/addInventory";
+import FullLayout from "./pages/layouts/FullLayout";
+import Consultation from "./pages/doctor/Consultation";
+import Schedule from "./pages/doctor/Schedule";
 
 function Approuter() {
 
@@ -50,6 +53,10 @@ function Approuter() {
           <Route path="/pharmacy/inventory/add" element={<AddInventory />} />
 
 
+
+        {/* doctor */}
+          <Route path="/doctor/schedule" element={<Schedule />}></Route>
+          <Route path="/doctor/consultation" element={<Consultation />}></Route>
         </Routes>
       </BrowserRouter>
       <div className="sidebar-overlay"></div>

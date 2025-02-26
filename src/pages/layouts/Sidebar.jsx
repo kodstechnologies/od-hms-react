@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
-import { blog, dashboard, doctor, doctorschedule, logout, menuicon04, menuicon06, menuicon08, menuicon09, menuicon10, menuicon11, menuicon12, menuicon14, menuicon15, menuicon16, patients, sidemenu } from './imagepath';
+import { blog, dashboard, doctor, doctorschedule, logout, menuicon04, menuicon06, menuicon08, menuicon09, menuicon10, menuicon11, menuicon12, menuicon14, menuicon15, menuicon16, patients, sidemenu } from '../../components/imagepath';
 import Scrollbars from "react-custom-scrollbars-2";
 
 
@@ -68,27 +68,6 @@ const Sidebar = (props) => {
                     </li>
                   </ul>
                 </li>
-
-
-                <li className="submenu" >
-                  <Link to="#" id="pharmacy-menu-item" onClick={(e) => {
-                    handleClick(e, "pharmacy-menu-item", "pharmacy-menu-items")
-                  }}>
-                    <span className="menu-side">
-                      <img src={dashboard} alt="" />
-                    </span>{" "}
-                    <span> Pharmacy </span> <span className="menu-arrow" />
-                  </Link>
-                  <ul style={{ display: sidebar === 'Pharmacy' ? 'block' : "none" }} className='pharmacy-menu-items'>
-                    <li>
-                      <Link className={props?.activeClassName === 'inventory' ? 'active' : ''} to="/pharmacy/inventory">Inventory</Link>
-                    </li>
-                    <li>
-                      <Link className={props?.activeClassName === 'outpatient' ? 'active' : ''} to="/admin/outpatient">Outpatient</Link>
-                    </li>
-                  </ul>
-                </li>
-
                 <li className='submenu'>
                   <Link to="#" id="doctor-dropmenu" onClick={(e) => {
                     handleClick(e, "doctor-dropmenu", "doctor-items")
