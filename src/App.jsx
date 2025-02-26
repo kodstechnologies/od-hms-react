@@ -16,6 +16,9 @@ import BlankPage from "./components/pages/login/BlankPage";
 import GalleryImage from "./components/pages/Gallery/Gallery";
 import Dashboard from "./pages/admin/dashboard";
 import Outpatient from "./pages/admin/outPatient";
+import FullLayout from "./pages/layouts/FullLayout";
+import Consultation from "./pages/doctor/Consultation";
+import Schedule from "./pages/doctor/Schedule";
 
 function Approuter() {
 
@@ -31,7 +34,7 @@ function Approuter() {
           <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/register" element={<Register />} />
           <Route path="/lockscreen" element={<LockScreen />} />
-          {/* <Route path="/changepassword" element={<ChangePassword />} /> */}
+          <Route path="/changepassword" element={<ChangePassword />} />
           <Route path="/error" element={<Error />} />
           <Route path="/server-error" element={<ServerError />} />
           <Route path="/blankpage" element={<BlankPage />} />
@@ -41,7 +44,10 @@ function Approuter() {
         {/* admin */}
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/outpatient" element={<Outpatient />} />
-          
+
+        {/* doctor */}
+          <Route path="/doctor/schedule" element={<Schedule />}></Route>
+          <Route path="/doctor/consultation" element={<Consultation />}></Route>
         </Routes>
       </BrowserRouter>
       <div className="sidebar-overlay"></div>
