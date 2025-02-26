@@ -8,7 +8,6 @@ import {
   baricon,
   baricon1,
   searchnormal,
-  imguser,
   noteicon,
   user06,
   settingicon01,
