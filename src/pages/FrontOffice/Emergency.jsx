@@ -1,14 +1,18 @@
 import React from "react";
-import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
-import { Link } from "react-router-dom";
+import Sidebar from "../../components/Sidebar";
 import FeatherIcon from "feather-icons-react";
+import { Link } from "react-router-dom";
 
-const Dashboard = () => {
+const Emergency = () => {
   return (
     <>
       <Header />
-      <Sidebar id="menu-item" id1="menu-items" activeClassName="dashboard" />
+      <Sidebar
+        id="frontoffice"
+        id1="frontoffices"
+        activeClassName="emergency"
+      />
       <div className="page-wrapper">
         <div className="content">
           {/* Page Header */}
@@ -17,23 +21,21 @@ const Dashboard = () => {
               <div className="col-sm-12">
                 <ul className="breadcrumb">
                   <li className="breadcrumb-item">
-                    <Link to="#">Blog </Link>
+                    <Link to="#">Emergency </Link>
                   </li>
                   <li className="breadcrumb-item">
                     <i className="feather-chevron-right">
                       <FeatherIcon icon="chevron-right" />
                     </i>
                   </li>
-                  <li className="breadcrumb-item active">View Blog</li>
                 </ul>
               </div>
             </div>
           </div>
-          <div>hi</div>
         </div>
       </div>
     </>
   );
 };
 
-export default Dashboard;
+export default Emergency;
