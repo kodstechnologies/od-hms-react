@@ -15,7 +15,6 @@ import EditProfile from "./components/pages/login/EditProfile";
 import BlankPage from "./components/pages/login/BlankPage";
 import GalleryImage from "./components/pages/Gallery/Gallery";
 import Dashboard from "./pages/admin/dashboard";
-import Outpatient from "./pages/admin/outPatient";
 import Inventory from "./pages/pharmacy/inventory";
 import AddInventory from "./pages/pharmacy/addInventory";
 import FullLayout from "./pages/layouts/FullLayout";
