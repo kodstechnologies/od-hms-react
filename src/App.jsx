@@ -31,7 +31,7 @@ function Approuter() {
           <Route path="/edit-profile" element={<EditProfile />} />
           <Route path="/register" element={<Register />} />
           <Route path="/lockscreen" element={<LockScreen />} />
-          <Route path="/changepassword" element={<ChangePassword />} />
+          {/* <Route path="/changepassword" element={<ChangePassword />} /> */}
           <Route path="/error" element={<Error />} />
           <Route path="/server-error" element={<ServerError />} />
           <Route path="/blankpage" element={<BlankPage />} />
