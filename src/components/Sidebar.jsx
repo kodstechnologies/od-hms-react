@@ -66,6 +66,31 @@ const Sidebar = (props) => {
                     <li>
                       <Link className={props?.activeClassName === 'outpatient' ? 'active' : ''} to="/admin/outpatient">Outpatient</Link>
                     </li>
+
+
+                  </ul>
+                </li>
+                
+                <li className="submenu">
+                  <Link to="#" id="recdrop" onClick={(e) => handleClick(e, "recdrop", "recdrop2")}>
+                    <span className="menu-side">
+                      <img src={patients} alt="" />
+                    </span>{" "}
+                    <span>Reception </span> <span className="menu-arrow" />
+                  </Link>
+                  <ul style={{ display: "none" }} className="recdrop2">
+                    <li>
+                      <Link className={props?.activeClassName === 'billing' ? 'active' : ''} to="/reception/billing">Billing And Cashiering</Link>
+                    </li>
+                    <li>
+                      <Link className={props?.activeClassName === 'discharge' ? 'active' : ''} to="/reception/discharge">Discharge Summary</Link>
+                    </li>
+                    <li>
+                      <Link className={props?.activeClassName === 'medicaladminstration' ? 'active' : ''} to="/reception/medicaladminstration">Medical Adminstartion(MAR)</Link>
+                    </li>
+                    <li>
+                      <Link className={props?.activeClassName === 'medicalrecord' ? 'active' : ''} to="/reception/medicalrecord">Medical Record Inventory</Link>
+                    </li>
                   </ul>
                 </li>
 
@@ -108,6 +133,8 @@ const Sidebar = (props) => {
                   </ul>
                 </li>
               </ul>
+
+
 
               <div className="logout-btn">
                 <Link to="/login">

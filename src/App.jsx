@@ -21,13 +21,18 @@ import AddInventory from "./pages/pharmacy/addInventory";
 import FullLayout from "./pages/layouts/FullLayout";
 import Consultation from "./pages/doctor/Consultation";
 import Schedule from "./pages/doctor/Schedule";
+import BillingAndcashiering from "./pages/reception/billingAndcashiering";
+import DischargeSummary from "./pages/reception/dischargeSummary";
 
 function Approuter() {
 
+
   return (
+  
     <>
       <BrowserRouter basename="/">
         <Routes>
+     
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
@@ -57,6 +62,11 @@ function Approuter() {
         {/* doctor */}
           <Route path="/doctor/schedule" element={<Schedule />}></Route>
           <Route path="/doctor/consultation" element={<Consultation />}></Route>
+
+          {/* reception */}
+          <Route path="/reception/billing" element={<BillingAndcashiering/>}/>
+          <Route path="/reception/discharge" element={<DischargeSummary/>}/>
+
         </Routes>
       </BrowserRouter>
       <div className="sidebar-overlay"></div>
