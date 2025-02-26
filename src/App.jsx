@@ -16,13 +16,18 @@ import BlankPage from "./components/pages/login/BlankPage";
 import GalleryImage from "./components/pages/Gallery/Gallery";
 import Dashboard from "./pages/admin/dashboard";
 import Outpatient from "./pages/admin/outPatient";
+import BillingAndcashiering from "./pages/reception/billingAndcashiering";
+import DischargeSummary from "./pages/reception/dischargeSummary";
 
 function Approuter() {
 
+
   return (
+  
     <>
       <BrowserRouter basename="/">
         <Routes>
+     
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
@@ -41,7 +46,11 @@ function Approuter() {
         {/* admin */}
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/outpatient" element={<Outpatient />} />
-          
+
+          {/* reception */}
+          <Route path="/reception/billing" element={<BillingAndcashiering/>}/>
+          <Route path="/reception/discharge" element={<DischargeSummary/>}/>
+
         </Routes>
       </BrowserRouter>
       <div className="sidebar-overlay"></div>
