@@ -1,0 +1,80 @@
+/* Custom table styling */
+.custom-table {
+  position: relative;
+}
+
+/* Ensure fixed columns have a solid white background */
+.custom-table .ant-table-cell-fix-left,
+.custom-table .ant-table-cell-fix-right {
+  background: #fff !important;
+  z-index: 10 !important; /* Keep fixed columns above scrolling content */
+  position: relative;
+}
+
+/* Fixed columns shadow effect for better visibility */
+.custom-table .ant-table-cell-fix-left::after,
+.custom-table .ant-table-cell-fix-right::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  pointer-events: none;
+}
+
+.custom-table .ant-table-cell-fix-right::after {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.05), transparent);
+}
+
+/* Ensure fixed headers are above other content */
+.custom-table .ant-table-thead > tr > th.ant-table-cell-fix-left,
+.custom-table .ant-table-thead > tr > th.ant-table-cell-fix-right {
+  background: #fff !important;
+  z-index: 11 !important;
+}
+
+/* Fixed header background */
+.ant-table-thead > tr > th {
+  background: #f8f9fa;
+  font-weight: 600;
+}
+
+/* Zebra striping for better readability */
+.ant-table-tbody > tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Row hover effect */
+.ant-table-tbody > tr:hover {
+  background-color: #e0efff !important; /* Light blue for scrollable content */
+}
+
+/* Darker background for fixed columns when row is hovered */
+.custom-table .ant-table-tbody > tr:hover .ant-table-cell-fix-left,
+.custom-table .ant-table-tbody > tr:hover .ant-table-cell-fix-right {
+  background-color: #cce0ff !important; /* Darker blue */
+  z-index: 12 !important; /* Keep above hover effects */
+}
+
+/* Ensure scrolling content goes under fixed columns */
+.custom-table .ant-table-body {
+  overflow-x: auto !important;
+  position: relative;
+  z-index: 1; /* Lower than fixed columns */
+}
+
+/* Action buttons styling */
+.actions {
+  white-space: nowrap;
+  display: flex;
+  gap: 4px;
+}
+
+.actions button {
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.ant-modal {
+  z-index: 1051 !important; /* Ensure modal appears on top */
+}

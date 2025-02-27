@@ -42,14 +42,18 @@ import BloodIssue from "./pages/bloodBank/BloodIssue";
 import AddBloodIssue from "./pages/bloodBank/AddBloodIssue";
 import ComponentIssue from "./pages/bloodBank/ComponentIssue";
 import AddComponentIssue from "./pages/bloodBank/AddComponentIssue";
+import OperativeInformation from "./pages/admin/OperativeInfo";
+import OTEditor from "./pages/admin/OtEdit";
+import OperationRegistration from "./pages/admin/operationRegistration";
+import LabDashboard from "./pages/laboratory/LabDashboard";
+import LabCollection from "./pages/laboratory/LabCollection";
+import CreateLabCollection from "./pages/laboratory/CreateCollection";
 
 function Approuter() {
   return (
-
     <>
       <BrowserRouter basename="/">
         <Routes>
-
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
@@ -64,22 +68,36 @@ function Approuter() {
           <Route path="/blankpage" element={<BlankPage />} />
           <Route path="/gallery" element={<GalleryImage />} />
 
-
           {/* admin */}
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/outpatient" element={<Outpatient />} />
-
+          <Route
+            path="/admin/operative-info"
+            element={<OperativeInformation />}
+          />
+          <Route path="/admin/operative-info/ot-edit" element={<OTEditor />} />
+          <Route
+            path="/admin/operative-info/register"
+            element={<OperationRegistration />}
+          />
 
           {/* pharmacy */}
           <Route path="/pharmacy/inventory" element={<Inventory />} />
           <Route path="/pharmacy/inventory/add" element={<AddInventory />} />
           <Route path="/pharmacy/inventory/add-stock" element={<AddStock />} />
-          <Route path="/pharmacy/inventory/stock-history" element={<StockHistory />} />
+          <Route
+            path="/pharmacy/inventory/stock-history"
+            element={<StockHistory />}
+          />
           <Route path="/pharmacy/prescriptions" element={<Prescriptions />} />
-          <Route path="/pharmacy/prescriptions/create" element={<CreateInvoice />} />
-          <Route path="/pharmacy/prescriptions/view" element={<InvoiceDetails />} />
-
-
+          <Route
+            path="/pharmacy/prescriptions/create"
+            element={<CreateInvoice />}
+          />
+          <Route
+            path="/pharmacy/prescriptions/view"
+            element={<InvoiceDetails />}
+          />
 
           {/* doctor */}
           <Route path="/doctor/schedule" element={<Schedule />}></Route>
@@ -91,20 +109,20 @@ function Approuter() {
 
           {/* Blood Bank */}
           <Route path="/blood/bloodGroup" element={<BloodGroup />} />
-          <Route path="/blood/bloodDonor" element={<BloodDonor/>} />
-          <Route path="/blood/bloodDonor/add" element={<AddBloodDonar/>} />
-          <Route path="/blood/bloodIssue" element={<BloodIssue/>} />
-          <Route path="/blood/bloodIssue/add" element={<AddBloodIssue/>} />
-          <Route path="/blood/componentIssue" element={<ComponentIssue/>}   />
-          <Route path="/blood/componentIssue/add" element={<AddComponentIssue/>} />
+          <Route path="/blood/bloodDonor" element={<BloodDonor />} />
+          <Route path="/blood/bloodDonor/add" element={<AddBloodDonar />} />
+          <Route path="/blood/bloodIssue" element={<BloodIssue />} />
+          <Route path="/blood/bloodIssue/add" element={<AddBloodIssue />} />
+          <Route path="/blood/componentIssue" element={<ComponentIssue />} />
+          <Route
+            path="/blood/componentIssue/add"
+            element={<AddComponentIssue />}
+          />
 
-
-
-
-
-
-
-
+          {/* laboratory */}
+          <Route path="/laboratory/dashboard" element={<LabDashboard />} />
+          <Route path="/laboratory/collection" element={<LabCollection />} />
+          <Route path="/laboratory/collection/create" element={<CreateLabCollection />} />
 
           {/* front office */}
           <Route path="/outpatient" element={<Outpatient />} />
