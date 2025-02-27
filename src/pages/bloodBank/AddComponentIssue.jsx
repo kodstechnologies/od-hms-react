@@ -67,9 +67,13 @@ const AddComponentIssue = () => {
 
   const components = [
     { value: "Platelets", label: "Platelets" },
+    { value: "Cryo", label: "Cryo" },
+
     { value: "Plasma", label: "Plasma" },
-    { value: "Whiteblood cells", label: "Whiteblood cells" },
+    { value: "white cells and granulocytes", label: "white cells and granulocytess" },
     { value: "Redblood cells", label: "Redblood cells" },
+    { value: "Cryo", label: "Cryo" },
+
   ];
 
   const handleSave = () => {
@@ -107,6 +111,38 @@ const AddComponentIssue = () => {
 
     // Navigate to the component issue list page
     navigate("/blood/componentIssue");
+  };
+
+  // ----- Styles (same as AddInventory.jsx) -----
+  const customStyles = {
+    menuPortal: (base) => ({
+      ...base,
+      zIndex: 9999,
+    }),
+    control: (baseStyles, state) => ({
+      ...baseStyles,
+      borderColor: state.isFocused
+        ? "none"
+        : "2px solid rgba(46, 55, 164, 0.1)",
+      boxShadow: state.isFocused ? "0 0 0 1px #2e37a4" : "none",
+      "&:hover": {
+        borderColor: state.isFocused
+          ? "none"
+          : "2px solid rgba(46, 55, 164, 0.1)",
+      },
+      borderRadius: "10px",
+      fontSize: "14px",
+      minHeight: "45px",
+    }),
+    dropdownIndicator: (base, state) => ({
+      ...base,
+      transform: state.selectProps.menuIsOpen
+        ? "rotate(-180deg)"
+        : "rotate(0)",
+      transition: "250ms",
+      width: "35px",
+      height: "35px",
+    }),
   };
 
   return (
@@ -159,6 +195,7 @@ const AddComponentIssue = () => {
                         </div>
                       </div>
 
+                      {/* Patient Select */}
                       <div className="col-12 col-md-6 col-xl-6">
                         <div className="form-group local-forms">
                           <label>
@@ -169,10 +206,14 @@ const AddComponentIssue = () => {
                             onChange={setPatient}
                             options={patients}
                             placeholder="Select Patient"
+                            menuPortalTarget={document.body}
+                            components={{ IndicatorSeparator: () => null }}
+                            styles={customStyles}
                           />
                         </div>
                       </div>
 
+                      {/* Issue Date */}
                       <div className="col-12 col-md-6 col-xl-6">
                         <div className="form-group local-forms">
                           <label>
@@ -185,6 +226,7 @@ const AddComponentIssue = () => {
                         </div>
                       </div>
 
+                      {/* Hospital Doctor Select */}
                       <div className="col-12 col-md-6 col-xl-6">
                         <div className="form-group local-forms">
                           <label>
@@ -195,10 +237,14 @@ const AddComponentIssue = () => {
                             onChange={setHospitalDoctor}
                             options={hospitalDoctors}
                             placeholder="Select Doctor"
+                            menuPortalTarget={document.body}
+                            components={{ IndicatorSeparator: () => null }}
+                            styles={customStyles}
                           />
                         </div>
                       </div>
 
+                      {/* Reference Number */}
                       <div className="col-12 col-md-6 col-xl-6">
                         <div className="form-group local-forms">
                           <label>
@@ -213,6 +259,7 @@ const AddComponentIssue = () => {
                         </div>
                       </div>
 
+                      {/* Technician */}
                       <div className="col-12 col-md-6 col-xl-6">
                         <div className="form-group local-forms">
                           <label>
@@ -227,34 +274,8 @@ const AddComponentIssue = () => {
                         </div>
                       </div>
 
-                      <div className="col-12 col-md-6 col-xl-6">
-                        <div className="form-group local-forms">
-                          <label>
-                            Charge Category <span className="login-danger">*</span>
-                          </label>
-                          <Select
-                            value={chargeCategory}
-                            onChange={setChargeCategory}
-                            options={chargeCategories}
-                            placeholder="Select Charge Category"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="col-12 col-md-6 col-xl-6">
-                        <div className="form-group local-forms">
-                          <label>
-                            Charge Name <span className="login-danger">*</span>
-                          </label>
-                          <Select
-                            value={chargeName}
-                            onChange={setChargeName}
-                            options={chargeNames}
-                            placeholder="Select Charge Name"
-                          />
-                        </div>
-                      </div>
-
+          
+                      {/* Standard Charge */}
                       <div className="col-12 col-md-6 col-xl-6">
                         <div className="form-group local-forms">
                           <label>
@@ -269,6 +290,7 @@ const AddComponentIssue = () => {
                         </div>
                       </div>
 
+                      {/* Blood Group Select */}
                       <div className="col-12 col-md-6 col-xl-6">
                         <div className="form-group local-forms">
                           <label>
@@ -279,10 +301,14 @@ const AddComponentIssue = () => {
                             onChange={setBloodGroup}
                             options={bloodGroups}
                             placeholder="Select Blood Group"
+                            menuPortalTarget={document.body}
+                            components={{ IndicatorSeparator: () => null }}
+                            styles={customStyles}
                           />
                         </div>
                       </div>
 
+                      {/* Bag */}
                       <div className="col-12 col-md-6 col-xl-6">
                         <div className="form-group local-forms">
                           <label>
@@ -297,6 +323,7 @@ const AddComponentIssue = () => {
                         </div>
                       </div>
 
+                      {/* Component Select */}
                       <div className="col-12 col-md-6 col-xl-6">
                         <div className="form-group local-forms">
                           <label>
@@ -307,10 +334,14 @@ const AddComponentIssue = () => {
                             onChange={setComponent}
                             options={components}
                             placeholder="Select Component"
+                            menuPortalTarget={document.body}
+                            components={{ IndicatorSeparator: () => null }}
+                            styles={customStyles}
                           />
                         </div>
                       </div>
 
+                      {/* Note */}
                       <div className="col-12 col-sm-12">
                         <div className="form-group local-forms">
                           <label>
@@ -325,6 +356,7 @@ const AddComponentIssue = () => {
                         </div>
                       </div>
 
+                      {/* Save & Cancel Buttons */}
                       <div className="col-12 text-end">
                         <div className="form-group local-forms">
                           <button
@@ -334,13 +366,15 @@ const AddComponentIssue = () => {
                           >
                             Save
                           </button>
+                          {/* ---- UPDATED Cancel button style ---- */}
                           <button
                             type="button"
-                            className="btn btn-secondary"
+                            className="btn btn-primary cancel-form"
                             onClick={handleCancel}
                           >
                             Cancel
                           </button>
+                          {/* ----------------------------------- */}
                         </div>
                       </div>
                     </div>

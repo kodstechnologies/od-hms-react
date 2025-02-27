@@ -97,6 +97,16 @@ const Sidebar = (props) => {
                         Dashboard
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "DietPlan" ? "active" : ""
+                        }
+                        to="/admin/diet-plan"
+                      >
+                        Diet plan
+                      </Link>
+                    </li>
                   </ul>
                 </li>
                 {/* FRONT OFFICE */}
@@ -189,6 +199,20 @@ const Sidebar = (props) => {
                       </Link>
                     </li>
 
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "Tokenboard"
+                            ? "active"
+                            : ""
+                        }
+                        to="/token-board"
+                      >
+                       Token Board
+                      </Link>
+                    </li>
+
+
 
                   </ul>
                 </li>
@@ -266,20 +290,42 @@ const Sidebar = (props) => {
                   </Link>
                   <ul style={{ display: sidebar === 'BloodBank' ? 'block' : "none" }} className='blood-menu-items'>
                     <li>
-                      <Link className={props?.activeClassName === 'BloodGroup' ? 'active' : ''} to="/blood/bloodGroup">BloodGroup</Link>
+                      <Link className={props?.activeClassName === 'BloodGroup' ? 'active' : ''} to="/blood/bloodGroup">Blood Group</Link>
                     </li>
                     <li>
-                      <Link className={props?.activeClassName === 'BloodDonor' ? 'active' : ''} to="/blood/bloodDonor">BloodDonorDetails</Link>
+                      <Link className={props?.activeClassName === 'BloodDonor' ? 'active' : ''} to="/blood/bloodDonor">Blood Donor Details</Link>
                     </li>
 
                     <li>
-                      <Link className={props?.activeClassName === 'BloodIssue' ? 'active' : ''} to="/blood/bloodIssue">BloodIssueDetails</Link>
+                      <Link className={props?.activeClassName === 'BloodIssue' ? 'active' : ''} to="/blood/bloodIssue">Blood Issue Details</Link>
                     </li>
                     <li>
-                      <Link className={props?.activeClassName === 'ComponentIssue' ? 'active' : ''} to="/blood/componentIssue">ComponentIssueDetails</Link>
+                      <Link className={props?.activeClassName === 'ComponentIssue' ? 'active' : ''} to="/blood/componentIssue">Component Issue Details</Link>
                     </li>
                   </ul>
                 </li>
+
+                <li className="submenu" >
+                  <Link to="#" id="ambulance-menu-item" onClick={(e) => {
+                    handleClick(e, "ambulance-menu-item", "ambulance-menu-items")
+                  }}>
+                    <span className="menu-side">
+                      <img src={dashboard} alt="" />
+                    </span>{" "}
+                    <span> Ambulance </span> <span className="menu-arrow" />
+                  </Link>
+                  <ul style={{ display: sidebar === 'Ambulance' ? 'block' : "none" }} className='ambulance-menu-items'>
+                    <li>
+                      <Link className={props?.activeClassName === 'AmbulanceDetails' ? 'active' : ''} to="/Ambulance/AmbulanceDetails">Ambulance Details</Link>
+                    </li>
+                    <li>
+                      <Link className={props?.activeClassName === 'AmbulanceCall' ? 'active' : ''} to="/Ambulance/AmbulanceCall"> Ambulance Call</Link>
+                    </li>
+                  </ul>
+                </li>
+
+                 
+               
               </ul>
 
 

@@ -42,6 +42,14 @@ import BloodIssue from "./pages/bloodBank/BloodIssue";
 import AddBloodIssue from "./pages/bloodBank/AddBloodIssue";
 import ComponentIssue from "./pages/bloodBank/ComponentIssue";
 import AddComponentIssue from "./pages/bloodBank/AddComponentIssue";
+import AmbulanceDetails from "./pages/Ambulance/AmbulanceDetails";
+import AddAmbulanceDetails from "./pages/Ambulance/AddAmbulanceDetails";
+import AddAmbulanceCall from "./pages/Ambulance/AddAmbulanceCall";
+import AmbulanceCall from "./pages/Ambulance/AmbulanceCall";
+import TokenBoard from "./pages/FrontOffice/TokenBoard";
+import AddToken from "./pages/FrontOffice/AddToken";
+import DietPlan from "./pages/admin/DietPlan";
+import AddDietPlan from "./pages/admin/AddDietPlan";
 
 function Approuter() {
   return (
@@ -67,6 +75,9 @@ function Approuter() {
 
           {/* admin */}
           <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/diet-plan" element={<DietPlan />} />
+          <Route path="/admin/diet-plan/add" element={<AddDietPlan />} />
+
           <Route path="/admin/outpatient" element={<Outpatient />} />
 
 
@@ -91,14 +102,20 @@ function Approuter() {
 
           {/* Blood Bank */}
           <Route path="/blood/bloodGroup" element={<BloodGroup />} />
-          <Route path="/blood/bloodDonor" element={<BloodDonor/>} />
-          <Route path="/blood/bloodDonor/add" element={<AddBloodDonar/>} />
-          <Route path="/blood/bloodIssue" element={<BloodIssue/>} />
-          <Route path="/blood/bloodIssue/add" element={<AddBloodIssue/>} />
-          <Route path="/blood/componentIssue" element={<ComponentIssue/>}   />
-          <Route path="/blood/componentIssue/add" element={<AddComponentIssue/>} />
+          <Route path="/blood/bloodDonor" element={<BloodDonor />} />
+          <Route path="/blood/bloodDonor/add" element={<AddBloodDonar />} />
+          <Route path="/blood/bloodIssue" element={<BloodIssue />} />
+          <Route path="/blood/bloodIssue/add" element={<AddBloodIssue />} />
+          <Route path="/blood/componentIssue" element={<ComponentIssue />} />
+          <Route path="/blood/componentIssue/add" element={<AddComponentIssue />} />
 
+          {/* Ambulance */}
 
+          <Route path="/Ambulance/AmbulanceDetails" element={<AmbulanceDetails />} />
+          <Route path="/Ambulance/AmbulanceDetails/add" element={<AddAmbulanceDetails />} />
+          <Route path="/Ambulance/AmbulanceCall" element={<AmbulanceCall />} />
+
+          <Route path="/Ambulance/AmbulanceCall/add" element={<AddAmbulanceCall />} />
 
 
 
@@ -115,6 +132,9 @@ function Approuter() {
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/queue-management" element={<Query />} />
+          <Route path="/token-board" element={<TokenBoard />} />
+          <Route path="/token-board/add" element={<AddToken />} />
+
         </Routes>
       </BrowserRouter>
       <div className="sidebar-overlay"></div>

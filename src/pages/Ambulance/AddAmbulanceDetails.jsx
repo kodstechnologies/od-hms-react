@@ -4,111 +4,73 @@ import React, { useState } from "react";
 import Header from "../layouts/header";
 import Sidebar from "../../components/Sidebar";
 import { Link, useNavigate } from "react-router-dom";
-import { DatePicker } from "antd";
 import { TextField } from "@mui/material";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import Select from "react-select";
 
-const AddBloodIssue = () => {
-  const [patient, setPatient] = useState(null);
-  const [issueDate, setIssueDate] = useState(null);
-  const [hospitalDoctor, setHospitalDoctor] = useState(null);
-  const [referenceNumber, setReferenceNumber] = useState("");
-  const [technician, setTechnician] = useState("");
-  const [chargeCategory, setChargeCategory] = useState(null);
-  const [chargeName, setChargeName] = useState(null);
-  const [standardCharge, setStandardCharge] = useState("");
-  const [bloodGroup, setBloodGroup] = useState(null);
-  const [bag, setBag] = useState("");
+const AddAmbulanceDetails = () => {
+  const [vehicleNumber, setVehicleNumber] = useState("");
+  const [vehicleModel, setVehicleModel] = useState("");
+  const [launchYear, setLaunchYear] = useState("");
+  const [status, setStatus] = useState("Available");
+  const [driverName, setDriverName] = useState("");
+  const [driverContact, setDriverContact] = useState("");
+  const [driverLicence, setDriverLicence] = useState("");
+  const [vehicleType, setVehicleType] = useState("Owned");
   const [note, setNote] = useState("");
-  const [bloodQty, setBloodQty] = useState("");
-  const navigate = useNavigate(); // Initialize useNavigate hook
+  const navigate = useNavigate();
 
-  const patients = [
-    { value: "John Doe", label: "John Doe" },
-    { value: "Jane Smith", label: "Jane Smith" },
-    { value: "Sam Wilson", label: "Sam Wilson" },
+  const statusOptions = [
+    { value: "Available", label: "Available" },
+    { value: "On Call", label: "On Call" },
+    { value: "At The Scene", label: "At The Scene" },
+    { value: "Transporting Patient", label: "Transporting Patient" },
+    { value: "Occupied", label: "Occupied" },
   ];
 
-  const hospitalDoctors = [
-    { value: "Dr. Smith", label: "Dr. Smith" },
-    { value: "Dr. Johnson", label: "Dr. Johnson" },
-    { value: "Dr. Lee", label: "Dr. Lee" },
-  ];
-
-  const chargeCategories = [
-    { value: "A+", label: "A+" },
-    { value: "B+", label: "B+" },
-    { value: "O+", label: "O+" },
-    { value: "AB+", label: "AB+" },
-    { value: "A-", label: "A-" },
-    { value: "B-", label: "B-" },
-    { value: "O-", label: "O-" },
-    { value: "AB-", label: "AB-" },
-  ];
-
-  const chargeNames = [
-    { value: "HIV", label: "HIV" },
-    { value: "Blood Group Test", label: "Blood Group Test" },
-    { value: "Test", label: "Test" },
-    { value: "Test ABC", label: "Test ABC" },
-  ];
-
-  const bloodGroups = [
-    { value: "A+", label: "A+" },
-    { value: "B+", label: "B+" },
-    { value: "O+", label: "O+" },
-    { value: "AB+", label: "AB+" },
-    { value: "A-", label: "A-" },
-    { value: "B-", label: "B-" },
-    { value: "O-", label: "O-" },
-    { value: "AB-", label: "AB-" },
+  const vehicleTypeOptions = [
+    { value: "Owned", label: "Owned" },
+    { value: "Contractual", label: "Contractual" },
   ];
 
   const handleSave = () => {
     // Handle save logic here
-    console.log("Blood Issue Saved", {
-      patient,
-      issueDate,
-      hospitalDoctor,
-      referenceNumber,
-      technician,
-      chargeCategory,
-      chargeName,
-      standardCharge,
-      bloodGroup,
-      bag,
+    console.log("Ambulance Saved", {
+      vehicleNumber,
+      vehicleModel,
+      launchYear,
+      status,
+      driverName,
+      driverContact,
+      driverLicence,
+      vehicleType,
       note,
-      bloodQty,
     });
   };
 
   const handleCancel = () => {
     // Reset the form fields
-    setPatient(null);
-    setIssueDate(null);
-    setHospitalDoctor(null);
-    setReferenceNumber("");
-    setTechnician("");
-    setChargeCategory(null);
-    setChargeName(null);
-    setStandardCharge("");
-    setBloodGroup(null);
-    setBag("");
+    setVehicleNumber("");
+    setVehicleModel("");
+    setLaunchYear("");
+    setStatus("Available");
+    setDriverName("");
+    setDriverContact("");
+    setDriverLicence("");
+    setVehicleType("Owned");
     setNote("");
-    setBloodQty("");
 
-    // Navigate to the blood issue list page
-    navigate("/blood/bloodIssue");
+    // Navigate to ambulance/ambulanceDetails
+    navigate("/ambulance/ambulanceDetails");
   };
 
   return (
     <>
       <Header />
       <Sidebar
-        id="blood-menu-item"
-        id1="blood-menu-items"
-        activeClassName="BloodIssue"
+        id="ambulance-menu-item"
+        id1="ambulance-menu-items"
+        activeClassName="AmbulanceDetails"
       />
       <div className="page-wrapper">
         <div className="content">
@@ -118,7 +80,7 @@ const AddBloodIssue = () => {
               <div className="col-sm-12">
                 <ul className="breadcrumb">
                   <li className="breadcrumb-item">
-                    <Link to="#">Blood Bank </Link>
+                    <Link to="#">Ambulance Management</Link>
                   </li>
                   <li className="breadcrumb-item">
                     <i className="feather-chevron-right">
@@ -126,14 +88,14 @@ const AddBloodIssue = () => {
                     </i>
                   </li>
                   <li className="breadcrumb-item">
-                    <Link to="/blood/bloodIssue">Blood Issue</Link>
+                    <Link to="/ambulance/ambulanceDetails">Ambulance Details</Link>
                   </li>
                   <li className="breadcrumb-item">
                     <i className="feather-chevron-right">
                       <FeatherIcon icon="chevron-right" />
                     </i>
                   </li>
-                  <li className="breadcrumb-item active">Add Blood Issue</li>
+                  <li className="breadcrumb-item active">Add Ambulance Details</li>
                 </ul>
               </div>
             </div>
@@ -148,22 +110,74 @@ const AddBloodIssue = () => {
                     <div className="row">
                       <div className="col-12">
                         <div className="form-heading">
-                          <h4>Add Blood Issue</h4>
+                          <h4>Add Ambulance Details</h4>
                         </div>
                       </div>
 
-                      {/* Patient Select */}
                       <div className="col-12 col-md-6 col-xl-6">
                         <div className="form-group local-forms">
                           <label>
-                            Patient <span className="login-danger">*</span>
+                            Vehicle Number <span className="login-danger">*</span>
+                          </label>
+                          <input
+                            className="form-control"
+                            type="text"
+                            value={vehicleNumber}
+                            onChange={(e) => setVehicleNumber(e.target.value)}
+                            style={{
+                              backgroundColor: "#fff", // Ensure white background
+                              border: "1px solid #ccc", // Border color
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="col-12 col-md-6 col-xl-6">
+                        <div className="form-group local-forms">
+                          <label>
+                            Vehicle Model <span className="login-danger">*</span>
+                          </label>
+                          <input
+                            className="form-control"
+                            type="text"
+                            value={vehicleModel}
+                            onChange={(e) => setVehicleModel(e.target.value)}
+                            style={{
+                              backgroundColor: "#fff", // Ensure white background
+                              border: "1px solid #ccc", // Border color
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="col-12 col-md-6 col-xl-6">
+                        <div className="form-group local-forms">
+                          <label>
+                            Launch Year <span className="login-danger">*</span>
+                          </label>
+                          <input
+                            className="form-control"
+                            type="number"
+                            value={launchYear}
+                            onChange={(e) => setLaunchYear(e.target.value)}
+                            style={{
+                              backgroundColor: "#fff", // Ensure white background
+                              border: "1px solid #ccc", // Border color
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="col-12 col-md-6 col-xl-6">
+                        <div className="form-group local-forms">
+                          <label>
+                            Status <span className="login-danger">*</span>
                           </label>
                           <Select
-                            value={patient}
-                            onChange={setPatient}
-                            options={patients}
-                            placeholder="Select Patient"
-                            /* ----- ADDED STYLES (from AddInventory.jsx) ----- */
+                            value={{ value: status, label: status }}
+                            onChange={(selected) => setStatus(selected.value)}
+                            options={statusOptions}
+                            placeholder="Select Status"
                             menuPortalTarget={document.body}
                             components={{
                               IndicatorSeparator: () => null,
@@ -204,31 +218,70 @@ const AddBloodIssue = () => {
                         </div>
                       </div>
 
-                      {/* Issue Date */}
                       <div className="col-12 col-md-6 col-xl-6">
                         <div className="form-group local-forms">
                           <label>
-                            Issue Date <span className="login-danger">*</span>
+                            Driver Name <span className="login-danger">*</span>
                           </label>
-                          <DatePicker
+                          <input
                             className="form-control"
-                            onChange={(date, dateString) => setIssueDate(dateString)}
+                            type="text"
+                            value={driverName}
+                            onChange={(e) => setDriverName(e.target.value)}
+                            style={{
+                              backgroundColor: "#fff", // Ensure white background
+                              border: "1px solid #ccc", // Border color
+                            }}
                           />
                         </div>
                       </div>
 
-                      {/* Hospital Doctor Select */}
                       <div className="col-12 col-md-6 col-xl-6">
                         <div className="form-group local-forms">
                           <label>
-                            Hospital Doctor <span className="login-danger">*</span>
+                            Driver Contact <span className="login-danger">*</span>
+                          </label>
+                          <input
+                            className="form-control"
+                            type="text"
+                            value={driverContact}
+                            onChange={(e) => setDriverContact(e.target.value)}
+                            style={{
+                              backgroundColor: "#fff", // Ensure white background
+                              border: "1px solid #ccc", // Border color
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="col-12 col-md-6 col-xl-6">
+                        <div className="form-group local-forms">
+                          <label>
+                            Driver Licence <span className="login-danger">*</span>
+                          </label>
+                          <input
+                            className="form-control"
+                            type="text"
+                            value={driverLicence}
+                            onChange={(e) => setDriverLicence(e.target.value)}
+                            style={{
+                              backgroundColor: "#fff", // Ensure white background
+                              border: "1px solid #ccc", // Border color
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      <div className="col-12 col-md-6 col-xl-6">
+                        <div className="form-group local-forms">
+                          <label>
+                            Vehicle Type <span className="login-danger">*</span>
                           </label>
                           <Select
-                            value={hospitalDoctor}
-                            onChange={setHospitalDoctor}
-                            options={hospitalDoctors}
-                            placeholder="Select Doctor"
-                            /* ----- ADDED STYLES (from AddInventory.jsx) ----- */
+                            value={{ value: vehicleType, label: vehicleType }}
+                            onChange={(selected) => setVehicleType(selected.value)}
+                            options={vehicleTypeOptions}
+                            placeholder="Select Vehicle Type"
                             menuPortalTarget={document.body}
                             components={{
                               IndicatorSeparator: () => null,
@@ -269,121 +322,6 @@ const AddBloodIssue = () => {
                         </div>
                       </div>
 
-                      {/* Reference Number */}
-                      <div className="col-12 col-md-6 col-xl-6">
-                        <div className="form-group local-forms">
-                          <label>
-                            Reference Number <span className="login-danger">*</span>
-                          </label>
-                          <input
-                            className="form-control"
-                            type="text"
-                            value={referenceNumber}
-                            onChange={(e) => setReferenceNumber(e.target.value)}
-                          />
-                        </div>
-                      </div>
-
-                      {/* Technician */}
-                      <div className="col-12 col-md-6 col-xl-6">
-                        <div className="form-group local-forms">
-                          <label>
-                            Technician <span className="login-danger">*</span>
-                          </label>
-                          <input
-                            className="form-control"
-                            type="text"
-                            value={technician}
-                            onChange={(e) => setTechnician(e.target.value)}
-                          />
-                        </div>
-                      </div>
-
-                  
-
-                      {/* Standard Charge */}
-                      <div className="col-12 col-md-6 col-xl-6">
-                        <div className="form-group local-forms">
-                          <label>
-                            Standard Charge <span className="login-danger">*</span>
-                          </label>
-                          <input
-                            className="form-control"
-                            type="text"
-                            value={standardCharge}
-                            onChange={(e) => setStandardCharge(e.target.value)}
-                          />
-                        </div>
-                      </div>
-
-                      {/* Blood Group Select */}
-                      <div className="col-12 col-md-6 col-xl-6">
-                        <div className="form-group local-forms">
-                          <label>
-                            Blood Group <span className="login-danger">*</span>
-                          </label>
-                          <Select
-                            value={bloodGroup}
-                            onChange={setBloodGroup}
-                            options={bloodGroups}
-                            placeholder="Select Blood Group"
-                            /* ----- ADDED STYLES (from AddInventory.jsx) ----- */
-                            menuPortalTarget={document.body}
-                            components={{
-                              IndicatorSeparator: () => null,
-                            }}
-                            styles={{
-                              menuPortal: (base) => ({
-                                ...base,
-                                zIndex: 9999,
-                              }),
-                              control: (baseStyles, state) => ({
-                                ...baseStyles,
-                                borderColor: state.isFocused
-                                  ? "none"
-                                  : "2px solid rgba(46, 55, 164, 0.1)",
-                                boxShadow: state.isFocused
-                                  ? "0 0 0 1px #2e37a4"
-                                  : "none",
-                                "&:hover": {
-                                  borderColor: state.isFocused
-                                    ? "none"
-                                    : "2px solid rgba(46, 55, 164, 0.1)",
-                                },
-                                borderRadius: "10px",
-                                fontSize: "14px",
-                                minHeight: "45px",
-                              }),
-                              dropdownIndicator: (base, state) => ({
-                                ...base,
-                                transform: state.selectProps.menuIsOpen
-                                  ? "rotate(-180deg)"
-                                  : "rotate(0)",
-                                transition: "250ms",
-                                width: "35px",
-                                height: "35px",
-                              }),
-                            }}
-                          />
-                        </div>
-                      </div>
-
-                      {/* Bag */}
-                      <div className="col-12 col-md-6 col-xl-6">
-                        <div className="form-group local-forms">
-                          <label>
-                            Bag <span className="login-danger">*</span>
-                          </label>
-                          <input
-                            className="form-control"
-                            type="text"
-                            value={bag}
-                            onChange={(e) => setBag(e.target.value)}
-                          />
-                        </div>
-                      </div>
-
-                      {/* Note */}
                       <div className="col-12 col-sm-12">
                         <div className="form-group local-forms">
                           <label>
@@ -394,26 +332,14 @@ const AddBloodIssue = () => {
                             rows={3}
                             value={note}
                             onChange={(e) => setNote(e.target.value)}
+                            style={{
+                              backgroundColor: "#fff", // Ensure white background
+                              border: "1px solid #ccc", // Border color
+                            }}
                           />
                         </div>
                       </div>
 
-                      {/* Blood Qty */}
-                      <div className="col-12 col-sm-12">
-                        <div className="form-group local-forms">
-                          <label>
-                            Blood Qty <span className="login-danger">*</span>
-                          </label>
-                          <textarea
-                            className="form-control"
-                            rows={3}
-                            value={bloodQty}
-                            onChange={(e) => setBloodQty(e.target.value)}
-                          />
-                        </div>
-                      </div>
-
-                      {/* Save & Cancel Buttons */}
                       <div className="col-12 text-end">
                         <div className="form-group local-forms">
                           <button
@@ -423,7 +349,6 @@ const AddBloodIssue = () => {
                           >
                             Save
                           </button>
-                          {/* ----- UPDATED Cancel button class ----- */}
                           <button
                             type="button"
                             className="btn btn-primary cancel-form"
@@ -431,7 +356,6 @@ const AddBloodIssue = () => {
                           >
                             Cancel
                           </button>
-                          {/* --------------------------------------- */}
                         </div>
                       </div>
                     </div>
@@ -444,6 +368,6 @@ const AddBloodIssue = () => {
       </div>
     </>
   );
-};
+};  
 
-export default AddBloodIssue;
+export default AddAmbulanceDetails;

@@ -6,7 +6,7 @@ import Header from "../layouts/header";
 import Sidebar from "../../components/Sidebar";
 import { plusicon, refreshicon, pdficon, pdficon3, pdficon4, searchnormal } from "../../components/imagepath";
 
-const BloodGroup = () => {
+const AmbulanceDetails = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
   const onSelectChange = (newSelectedRowKeys) => {
@@ -32,54 +32,75 @@ const BloodGroup = () => {
   const datasource = [
     {
       key: 1,
-      slno: "1",
-      BloodCategory: "A+",
-      BloodInStock: "50 Units",
-      IssuedBlood: "10 Units",
+      vehicleNumber: "AB123CD",
+      driverName: "John Doe",
+      driverContact: "+1 23 456789",
+      driverLicence: "DL1234567",
+      vehicleModel: "Toyota Hiace",
+      launchYear: 2018,
+      note: "Available for emergencies.",
+      vehicleType: "Ambulance",
+      status: "Active",
     },
     {
       key: 2,
-      slno: "2",
-      BloodCategory: "B+",
-      BloodInStock: "30 Units",
-      IssuedBlood: "5 Units",
-    },
-    {
-      key: 3,
-      slno: "3",
-      BloodCategory: "O+",
-      BloodInStock: "100 Units",
-      IssuedBlood: "20 Units",
-    },
-    {
-      key: 4,
-      slno: "4",
-      BloodCategory: "AB+",
-      BloodInStock: "300 Units",
-      IssuedBlood: "30 Units",
+      vehicleNumber: "XY456ZT",
+      driverName: "Jane Smith",
+      driverContact: "+1 23 456790",
+      driverLicence: "DL7654321",
+      vehicleModel: "Ford Transit",
+      launchYear: 2020,
+      note: "Available for city tours.",
+      vehicleType: "Ambulance",
+      status: "Inactive",
     },
   ];
 
   const columns = [
     {
-      title: "Sl.No",
-      dataIndex: "slno",
-      sorter: (a, b) => a.slno - b.slno,
+      title: "Vehicle Number",
+      dataIndex: "vehicleNumber",
+      sorter: (a, b) => a.vehicleNumber.localeCompare(b.vehicleNumber),
     },
     {
-      title: "Blood Category",
-      dataIndex: "BloodCategory",
-      sorter: (a, b) => a.BloodCategory.localeCompare(b.BloodCategory),
+      title: "Driver Name",
+      dataIndex: "driverName",
+      sorter: (a, b) => a.driverName.length - b.driverName.length,
     },
     {
-      title: "Blood In Stock",
-      dataIndex: "BloodInStock",
-      sorter: (a, b) => a.BloodInStock.localeCompare(b.BloodInStock),
+      title: "Driver Contact",
+      dataIndex: "driverContact",
+      sorter: (a, b) => a.driverContact.localeCompare(b.driverContact),
     },
     {
-      title: "Issued Blood",
-      dataIndex: "IssuedBlood",
-      sorter: (a, b) => a.IssuedBlood.localeCompare(b.IssuedBlood),
+      title: "Driver Licence",
+      dataIndex: "driverLicence",
+      sorter: (a, b) => a.driverLicence.localeCompare(b.driverLicence),
+    },
+    {
+      title: "Vehicle Model",
+      dataIndex: "vehicleModel",
+      sorter: (a, b) => a.vehicleModel.localeCompare(b.vehicleModel),
+    },
+    {
+      title: "Launch Year",
+      dataIndex: "launchYear",
+      sorter: (a, b) => a.launchYear - b.launchYear,
+    },
+    {
+      title: "Note",
+      dataIndex: "note",
+      sorter: (a, b) => a.note.length - b.note.length,
+    },
+    {
+      title: "Vehicle Type",
+      dataIndex: "vehicleType",
+      sorter: (a, b) => a.vehicleType.localeCompare(b.vehicleType),
+    },
+    {
+      title: "Status",
+      dataIndex: "status",
+      sorter: (a, b) => a.status.localeCompare(b.status),
     },
     {
       title: "Action",
@@ -96,7 +117,7 @@ const BloodGroup = () => {
               <i className="fas fa-ellipsis-v" />
             </Link>
             <div className="dropdown-menu dropdown-menu-end">
-              <Link className="dropdown-item" to="/edit-blood-group">
+              <Link className="dropdown-item" to="/edit-ambulance-details">
                 <i className="far fa-edit me-2" />
                 Edit
               </Link>
@@ -104,7 +125,7 @@ const BloodGroup = () => {
                 className="dropdown-item"
                 to="#"
                 data-bs-toggle="modal"
-                data-bs-target="#delete_blood_group"
+                data-bs-target="#delete_ambulance"
               >
                 <i className="fa fa-trash-alt m-r-5"></i> Delete
               </Link>
@@ -119,9 +140,9 @@ const BloodGroup = () => {
     <>
       <Header />
       <Sidebar
-        id="blood-menu-item"
-        id1="blood-menu-items"
-        activeClassName="BloodGroup"
+        id="ambulance-menu-item"
+        id1="ambulance-menu-items"
+        activeClassName="AmbulanceDetails"
       />
       <div className="page-wrapper">
         <div className="content">
@@ -131,14 +152,14 @@ const BloodGroup = () => {
               <div className="col-sm-12">
                 <ul className="breadcrumb">
                   <li className="breadcrumb-item">
-                    <Link to="#">Blood Bank </Link>
+                    <Link to="#">Ambulance Management</Link>
                   </li>
                   <li className="breadcrumb-item">
                     <i className="feather-chevron-right">
                       <FeatherIcon icon="chevron-right" />
                     </i>
                   </li>
-                  <li className="breadcrumb-item active">Blood Group</li>
+                  <li className="breadcrumb-item active">Ambulance Details</li>
                 </ul>
               </div>
             </div>
@@ -153,7 +174,7 @@ const BloodGroup = () => {
                     <div className="row align-items-center">
                       <div className="col">
                         <div className="doctor-table-blk">
-                          <h3>Blood Group Inventory</h3>
+                          <h3>Ambulance Details List</h3>
                           <div className="doctor-search-blk">
                             <div className="top-nav-search table-search-blk">
                               <form>
@@ -169,7 +190,7 @@ const BloodGroup = () => {
                             </div>
                             <div className="add-group">
                               <Link
-                                to="#"
+                                to="/Ambulance/AmbulanceDetails/add"
                                 className="btn btn-primary add-pluss ms-2"
                               >
                                 <img src={plusicon} alt="#" />
@@ -222,16 +243,16 @@ const BloodGroup = () => {
         </div>
       </div>
 
-      {/* Modal for Deleting Blood Group */}
+      {/* Modal for Deleting Ambulance */}
       <div
-        id="delete_blood_group"
+        id="delete_ambulance"
         className="modal fade delete-modal"
         role="dialog"
       >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-body text-center">
-              <h3>Are you sure want to delete this Blood Group?</h3>
+              <h3>Are you sure want to delete this Ambulance?</h3>
               <div className="m-t-20">
                 <Link
                   to="#"
@@ -252,4 +273,4 @@ const BloodGroup = () => {
   );
 };
 
-export default BloodGroup;
+export default AmbulanceDetails;
