@@ -3,25 +3,40 @@ import Header from '../../components/Header'
 import Sidebar from '../../components/Sidebar'
 import { Link } from 'react-router-dom'
 
-import { medicines, symptoms } from '../../assets/json/Patient.js'
-import { Avatar1, Avatar2, Avatar3, Avatar4, Avatar5, ProfileUser, call, call01, call02, call03, callicon1, callicon2, callicon3, chaticon1, chaticon2, chaticon3, incomingcall, plusicon, searchnormal, videoicon1, videoicon2, videoicon3 } from '../../components/imagepath'
+import { symptoms } from '../../assets/json/Patient.js'
+import { call, callicon1, callicon2, callicon3, videoicon3, doctor_consultation_video_1, doctor_consultation_video_2 } from '../../components/imagepath'
 import FeatherIcon from 'feather-icons-react/build/FeatherIcon'
 
 const Consultation = () => {
-    const [medicine, setMedicine] = useState([]);
-    const [rows, setRows] = useState([]);
+    const [prescriptionRows, setPrescriptionRows] = useState([]);
+    const [labTestRows, setLabTestRows] = useState([]);
 
-    const addRow = () => {
+    const addPrescriptionRow = () => {
         const newRow = {
-            id: rows.length + 1,
+            id: prescriptionRows.length + 1,
         };
 
-        setRows([...rows, newRow]);
+        setPrescriptionRows([...prescriptionRows, newRow]);
     };
 
-    const removeRow = (id) => {
-        const updatedRows = rows.filter((row) => row.id !== id);
-        setRows(updatedRows);
+    const removePrescriptionRow = (id) => {
+        const updatedRows = prescriptionRows.filter((row) => row.id !== id);
+        setPrescriptionRows(updatedRows);
+    };
+
+    const addLabTestRow = () => {
+        const newRow = {
+            id: labTestRows.length + 1,
+        };
+        console.log('labtest');
+        console.log(newRow);
+
+        setLabTestRows([...labTestRows, newRow]);
+    };
+
+    const removeLabTestRow = (id) => {
+        const updatedRows = labTestRows.filter((row) => row.id !== id);
+        setLabTestRows(updatedRows);
     };
 
     return (
@@ -138,7 +153,9 @@ const Consultation = () => {
                                                     {/* Horizontal View */}
                                                     <div className="join-contents horizontal-view fade-whiteboard">
                                                         <div className="join-video user-active">
-                                                            <img src={call} className="img-fluid call-imgs" alt="Logo" />
+                                                            <img src={doctor_consultation_video_1} className="img-fluid call-imgs" alt="video_consultation_video_1"
+                                                                style={{ height: '25vw' }}
+                                                            />
                                                             <div className="video-avatar">
                                                                 <div className="text-avatar">
                                                                     <div className="text-box">
@@ -146,13 +163,13 @@ const Consultation = () => {
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div className="part-name">
-                                                                <h4><img src={videoicon3} className="me-2" alt="img" />Laura Strattenberg</h4>
+                                                            <div className="part-name d-flex justify-content-end">
+                                                                <img
+                                                                    src={doctor_consultation_video_2} className="me-2" alt="img"
+                                                                    style={{ width: '10vw' }}
+                                                                />
                                                             </div>
                                                             <div className="more-icon">
-                                                                <Link to="#" className="handraise-on me-2">
-                                                                    <i className="fas fa-thumbtack" />
-                                                                </Link>
                                                                 <Link to="#" className="mic-off">
                                                                     <i className="feather-mic-off" >
                                                                         <FeatherIcon icon="mic-off" />
@@ -211,11 +228,10 @@ const Consultation = () => {
                             </div>
                             <div className="card chat-box ">
                                 <div className=" chat-search-group">
-                                    <div className="chat-user-group clinic-user mb-0 d-flex align-items-center w-100">
+                                    <div className="chat-user-group clinic-user mb-0 d-flex flex-column align-items-center w-100">
                                         <div className="call-all comman-space-flex mb-2 flex-column w-100" style={{ alignItems: 'unset' }}>
-                                            <h4>Prescription</h4>   
+                                            <h4>Prescription</h4>
                                             <div className="invoice-add-table">
-                                                <h4>Item Details</h4>
                                                 <div className="table-responsive">
                                                     <table className="table table-center add-table-items">
                                                         <thead>
@@ -229,10 +245,7 @@ const Consultation = () => {
                                                         <tbody>
                                                             <tr className="add-row">
                                                                 <td>
-                                                                    <input
-                                                                        type="text"
-                                                                        className="form-control"
-                                                                    />
+                                                                    <p style={{ textAlign: 'center' }}>1</p>
                                                                 </td>
                                                                 <td>
                                                                     <input
@@ -256,14 +269,9 @@ const Consultation = () => {
                                                                     <Link
                                                                         to="#"
                                                                         className="add-btn me-2"
-                                                                        onClick={addRow}
+                                                                        onClick={addPrescriptionRow}
                                                                     >
                                                                         <i className="fas fa-plus-circle" />
-                                                                    </Link>
-                                                                    <Link to="#" className="copy-btn me-2">
-                                                                        <i className="fe fe-copy">
-                                                                            <FeatherIcon icon="copy" />
-                                                                        </i>
                                                                     </Link>
                                                                     <Link to="#" className="remove-btn">
                                                                         <i className="fe fe-trash-2">
@@ -272,31 +280,10 @@ const Consultation = () => {
                                                                     </Link>
                                                                 </td>
                                                             </tr>
-                                                            {rows.map((row) => (
-                                                                <tr key={row.id}>
+                                                            {prescriptionRows.map((row) => {
+                                                                return <tr key={row.id}>
                                                                     <td>
-                                                                        {
-                                                                            <input
-                                                                                type="text"
-                                                                                className="form-control"
-                                                                            />
-                                                                        }
-                                                                    </td>
-                                                                    <td>
-                                                                        {
-                                                                            <input
-                                                                                type="text"
-                                                                                className="form-control"
-                                                                            />
-                                                                        }
-                                                                    </td>
-                                                                    <td>
-                                                                        {
-                                                                            <input
-                                                                                type="text"
-                                                                                className="form-control"
-                                                                            />
-                                                                        }
+                                                                        <p style={{ textAlign: 'center' }}>{row.id + 1}</p>
                                                                     </td>
                                                                     <td>
                                                                         {
@@ -324,21 +311,113 @@ const Consultation = () => {
                                                                     </td>
                                                                     <td className="add-remove text-end">
                                                                         <Link
-                                                                            to="#"
                                                                             className="add-btn me-2"
-                                                                            onClick={addRow}
+                                                                            onClick={addPrescriptionRow}
                                                                         >
                                                                             <i className="fas fa-plus-circle" />
-                                                                        </Link>
-                                                                        <Link to="#" className="copy-btn me-2">
-                                                                            <i className="fe fe-copy">
-                                                                                <FeatherIcon icon="copy" />
-                                                                            </i>
                                                                         </Link>
                                                                         <Link
                                                                             to="#"
                                                                             className="remove-btn"
-                                                                            onClick={() => removeRow(row.id)}
+                                                                            onClick={() => removePrescriptionRow(row.id)}
+                                                                        >
+                                                                            <i className="fe fe-trash-2">
+                                                                                <FeatherIcon icon="trash-2" />
+                                                                            </i>
+                                                                        </Link>
+                                                                    </td>
+                                                                </tr>
+                                                            })}
+                                                        </tbody>
+                                                    </table>
+                                                    <div className="text-end">
+                                                        <button
+                                                            type="submit"
+                                                            className="btn btn-primary submit-form me-2 mt-2 text-end"
+                                                        >
+                                                            + Add
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="call-all comman-space-flex mb-2 flex-column w-100" style={{ alignItems: 'unset' }}>
+                                            <h4>Lab Tests</h4>
+                                            <div className="invoice-add-table">
+                                                <div className="table-responsive">
+                                                    <table className="table table-center add-table-items">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>Serial Number</th>
+                                                                <th>Lab Test</th>
+                                                                <th>Description</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr className="add-row">
+                                                                <td>
+                                                                    <p className='text-center'>1</p>
+                                                                </td>
+                                                                <td>
+                                                                    <input
+                                                                        type="text"
+                                                                        className="form-control"
+                                                                    />
+                                                                </td>
+                                                                <td>
+                                                                    <input
+                                                                        type="text"
+                                                                        className="form-control"
+                                                                    />
+                                                                </td>
+                                                                <td className="add-remove text-end" style={{ display: "flex", gap: "2px", alignItems: "center" }}>
+                                                                    <Link
+                                                                        to="#"
+                                                                        className="add-btn me-2"
+                                                                        onClick={addLabTestRow}
+                                                                    >
+                                                                        <i className="fas fa-plus-circle" />
+                                                                    </Link>
+                                                                    <Link to="#" className="remove-btn">
+                                                                        <i className="fe fe-trash-2">
+                                                                            <FeatherIcon icon="trash-2" />
+                                                                        </i>
+                                                                    </Link>
+                                                                </td>
+                                                            </tr>
+                                                            {labTestRows.map((row) => (
+                                                                <tr key={row.id}>
+                                                                    <td>
+                                                                        <p style={{ textAlign: 'center' }}>{row.id + 1}</p>
+                                                                    </td>
+                                                                    <td>
+                                                                        {
+                                                                            <input
+                                                                                type="text"
+                                                                                className="form-control"
+                                                                            />
+                                                                        }
+                                                                    </td>
+                                                                    <td>
+                                                                        {
+                                                                            <input
+                                                                                type="text"
+                                                                                className="form-control"
+                                                                            />
+                                                                        }
+                                                                    </td>
+                                                                    <td className="add-remove text-end" style={{ display: "flex", gap: "2px", alignItems: "center" }}>
+                                                                        <Link
+                                                                            to="#"
+                                                                            className="add-btn me-2"
+                                                                            onClick={addLabTestRow}
+                                                                        >
+                                                                            <i className="fas fa-plus-circle" />
+                                                                        </Link>
+                                                                        <Link
+                                                                            to="#"
+                                                                            className="remove-btn"
+                                                                            onClick={() => removeLabTestRow(row.id)}
                                                                         >
                                                                             <i className="fe fe-trash-2">
                                                                                 <FeatherIcon icon="trash-2" />
@@ -349,6 +428,14 @@ const Consultation = () => {
                                                             ))}
                                                         </tbody>
                                                     </table>
+                                                    <div className="text-end">
+                                                        <button
+                                                            type="submit"
+                                                            className="btn btn-primary submit-form me-2 mt-2 text-end"
+                                                        >
+                                                            + Add
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
