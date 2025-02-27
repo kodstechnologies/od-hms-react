@@ -6,9 +6,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import { Link } from "react-router-dom";
-import {
-  profiles03,
-} from "../../components/imagepath";
+import { profiles03 } from "../../components/imagepath";
 
 const Outpatient = () => {
   const [weekendsVisible, setweekendsVisible] = useState(true);
@@ -116,7 +114,14 @@ const Outpatient = () => {
                       id="bottom-justified-tab1"
                     >
                       <div className="card">
-                        <ul className="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified">
+                        <ul
+                          className="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified"
+                          style={{
+                            display: "flex",
+                            justifyContent: "space-evenly", // Correct camelCase syntax
+                            flexWrap: "nowrap", // Correct camelCase syntax
+                          }}
+                        >
                           <li className="nav-item">
                             <Link
                               className="nav-link active"
@@ -161,37 +166,14 @@ const Outpatient = () => {
                           >
                             <div className="widget author-widget border">
                               <div className="authr-blog-group text-center">
-                                <div className="authr-blg-img mb-2">
-                                  <img
-                                    className="avatar"
-                                    alt="#"
-                                    src={profiles03}
-                                  />
-                                </div>
                                 <h2>(250112)Siva M Demo</h2>
                                 <span>Waiting</span>
-                                <p>
+                                <p style={{ color: "black" }}>
                                   Appointment No. | 3340 Dr. Yogesh Balar WS: 4
                                   H 29 M
                                 </p>
-                                <span>Payer: INFOSYS</span>
+                                <b>Time: 12:15 PM</b>
                                 <ul className="nav social-blk">
-                                  <li>
-                                    <Link
-                                      to="#"
-                                      className="btn btn-outline-primary"
-                                    >
-                                      Vital
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      to="#"
-                                      className="btn btn-outline-primary"
-                                    >
-                                      Billing
-                                    </Link>
-                                  </li>
                                   <li>
                                     <Link
                                       to="#"
@@ -210,20 +192,13 @@ const Outpatient = () => {
                           >
                             <div className="widget author-widget border">
                               <div className="authr-blog-group text-center">
-                                <div className="authr-blg-img mb-2">
-                                  <img
-                                    className="avatar"
-                                    alt="#"
-                                    src={profiles03}
-                                  />
-                                </div>
                                 <h2>(250112)Siva M Demo</h2>
                                 <span>Waiting</span>
-                                <p>
+                                <p style={{ color: "black" }}>
                                   Appointment No. | 3340 Dr. Yogesh Balar WS: 4
                                   H 29 M
                                 </p>
-                                <span>Payer: INFOSYS</span>
+                                <b>Time: 12:15 PM</b>
                                 <ul className="nav social-blk">
                                   <li>
                                     <Link
@@ -265,25 +240,12 @@ const Outpatient = () => {
                           >
                             <div className="widget author-widget border">
                               <div className="authr-blog-group text-center">
-                                <div className="authr-blg-img mb-2">
-                                  <img
-                                    className="avatar"
-                                    alt="#"
-                                    src={profiles03}
-                                  />
-                                </div>
                                 <h2>(HC721)Jamila Khatoon</h2>
                                 <span>Completed</span>
-                                <p>Appointment No. | 3328 Dr. Yogesh Balar</p>
+                                <p style={{ color: "black" }}>
+                                  Appointment No. | 3328 Dr. Yogesh Balar
+                                </p>
                                 <ul className="nav social-blk">
-                                  <li>
-                                    <Link
-                                      to="#"
-                                      className="btn btn-outline-primary"
-                                    >
-                                      Vital
-                                    </Link>
-                                  </li>
                                   <li>
                                     <Link
                                       to="#"
@@ -308,7 +270,32 @@ const Outpatient = () => {
                       </div>
                     </div>
                     <div className="tab-pane" id="bottom-justified-tab2">
-                      Tab content 2
+                      <div className="widget author-widget border">
+                        <div className="authr-blog-group text-center">
+                          <h2>(250112)Siva M Demo</h2>
+                          <span>Waiting</span>
+                          <p>
+                            Appointment No. | 3340 Dr. Yogesh Balar WS: 4 H 29 M
+                          </p>
+                          <ul className="nav social-blk">
+                            <li>
+                              <Link to="#" className="btn btn-outline-primary">
+                                Create
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="#" className="btn btn-outline-primary">
+                                Edit
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="#" className="btn btn-outline-primary">
+                                Cancel
+                              </Link>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

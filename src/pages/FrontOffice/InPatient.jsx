@@ -1,30 +1,31 @@
 import React, { useState } from "react";
 import { Table } from "antd";
+import Select from "react-select";
 import Sidebar from "../../components/Sidebar";
 import Header from "../../components/Header";
 import { Link } from "react-router-dom";
 import FeatherIcon from "feather-icons-react";
 import { onShowSizeChange, itemRender } from "../../components/Pagination";
 
-import {
-  blogimg10,
-  blogimg12,
-  blogimg2,
-  blogimg4,
-  blogimg6,
-  blogimg8,
-  plusicon,
-  searchnormal,
-} from "../../components/imagepath";
+import { plusicon, searchnormal } from "../../components/imagepath";
 import CountUp from "react-countup";
 import InpatientList from "../../assets/json/InpatientList";
 
 const InPatient = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+  const [selectedFilter, setSelectedFilter] = useState(null);
   const onSelectChange = (newSelectedRowKeys) => {
     console.log("selectedRowKeys changed: ", selectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
   };
+
+  const [filters, setFilters] = useState([
+    { value: 1, label: "All (392)" },
+    { value: 2, label: "Pre Booked (0)" },
+    { value: 3, label: "Admitted (78)" },
+    { value: 4, label: "Discharged (303)" },
+    { value: 5, label: "Cancelled (11)" },
+  ]);
   const rowSelection = {
     selectedRowKeys,
     onChange: onSelectChange,
@@ -42,9 +43,22 @@ const InPatient = () => {
       sorter: (a, b) => a.Name.length - b.Name.length,
     },
     {
+      title: "Mobile No",
+      dataIndex: "Mobile",
+      sorter: (a, b) => a.Mobile.length - b.Mobile.length,
+    },
+    {
       title: "Ward",
       dataIndex: "Ward",
       sorter: (a, b) => a.Ward.length - b.Ward.length,
+    },
+    {
+      title: "MLC",
+      dataIndex: "MLC",
+      render: (text, record) => (
+        <span className="text-red">{text ? "MLC" : "--"}</span>
+      ),
+      sorter: (a, b) => a.MLC.length - b.MLC.length,
     },
     {
       title: "Bed",
@@ -60,6 +74,22 @@ const InPatient = () => {
       title: "Primary Doctor",
       dataIndex: "PrimaryDoctor",
       sorter: (a, b) => a.PrimaryDoctor.length - b.PrimaryDoctor.length,
+    },
+    {
+      title: "Payer Name",
+      dataIndex: "PayerName",
+      sorter: (a, b) => a.PayerName.length - b.PayerName.length,
+    },
+    {
+      title: "Billing",
+      dataIndex: "Billing",
+      render: (text, record) =>
+        text === "DUE" ? (
+          <span className="text-danger">DUE</span>
+        ) : (
+          <span className="text-success">PAID</span>
+        ),
+      sorter: (a, b) => a.Billing.length - b.Billing.length,
     },
     {
       title: "Status",
@@ -90,6 +120,12 @@ const InPatient = () => {
                   data-bs-target="#delete_patient"
                 >
                   <i className="fa fa-trash-alt m-r-5"></i> View Details
+                </Link>
+                <Link
+                  className="dropdown-item"
+                  to="doctor-visit"
+                >
+                  Doctor Visit
                 </Link>
               </div>
             </div>
@@ -213,14 +249,37 @@ const InPatient = () => {
                                 </Link>
                               </form>
                             </div>
-                            <div className="add-group">
-                              <Link
-                                to="/add-patient"
-                                className="btn btn-primary add-pluss ms-2"
-                              >
-                                <img src={plusicon} alt="#" />
-                              </Link>
-                            </div>
+                          </div>
+
+                          <div
+                            className="form-group local-forms ms-2 my-auto"
+                            style={{ width: "250px" }}
+                          >
+                            <label>Filter</label>
+                            <Select
+                              defaultValue={selectedFilter}
+                              onChange={setSelectedFilter}
+                              options={filters}
+                              menuPortalTarget={document.body}
+                              styles={{
+                                menuPortal: (base) => ({
+                                  ...base,
+                                  zIndex: 9999,
+                                }),
+                              }}
+                              id="search-commodity"
+                              components={{
+                                IndicatorSeparator: () => null,
+                              }}
+                            />
+                          </div>
+                          <div style={{ marginLeft: "auto" }}>
+                            <Link
+                              to="/inpatient/add"
+                              className="btn btn-primary add-pluss ms-2"
+                            >
+                              Add IPD
+                            </Link>
                           </div>
                         </div>
                       </div>
