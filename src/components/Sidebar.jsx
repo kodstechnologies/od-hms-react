@@ -194,13 +194,13 @@ const Sidebar = (props) => {
                 </li>
                 
                 <li className="submenu">
-                  <Link to="#" id="recdrop" onClick={(e) => handleClick(e, "recdrop", "recdrop2")}>
+                  <Link to="#" id="reception-dropmenu" onClick={(e) => handleClick(e, "reception-dropmenu", "reception-items")}>
                     <span className="menu-side">
                       <img src={patients} alt="" />
                     </span>{" "}
                     <span>Reception </span> <span className="menu-arrow" />
                   </Link>
-                  <ul style={{ display: "none" }} className="recdrop2">
+                  <ul style={{ display:sidebar === 'Reception' ? 'block' :  "none" }} className="reception-items">
                     <li>
                       <Link className={props?.activeClassName === 'billing' ? 'active' : ''} to="/reception/billing">Billing And Cashiering</Link>
                     </li>
@@ -208,10 +208,10 @@ const Sidebar = (props) => {
                       <Link className={props?.activeClassName === 'discharge' ? 'active' : ''} to="/reception/discharge">Discharge Summary</Link>
                     </li>
                     <li>
-                      <Link className={props?.activeClassName === 'medicaladminstration' ? 'active' : ''} to="/reception/medicaladminstration">Medical Adminstartion(MAR)</Link>
+                      <Link className={props?.activeClassName === 'medicaladminstration' ? 'active' : ''} to="/reception/medicaladminstration">Medical Administration (MAR)</Link>
                     </li>
                     <li>
-                      <Link className={props?.activeClassName === 'medicalrecord' ? 'active' : ''} to="/reception/medicalrecord">Medical Record Inventory</Link>
+                      <Link className={props?.activeClassName === 'equipment' ? 'active' : ''} to="/reception/equipment">Equipment</Link>
                     </li>
                   </ul>
                 </li>

@@ -22,6 +22,10 @@ import Consultation from "./pages/doctor/Consultation";
 import Schedule from "./pages/doctor/Schedule";
 import BillingAndcashiering from "./pages/reception/billingAndcashiering";
 import DischargeSummary from "./pages/reception/dischargeSummary";
+import MedicationAdministration from "./pages/reception/medicationAdministration";
+import AddPatientInfo from "./pages/reception/addPatientInfo";
+import Equipment from "./pages/reception/equipment";
+import AddEquipment from "./pages/reception/addEquipment";
 import AddStock from "./pages/pharmacy/addStock";
 import StockHistory from "./pages/pharmacy/stockHistory";
 import Prescriptions from "./pages/pharmacy/prescriptions";
@@ -88,6 +92,16 @@ function Approuter() {
           {/* reception */}
           <Route path="/reception/billing" element={<BillingAndcashiering />} />
           <Route path="/reception/discharge" element={<DischargeSummary />} />
+          <Route path="/reception/medicaladminstration" element={<MedicationAdministration />} />
+          <Route path="/reception/medicaladminstration/add-mar" element={<AddPatientInfo />} />
+          <Route path="/reception/equipment" element={<Equipment/>} />
+          <Route path="/reception/equipment/add-equipment" element={<AddEquipment/>} />
+
+
+
+
+
+
 
           {/* Blood Bank */}
           <Route path="/blood/bloodGroup" element={<BloodGroup />} />
