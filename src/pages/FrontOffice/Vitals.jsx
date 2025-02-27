@@ -1,0 +1,214 @@
+import React, { useState } from 'react'
+import { Link, useParams } from 'react-router-dom'
+import Header from '../../components/Header';
+import Sidebar from '../../components/Sidebar';
+import FeatherIcon from 'feather-icons-react/build/FeatherIcon';
+import Card from '../../components/ui_elements/card/Card';
+import CardBody from '../../components/ui_elements/card/CardBody';
+import CardHeader from '../../components/ui_elements/card/CardHeader';
+
+const Input = ({ text, unit, type='text', placeholder = '' }) => {
+    return (
+        <div className="form-group local-forms"
+            style={{ position: 'relative', width: '' }}>
+            <label>
+                {text} <span className="login-danger">*</span>
+            </label>
+            <input
+                className="form-control"
+                type={type}
+                placeholder={placeholder ? placeholder : text}
+            />
+            <div style={{ position: 'absolute', top: '10px', right: '15px' }}>
+                <p style={{ color: 'darkblue' }}>{unit}</p>
+            </div>
+        </div>
+    )
+}
+
+const Vitals = () => {
+    const params = useParams();
+    const [isClicked, setIsClicked] = useState(false);
+    const [temperature, setTemperature] = useState("");
+    const [eGFR, setEGFR] = useState("");
+    const [pefr, setPefr] = useState("");
+    const [homaIR, setHomaIR] = useState("");
+    const [albumin, setAlbumin] = useState("");
+    const [serumSodium, setSerumSodium] = useState("");
+    const [waistHipRatio, setWaistHipRatio] = useState("");
+    const [systolic, setSystolic] = useState("");
+    const [diastolic, setDiastolic] = useState("");
+    const [spotBloodSugar, setSpotBloodSugar] = useState("");
+    const [dateOfBirth, setDateOfBirth] = useState(null);
+
+    const onChange = (date, dateString) => {
+        setDateOfBirth(dateString);
+        setIsClicked(true);
+    };
+
+    const handleInputChange = (e, setState) => {
+        setState(e.target.value);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Handle form submission logic here
+        console.log({
+            temperature,
+            eGFR,
+            pefr,
+            homaIR,
+            albumin,
+            serumSodium,
+            waistHipRatio,
+            systolic,
+            diastolic,
+            spotBloodSugar,
+            dateOfBirth,
+        });
+    };
+
+    return (
+        <>
+            <Header />
+            <Sidebar
+                id="frontoffice"
+                id1="frontoffices"
+                activeClassName="queue-management"
+            />
+            <div className="page-wrapper">
+                <div className="content">
+                    {/* Page Header */}
+                    <div className="page-header">
+                        <div className="row">
+                            <div className="col-sm-12">
+                                <ul className="breadcrumb">
+                                    <li className="breadcrumb-item">
+                                        <Link to="/queue-management">Queue Management</Link>
+                                    </li>
+                                    <li className="breadcrumb-item">
+                                        <i className="feather-chevron-right">
+                                            <FeatherIcon icon="chevron-right" />
+                                        </i>
+                                    </li>
+                                    <li className="breadcrumb-item">
+                                        <Link to="#">Vitals</Link>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <Card>
+                        <CardHeader title={`    Vital Form - ${params.uhid}`} />
+                        <CardBody>
+                            <form action="" method="post">
+                                <div className="row">
+                                    <div className="col-lg-2">
+                                        <Input text='W' unit='kg' type='number' />
+                                    </div>
+                                    <div className="col-lg-2">
+                                        <Input text='H' unit='cm' type='number' />
+                                    </div>
+                                    <div className="col-lg-2">
+                                        <Input text='BMI' unit='' />
+                                    </div>
+                                    <div className="col-lg-4">
+                                        <Input text='BP Systalic' unit='Sitting' type='number' placeholder='systolic  /  diastoic' />
+                                    </div>
+                                    <div className="col-lg-2">
+                                        <Input text='Hr' unit='/min' type='number' />
+                                    </div>
+
+                                     {/* Four -One */}
+                                     <div className="col-4">
+                                        <Input text='Temperature' unit='°F'/>
+                                    </div>
+                                    <div className="col-4">
+                                        <Input text='Spot Blood Sugar' unit='mg/dL' type='test'/>
+                                    </div>
+                                    <div className="col-2">
+                                        <Input text='Spo2' unit='%' />
+                                    </div>
+                                    <div className="col-2">
+                                        <Input text='BSA' unit=''/>
+                                    </div>
+
+                                     {/* Four-Two */}
+                                     <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+                                    <div className="col-2">
+                                        <Input text='' unit=''/>
+                                    </div>
+                                    <div className="col-2">
+                                        <Input text='' unit=''/>
+                                    </div>
+                                    <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+
+                                    {/* One */}
+                                    <div className="col-4">
+                                        <Input text='' unit='' />
+                                    </div>
+                                    <div className="col-4">
+                                        <Input text='' unit='' />
+                                    </div>
+                                    <div className="col-4">
+                                        <Input text='' unit='' />
+                                    </div>
+
+                                    {/* Two */}
+                                    <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+                                    <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+                                    <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+
+                                     {/* Three */}
+                                     <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+                                    <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+                                    <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+
+                                     {/* Four */}
+                                     <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+                                    <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+                                    <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+
+                                     {/* Five */}
+                                     <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+                                    <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+                                    <div className="col-4">
+                                        <Input text='' unit=''/>
+                                    </div>
+                                </div>
+                            </form>
+                        </CardBody>
+                    </Card>
+                </div>
+            </div>
+        </>
+    )
+}
+
+export default Vitals
