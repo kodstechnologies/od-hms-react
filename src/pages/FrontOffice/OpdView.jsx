@@ -40,67 +40,208 @@ const Input = ({ text, unit, type = 'text', placeholder = '' }) => {
 const AppointmentOpdBox = ({ title, badges, setThing }) => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [options, setOptions] = useState([
-        { value: 1, label: "Select City" },
-        { value: 2, label: "Alaska" },
-        { value: 3, label: "California" },
+        { value: 1, label: "Fever" },
+        { value: 2, label: "Headache" },
+        { value: 3, label: "Cold" },
+        { value: 4, label: "Cough" },
+        { value: 5, label: "Sore Throat" },
+        { value: 6, label: "Shortness of Breath" },
+        { value: 7, label: "Fatigue" },
+        { value: 8, label: "Nausea" },
+        { value: 9, label: "Vomiting" },
+        { value: 10, label: "Chest Pain" },
+        { value: 11, label: "Dizziness" },
+        { value: 12, label: "Chills" },
+        { value: 13, label: "Body Ache" },
+
+        { value: 14, label: "Asthma" },
+        { value: 15, label: "Bronchitis" },
+        { value: 16, label: "Pneumonia" },
+        { value: 17, label: "COPD" },
+        { value: 18, label: "Lung Cancer" },
+        { value: 19, label: "Tuberculosis" },
+        { value: 20, label: "Pulmonary Fibrosis" },
+
+        { value: 21, label: "Hypertension" },
+        { value: 22, label: "Heart Attack" },
+        { value: 23, label: "Heart Failure" },
+        { value: 24, label: "Atrial Fibrillation" },
+        { value: 25, label: "Stroke" },
+        { value: 26, label: "Coronary Artery Disease" },
+        { value: 27, label: "Arrhythmia" },
+        { value: 28, label: "Angina" },
+
+        { value: 29, label: "Gastritis" },
+        { value: 30, label: "Ulcer" },
+        { value: 31, label: "Gastroesophageal Reflux Disease (GERD)" },
+        { value: 32, label: "Crohn's Disease" },
+        { value: 33, label: "Irritable Bowel Syndrome (IBS)" },
+        { value: 34, label: "Celiac Disease" },
+        { value: 35, label: "Hepatitis" },
+        { value: 36, label: "Liver Cirrhosis" },
+
+        { value: 37, label: "Epilepsy" },
+        { value: 38, label: "Parkinson's Disease" },
+        { value: 39, label: "Multiple Sclerosis" },
+        { value: 40, label: "Alzheimer's Disease" },
+        { value: 41, label: "Dementia" },
+        { value: 42, label: "Stroke" },
+        { value: 43, label: "Migraine" },
+        { value: 44, label: "Vertigo" },
+
+        { value: 45, label: "Diabetes Mellitus" },
+        { value: 46, label: "Hypothyroidism" },
+        { value: 47, label: "Hyperthyroidism" },
+        { value: 48, label: "Cushing's Syndrome" },
+        { value: 49, label: "Addison's Disease" },
+        { value: 50, label: "Polycystic Ovary Syndrome (PCOS)" },
+        { value: 51, label: "Hyperparathyroidism" },
+
+        { value: 52, label: "Lupus" },
+        { value: 53, label: "Rheumatoid Arthritis" },
+        { value: 54, label: "Psoriasis" },
+        { value: 55, label: "Multiple Sclerosis" },
+        { value: 56, label: "Hashimoto's Thyroiditis" },
+        { value: 57, label: "Sjögren's Syndrome" },
+
+        { value: 58, label: "Anxiety" },
+        { value: 59, label: "Depression" },
+        { value: 60, label: "Bipolar Disorder" },
+        { value: 61, label: "Schizophrenia" },
+        { value: 62, label: "Post-Traumatic Stress Disorder (PTSD)" },
+        { value: 63, label: "Obsessive-Compulsive Disorder (OCD)" },
+        { value: 64, label: "Panic Disorder" },
+
+        { value: 65, label: "Chronic Kidney Disease (CKD)" },
+        { value: 66, label: "Acute Kidney Failure" },
+        { value: 67, label: "Nephritis" },
+        { value: 68, label: "Kidney Stones" },
+        { value: 69, label: "Polycystic Kidney Disease" },
+
+        { value: 70, label: "Tuberculosis" },
+        { value: 71, label: "Malaria" },
+        { value: 72, label: "HIV/AIDS" },
+        { value: 73, label: "Hepatitis B" },
+        { value: 74, label: "Hepatitis C" },
+        { value: 75, label: "Influenza" },
+        { value: 76, label: "COVID-19" },
+        { value: 77, label: "Measles" },
+        { value: 78, label: "Chickenpox" },
+        { value: 79, label: "Mumps" },
+        { value: 80, label: "Pneumonia" },
+
+        { value: 81, label: "Eczema" },
+        { value: 82, label: "Psoriasis" },
+        { value: 83, label: "Acne" },
+        { value: 84, label: "Rosacea" },
+        { value: 85, label: "Warts" },
+        { value: 86, label: "Skin Cancer" },
+        { value: 87, label: "Melanoma" },
+
+        { value: 88, label: "Lung Cancer" },
+        { value: 89, label: "Breast Cancer" },
+        { value: 90, label: "Colon Cancer" },
+        { value: 91, label: "Prostate Cancer" },
+        { value: 92, label: "Ovarian Cancer" },
+        { value: 93, label: "Pancreatic Cancer" },
+        { value: 94, label: "Leukemia" },
+        { value: 95, label: "Lymphoma" },
+        { value: 96, label: "Cervical Cancer" },
+
+        { value: 97, label: "Osteoarthritis" },
+        { value: 98, label: "Rheumatoid Arthritis" },
+        { value: 99, label: "Osteoporosis" },
+        { value: 100, label: "Scoliosis" },
+        { value: 101, label: "Gout" },
+        { value: 102, label: "Fibromyalgia" },
+
+        { value: 103, label: "Polycystic Ovary Syndrome (PCOS)" },
+        { value: 104, label: "Endometriosis" },
+        { value: 105, label: "Ectopic Pregnancy" },
+        { value: 106, label: "Infertility" },
+        { value: 107, label: "Prostate Enlargement" },
+        { value: 108, label: "Cervical Dysplasia" },
+
+        { value: 109, label: "Chronic Fatigue Syndrome" },
+        { value: 110, label: "Sleep Apnea" },
+        { value: 111, label: "Restless Leg Syndrome" },
+        { value: 112, label: "Hemorrhoids" },
+        { value: 113, label: "Varicose Veins" },
+        { value: 114, label: "Shingles" },
+        { value: 115, label: "Anemia" },
+        { value: 116, label: "Sickle Cell Disease" },
+        { value: 117, label: "Thyroid Disorder" },
+        { value: 118, label: "Gallstones" },
+        { value: 119, label: "Appendicitis" },
+
+        { value: 120, label: "Burns" },
+        { value: 121, label: "Trauma" },
+        { value: 122, label: "Injuries" },
+        { value: 123, label: "Fractures" },
+        { value: 124, label: "Sprains" },
+        { value: 125, label: "Strains" },
+        { value: 126, label: "Allergic Reactions" },
+        { value: 127, label: "Poisoning" },
+        { value: 128, label: "Hydration Issues" },
+        { value: 129, label: "Weight Loss" }
     ]);
 
-    return (
-        <div>
-            <h5>{title} </h5>
-            <div className="form-group w-100">
-                <Select
-                    defaultValue={selectedOption}
-                    onChange={setSelectedOption}
-                    options={options}
-                    menuPortalTarget={document.body}
-                    id="search-commodity"
-                    components={{
-                        IndicatorSeparator: () => null,
-                    }}
-                    styles={{
-                        menuPortal: (base) => ({
-                            ...base,
-                            zIndex: 9999,
-                        }),
-                        control: (baseStyles, state) => ({
-                            ...baseStyles,
+return (
+    <div>
+        <h5>{title} </h5>
+        <div className="form-group w-100">
+            <Select
+                defaultValue={selectedOption}
+                onChange={setSelectedOption}
+                options={options}
+                menuPortalTarget={document.body}
+                id="search-commodity"
+                components={{
+                    IndicatorSeparator: () => null,
+                }}
+                styles={{
+                    menuPortal: (base) => ({
+                        ...base,
+                        zIndex: 9999,
+                    }),
+                    control: (baseStyles, state) => ({
+                        ...baseStyles,
+                        borderColor: state.isFocused
+                            ? "none"
+                            : "2px solid rgba(46, 55, 164, 0.1);",
+                        boxShadow: state.isFocused
+                            ? "0 0 0 1px #2e37a4"
+                            : "none",
+                        "&:hover": {
                             borderColor: state.isFocused
                                 ? "none"
-                                : "2px solid rgba(46, 55, 164, 0.1);",
-                            boxShadow: state.isFocused
-                                ? "0 0 0 1px #2e37a4"
-                                : "none",
-                            "&:hover": {
-                                borderColor: state.isFocused
-                                    ? "none"
-                                    : "2px solid rgba(46, 55, 164, 0.1)",
-                            },
-                            borderRadius: "10px",
-                            fontSize: "14px",
-                            minHeight: "45px",
-                        }),
-                        dropdownIndicator: (base, state) => ({
-                            ...base,
-                            transform: state.selectProps.menuIsOpen
-                                ? "rotate(-180deg)"
-                                : "rotate(0)",
-                            transition: "250ms",
-                            width: "35px",
-                            height: "35px",
-                        }),
-                    }}
-                />
-            </div>
-            <div style={{ backgroundColor: '#ededed', border: '0.5px solid grey', borderRadius: '0.5rem', padding: '0.3rem', marginBottom: '1rem' }}>
-                {
-                    badges.map((badge, index) => {
-                        return <CustomBadge color='pink' title={badge} border="1px solid grey" mr='0.3rem' mb='0.3rem' key={index} onClick={setThing} />
-                    })
-                }
-            </div>
+                                : "2px solid rgba(46, 55, 164, 0.1)",
+                        },
+                        borderRadius: "10px",
+                        fontSize: "14px",
+                        minHeight: "45px",
+                    }),
+                    dropdownIndicator: (base, state) => ({
+                        ...base,
+                        transform: state.selectProps.menuIsOpen
+                            ? "rotate(-180deg)"
+                            : "rotate(0)",
+                        transition: "250ms",
+                        width: "35px",
+                        height: "35px",
+                    }),
+                }}
+            />
         </div>
-    )
+        <div style={{ backgroundColor: '#ededed', border: '0.5px solid grey', borderRadius: '0.5rem', padding: '0.3rem', marginBottom: '1rem' }}>
+            {
+                badges.map((badge, index) => {
+                    return <CustomBadge color='pink' title={badge} border="1px solid grey" mr='0.3rem' mb='0.3rem' key={index} onClick={setThing} />
+                })
+            }
+        </div>
+    </div>
+)
 }
 
 const SufferingDetails = ({ id, select = true }) => {
@@ -225,7 +366,7 @@ const OpdView = () => {
                             <div className="row">
                                 <div className="col-12 col-md-4 d-flex">
                                     <div className='me-2'>
-                                        <img src={ doctor_consultation_video_1 } alt="image" height={60} width={60}/>
+                                        <img src={doctor_consultation_video_1} alt="image" height={60} width={60} />
                                     </div>
                                     <div className="invoice-info">
                                         <strong className="customer-text">
