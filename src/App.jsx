@@ -63,6 +63,13 @@ import OperationRegistration from "./pages/admin/operationRegistration";
 import LabDashboard from "./pages/laboratory/LabDashboard";
 import LabCollection from "./pages/laboratory/LabCollection";
 import CreateLabCollection from "./pages/laboratory/CreateCollection";
+import CreateBill from "./pages/reception/createBill";
+import StaffList from "./pages/hr/staffList";
+import AddStaff from "./pages/hr/addStaff";
+import StaffProfile from "./pages/hr/viewStaff";
+import Leave from "./pages/hr/leaves";
+import Holiday from "./pages/hr/holidays";
+import Attendence from "./pages/hr/Attendence";
 
 function Approuter() {
   return (
@@ -124,6 +131,7 @@ function Approuter() {
 
           {/* reception */}
           <Route path="/reception/billing" element={<BillingAndcashiering />} />
+          <Route path="/reception/billing/create" element={<CreateBill />} />
           <Route path="/reception/discharge" element={<DischargeSummary />} />
           <Route path="/reception/medicaladminstration" element={<MedicationAdministration />} />
           <Route path="/reception/medicaladminstration/add-mar" element={<AddPatientInfo />} />
@@ -174,6 +182,15 @@ function Approuter() {
 
           <Route path="/queue-management" element={<QueueManagement />} />
           <Route path="/vitals/:uhid" element={<Vitals />} />
+
+
+          {/* hr */}
+          <Route path="/hr/staff-list" element={<StaffList />} />
+          <Route path="/hr/staff-list/add" element={<AddStaff />} />
+          <Route path="/hr/staff-list/view" element={<StaffProfile />} />
+          <Route path="/hr/leaves" element={<Leave />} />
+          <Route path="/hr/holidays" element={<Holiday />} />
+          <Route path="/hr/attendance" element={<Attendence />} />
         </Routes>
       </BrowserRouter>
       <div className="sidebar-overlay"></div>

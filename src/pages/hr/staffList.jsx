@@ -1,11 +1,8 @@
-/* eslint-disable no-unused-vars */
 import React from "react";
 import { Table } from "antd";
-import { onShowSizeChange, itemRender } from "../../components/Pagination";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
 import {
-  blogimg10,
   imagesend,
   pdficon,
   pdficon3,
@@ -13,23 +10,14 @@ import {
   plusicon,
   refreshicon,
   searchnormal,
-  blogimg12,
-  blogimg2,
-  blogimg4,
-  blogimg6,
-  blogimg8,
-  calendar,
-  profile_add,
-  scissor,
-  empty_wallet,
 } from "../../components/imagepath";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import FeatherIcon from "feather-icons-react/build/FeatherIcon";
-import CountUp from "react-countup";
-import BillingData from "../../assets/json/BillingList";
+import FeatherIcon from "feather-icons-react";
+import { onShowSizeChange, itemRender } from "../../components/Pagination";
+import StaffData from "../../assets/json/StaffList";
 
-const DoctorList = () => {
+const StaffList = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
   const onSelectChange = (newSelectedRowKeys) => {
@@ -41,14 +29,10 @@ const DoctorList = () => {
     selectedRowKeys,
     onChange: onSelectChange,
   };
-  const onChange = (date, dateString) => {
-    // console.log(date, dateString);
-  };
-
-  const datasource = BillingData.Data;
+  const datasource = StaffData.Data;
   const columns = [
     {
-      title: "Patient Name",
+      title: "Name",
       dataIndex: "Name",
       render: (text, record) => (
         <>
@@ -57,14 +41,13 @@ const DoctorList = () => {
               <img
                 className="avatar-img rounded-circle"
                 src={record.Img}
-                alt="User Image"
+                alt="rounded circle"
               />
             </Link>
             <Link to="#">{record.Name}</Link>
           </h2>
         </>
       ),
-      sorter: (a, b) => a.Name.length - b.Name.length,
     },
     {
       title: "Department",
@@ -72,9 +55,14 @@ const DoctorList = () => {
       sorter: (a, b) => a.Department.length - b.Department.length,
     },
     {
-      title: "Doctor",
-      dataIndex: "Doctor",
+      title: "Specialization",
+      dataIndex: "Specialization",
       sorter: (a, b) => a.Specialization.length - b.Specialization.length,
+    },
+    {
+      title: "Degree",
+      dataIndex: "Degree",
+      sorter: (a, b) => a.Degree.length - b.Degree.length,
     },
     {
       title: "Mobile",
@@ -92,8 +80,8 @@ const DoctorList = () => {
       sorter: (a, b) => a.Email.length - b.Email.length,
     },
     {
-      title: "Date",
-      dataIndex: "Date",
+      title: "JoiningDate",
+      dataIndex: "JoiningDate",
       sorter: (a, b) => a.JoiningDate.length - b.JoiningDate.length,
     },
     {
@@ -112,7 +100,11 @@ const DoctorList = () => {
                 <i className="fas fa-ellipsis-v" />
               </Link>
               <div className="dropdown-menu dropdown-menu-end">
-                <Link className="dropdown-item" to="/editdoctor">
+                <Link className="dropdown-item" to="view">
+                  <i className="far fa-edit me-2" />
+                  View Profile
+                </Link>
+                <Link className="dropdown-item" to="#">
                   <i className="far fa-edit me-2" />
                   Edit
                 </Link>
@@ -135,11 +127,7 @@ const DoctorList = () => {
   return (
     <>
       <Header />
-      <Sidebar
-        id="reception-dropmenu"
-        id1="reception-items"
-        activeClassName="billing"
-      />
+      <Sidebar id="hr-menu-item" id1="hr-menu-items" activeClassName="staff-list" />
       <>
         <div className="page-wrapper">
           <div className="content">
@@ -149,110 +137,19 @@ const DoctorList = () => {
                 <div className="col-sm-12">
                   <ul className="breadcrumb">
                     <li className="breadcrumb-item">
-                      <Link to="#">Reception </Link>
+                      <Link to="#">HRMS </Link>
                     </li>
-                    <li className="breadcrumb-item active">
+                    <li className="breadcrumb-item">
                       <i className="feather-chevron-right">
                         <FeatherIcon icon="chevron-right" />
                       </i>
-                      Billing List
                     </li>
+                    <li className="breadcrumb-item active">Staff List</li>
                   </ul>
                 </div>
               </div>
             </div>
             {/* /Page Header */}
-            <div className="row">
-              <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                <div className="dash-widget">
-                  <div className="dash-boxs comman-flex-center">
-                    <img src={calendar} alt="#" />
-                  </div>
-                  <div className="dash-content dash-count flex-grow-1">
-                    <h4>New Bills</h4>
-                    <h2>
-                      {" "}
-                      <CountUp delay={0.4} end={250} duration={0.6} />
-                    </h2>
-                    {/* <p>
-                      <span className="passive-view">
-                        <i className="feather-arrow-up-right me-1" >
-                          <FeatherIcon icon="arrow-up-right"/>
-                        </i>
-                        40%
-                      </span>{" "}
-                      vs last month
-                    </p> */}
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                <div className="dash-widget">
-                  <div className="dash-boxs comman-flex-center">
-                    <img src={profile_add} alt="#" />
-                  </div>
-                  <div className="dash-content dash-count">
-                    <h4>Generate Report</h4>
-                    <h2>
-                      <CountUp delay={0.4} end={140} duration={0.6} />
-                    </h2>
-                    {/* <p>
-                      <span className="passive-view">
-                        <i className="feather-arrow-up-right me-1">
-                          <FeatherIcon icon="arrow-up-right" />
-                          </i>
-                        20%
-                      </span>{" "}
-                      vs last month
-                    </p> */}
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                <div className="dash-widget">
-                  <div className="dash-boxs comman-flex-center">
-                    <img src={scissor} alt="#" />
-                  </div>
-                  <div className="dash-content dash-count">
-                    <h4>View Transactions</h4>
-                    <h2>
-                      <CountUp delay={0.4} end={56} duration={0.6} />
-                    </h2>
-                    {/* <p>
-                      <span className="negative-view">
-                        <i className="feather-arrow-down-right me-1">
-                          <FeatherIcon icon="arrow-down-right"/>
-                          </i>
-                        15%
-                      </span>{" "}
-                      vs last month
-                    </p> */}
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                <div className="dash-widget">
-                  <div className="dash-boxs comman-flex-center">
-                    <img src={empty_wallet} alt="#" />
-                  </div>
-                  <div className="dash-content dash-count">
-                    <h4>Earnings</h4>
-                    <h2>
-                      $<CountUp delay={0.4} end={20250} duration={0.6} />
-                    </h2>
-                    {/* <p>
-                      <span className="passive-view">
-                        <i className="feather-arrow-up-right me-1">
-                          <FeatherIcon icon="arrow-up-right"/>
-                          </i>
-                        30%
-                      </span>{" "}
-                      vs last month
-                    </p> */}
-                  </div>
-                </div>
-              </div>
-            </div>
             <div className="row">
               <div className="col-sm-12">
                 <div className="card card-table show-entire">
@@ -262,7 +159,7 @@ const DoctorList = () => {
                       <div className="row align-items-center">
                         <div className="col">
                           <div className="doctor-table-blk">
-                            <h3>Recent Billings</h3>
+                            <h3> Staff List</h3>
                             <div className="doctor-search-blk">
                               <div className="top-nav-search table-search-blk">
                                 <form>
@@ -278,7 +175,7 @@ const DoctorList = () => {
                               </div>
                               <div className="add-group">
                                 <Link
-                                  to="create"
+                                  to="add"
                                   className="btn btn-primary add-pluss ms-2"
                                 >
                                   <img src={plusicon} alt="#" />
@@ -322,10 +219,23 @@ const DoctorList = () => {
                         dataSource={datasource}
                         rowSelection={rowSelection}
                         rowKey={(record) => record.id}
-                        style={{
-                          backgroundColor: "#f2f2f2", // Replace with your desired background color for the table
-                        }}
                       />
+
+                      {/* <Table className='table border-0 custom-table comman-table datatable mb-0'
+                        // pagination={{
+                        //   total: datasource.length,
+                        //   showTotal: (total, range) =>
+                        //     `Showing ${range[0]} to ${range[1]} of ${total} entries`,
+                        //   showSizeChanger: true,
+                        //   onShowSizeChange: onShowSizeChange,
+                        //   itemRender: itemRender,
+                        // }}
+                        columns={columns}
+                        dataSource={datasource}
+
+                        rowSelection={rowSelection}
+                        rowKey={(record) => record.id}
+                      /> */}
                     </div>
                   </div>
                 </div>
@@ -611,33 +521,6 @@ const DoctorList = () => {
               </div>
             </div>
           </div>
-          <div
-            id="delete_patient"
-            className="modal fade delete-modal"
-            role="dialog"
-          >
-            <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-body text-center">
-                  <img src={imagesend} alt="#" width={50} height={46} />
-                  <h3>Are you sure want to delete this ?</h3>
-                  <div className="m-t-20">
-                    {" "}
-                    <Link
-                      to="#"
-                      className="btn btn-white me-2"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </Link>
-                    <button type="submit" className="btn btn-danger">
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </>
 
@@ -646,4 +529,4 @@ const DoctorList = () => {
   );
 };
 
-export default DoctorList;
+export default StaffList;

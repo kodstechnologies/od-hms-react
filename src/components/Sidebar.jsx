@@ -71,7 +71,7 @@ const Sidebar = (props) => {
               onMouseOver={expandMenuOpen}
             >
               <ul>
-                <li className="menu-title">Main</li>
+                <li className="menu-title">Pages</li>
                 {/* admin */}
                 <li className="submenu">
                   <Link
@@ -590,7 +590,73 @@ const Sidebar = (props) => {
                 </li>
 
                  
-               
+                 {/* HR */}
+                 <li className="submenu">
+                  <Link
+                    to="#"
+                    id="hr-menu-item"
+                    onClick={(e) => {
+                      handleClick(
+                        e,
+                        "hr-menu-item",
+                        "hr-menu-items"
+                      );
+                    }}
+                  >
+                    <span className="menu-side">
+                      <img src={dashboard} alt="" />
+                    </span>{" "}
+                    <span> HRMS </span> <span className="menu-arrow" />
+                  </Link>
+                  <ul
+                    style={{
+                      display: sidebar === "HRMS" ? "block" : "none",
+                    }}
+                    className="hr-menu-items"
+                  >
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "staff-list" ? "active" : ""
+                        }
+                        to="/hr/staff-list"
+                      >
+                        Staff List
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "leaves" ? "active" : ""
+                        }
+                        to="/hr/leaves"
+                      >
+                        Leaves
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "holidays" ? "active" : ""
+                        }
+                        to="/hr/holidays"
+                      >
+                        Holidays
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "attendance" ? "active" : ""
+                        }
+                        to="/hr/attendance"
+                      >
+                        Attendence
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+
               </ul>
 
               <div className="logout-btn">

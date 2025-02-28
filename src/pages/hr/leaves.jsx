@@ -1,35 +1,39 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
-import { Table } from "antd";
-import { onShowSizeChange, itemRender } from "../../components/Pagination";
+import React, { useState } from "react";
 import Header from "../../components/Header";
 import Sidebar from "../../components/Sidebar";
-import {
-  blogimg10,
-  imagesend,
-  pdficon,
-  pdficon3,
-  pdficon4,
-  plusicon,
-  refreshicon,
-  searchnormal,
-  blogimg12,
-  blogimg2,
-  blogimg4,
-  blogimg6,
-  blogimg8,
-  calendar,
-  profile_add,
-  scissor,
-  empty_wallet,
-} from "../../components/imagepath";
-import { useState } from "react";
+import { DatePicker} from "antd";
+import { onShowSizeChange, itemRender } from "../../components/Pagination";
+import {Table} from "antd";
+import { imagesend,pdficon,pdficon2,pdficon3,pdficon4,plusicon,refreshicon,searchnormal} from "../../components/imagepath";
+import FeatherIcon from "feather-icons-react";
 import { Link } from "react-router-dom";
-import FeatherIcon from "feather-icons-react/build/FeatherIcon";
-import CountUp from "react-countup";
-import BillingData from "../../assets/json/BillingList";
+import Select from "react-select";
+import { Dropdown} from 'react-bootstrap';
+import LeaveData from "../../assets/json/Leaves";
 
-const DoctorList = () => {
+const Leave = () => {
+  const [dropdownValue, setDropdownValue] = useState('');
+
+  const handleDropdownChange = (value) => {
+    setDropdownValue(value);
+  };
+  const onChange = (date, dateString) => {
+    // console.log(date, dateString);
+  };
+  const [selectedOption, setSelectedOption] = useState(null);
+  const [options, setOptions] = useState([
+    { value: 1, label: "Select LeaveType" },
+    { value: 2, label: "Medical Leave" },
+    { value: 3, label: "Casual Leave" },
+    { value: 3, label: "Loss of Pay" },
+  ]);
+  const [leave, setLeave] = useState([
+    { value: 1, label: "Leave Status" },
+    { value: 2, label: "Pending" },
+    { value: 3, label: "Approved" },
+    { value: 3, label: "Declined" },
+  ]);
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
   const onSelectChange = (newSelectedRowKeys) => {
@@ -41,60 +45,108 @@ const DoctorList = () => {
     selectedRowKeys,
     onChange: onSelectChange,
   };
-  const onChange = (date, dateString) => {
-    // console.log(date, dateString);
-  };
+  const datasource = LeaveData.Data;
 
-  const datasource = BillingData.Data;
   const columns = [
     {
-      title: "Patient Name",
-      dataIndex: "Name",
+      title: "EmployeeName",
+      dataIndex: "EmployeeName",
+      sorter: (a, b) => a.EmployeeName.length - b.EmployeeName.length,
+    },
+    {
+      title: "LeaveType",
+      dataIndex: "LeaveType",
+      sorter: (a, b) => a.LeaveType.length - b.LeaveType.length,
+    },
+    {
+      title: "From",
+      dataIndex: "From",
+      sorter: (a, b) => a.From.length - b.From.length,
+    },
+    {
+      title: "To",
+      dataIndex: "To",
+      sorter: (a, b) => a.To.length - b.To.length,
+    },
+    {
+      title: "Noofdays",
+      dataIndex: "Noofdays",
+      sorter: (a, b) => a.Noofdays.length - b.Noofdays.length,
+    },
+
+    {
+      title: "Reason",
+      dataIndex: "Reason",
+      sorter: (a, b) => a.Reason.length - b.Reason.length,
+    },
+    {
+      title: 'Status',
+      dataIndex: 'Status',
+      // key: 'status',
       render: (text, record) => (
-        <>
-          <h2 className="profile-image">
-            <Link to="#" className="avatar avatar-sm me-2">
-              <img
-                className="avatar-img rounded-circle"
-                src={record.Img}
-                alt="User Image"
-              />
-            </Link>
-            <Link to="#">{record.Name}</Link>
-          </h2>
-        </>
+        <div>
+          <Dropdown onSelect={handleDropdownChange}>
+            {text === "Approved" && (
+              <span className="custom1-badge status-green ">
+                {text}
+                <Dropdown.Toggle variant="">
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item eventKey="New">New</Dropdown.Item>
+                  <Dropdown.Item eventKey="Pending">Pending</Dropdown.Item>
+                  <Dropdown.Item eventKey="Approved">Approved</Dropdown.Item>
+                  <Dropdown.Item eventKey="Declined" >Declined</Dropdown.Item>
+                </Dropdown.Menu>
+              </span>
+            )}
+          </Dropdown>
+          <Dropdown onSelect={handleDropdownChange}>
+            {text === "Pending" && (
+              <span className="custom1-badge status-orange ">
+                {text}
+                <Dropdown.Toggle variant="">
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item eventKey="New">New</Dropdown.Item>
+                  <Dropdown.Item eventKey="Pending">Pending</Dropdown.Item>
+                  <Dropdown.Item eventKey="Approved">Approved</Dropdown.Item>
+                  <Dropdown.Item eventKey="Declined" >Declined</Dropdown.Item>
+                </Dropdown.Menu>
+              </span>
+            )}
+          </Dropdown>
+          <Dropdown onSelect={handleDropdownChange}>
+            {text === "Declined" && (
+              <span className="custom1-badge status-pink ">
+                {text}
+                <Dropdown.Toggle variant="">
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item eventKey="New">New</Dropdown.Item>
+                  <Dropdown.Item eventKey="Pending">Pending</Dropdown.Item>
+                  <Dropdown.Item eventKey="Approved">Approved</Dropdown.Item>
+                  <Dropdown.Item eventKey="Declined" >Declined</Dropdown.Item>
+                </Dropdown.Menu>
+              </span>
+            )}
+          </Dropdown>
+          <Dropdown onSelect={handleDropdownChange}>
+            {text === "New" && (
+              <span className="custom1-badge status-purple ">
+                {text}
+                <Dropdown.Toggle variant="">
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                  <Dropdown.Item eventKey="New">New</Dropdown.Item>
+                  <Dropdown.Item eventKey="Pending">Pending</Dropdown.Item>
+                  <Dropdown.Item eventKey="Approved">Approved</Dropdown.Item>
+                  <Dropdown.Item eventKey="Declined" >Declined</Dropdown.Item>
+                </Dropdown.Menu>
+              </span>
+            )}
+          </Dropdown>
+        </div>
       ),
-      sorter: (a, b) => a.Name.length - b.Name.length,
-    },
-    {
-      title: "Department",
-      dataIndex: "Department",
-      sorter: (a, b) => a.Department.length - b.Department.length,
-    },
-    {
-      title: "Doctor",
-      dataIndex: "Doctor",
-      sorter: (a, b) => a.Specialization.length - b.Specialization.length,
-    },
-    {
-      title: "Mobile",
-      dataIndex: "Mobile",
-      sorter: (a, b) => a.Mobile.length - b.Mobile.length,
-      render: (text, record) => (
-        <>
-          <Link to="#">{record.Mobile}</Link>
-        </>
-      ),
-    },
-    {
-      title: "Email",
-      dataIndex: "Email",
-      sorter: (a, b) => a.Email.length - b.Email.length,
-    },
-    {
-      title: "Date",
-      dataIndex: "Date",
-      sorter: (a, b) => a.JoiningDate.length - b.JoiningDate.length,
     },
     {
       title: "",
@@ -112,35 +164,26 @@ const DoctorList = () => {
                 <i className="fas fa-ellipsis-v" />
               </Link>
               <div className="dropdown-menu dropdown-menu-end">
-                <Link className="dropdown-item" to="/editdoctor">
+                <Link className="dropdown-item" to="/editleave">
                   <i className="far fa-edit me-2" />
                   Edit
                 </Link>
-                <Link
-                  className="dropdown-item"
-                  to="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#delete_patient"
-                >
-                  <i className="fa fa-trash-alt m-r-5"></i> Delete
-                </Link>
+                <Link className="dropdown-item" to="#" data-bs-toggle="modal" data-bs-target="#delete_patient">
+                  <i className="fa fa-trash-alt m-r-5"></i> Delete</Link>
               </div>
             </div>
           </div>
         </>
       ),
     },
+
   ];
 
   return (
     <>
-      <Header />
-      <Sidebar
-        id="reception-dropmenu"
-        id1="reception-items"
-        activeClassName="billing"
-      />
-      <>
+      <div className="main-wrapper">
+        <Header />
+        <Sidebar id="hr-menu-item" id1="hr-menu-items" activeClassName="leaves" />
         <div className="page-wrapper">
           <div className="content">
             {/* Page Header */}
@@ -149,110 +192,19 @@ const DoctorList = () => {
                 <div className="col-sm-12">
                   <ul className="breadcrumb">
                     <li className="breadcrumb-item">
-                      <Link to="#">Reception </Link>
+                      <Link to="/add-leave">Staffs </Link>
                     </li>
-                    <li className="breadcrumb-item active">
+                    <li className="breadcrumb-item">
                       <i className="feather-chevron-right">
                         <FeatherIcon icon="chevron-right" />
                       </i>
-                      Billing List
                     </li>
+                    <li className="breadcrumb-item active">Leave Request</li>
                   </ul>
                 </div>
               </div>
             </div>
             {/* /Page Header */}
-            <div className="row">
-              <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                <div className="dash-widget">
-                  <div className="dash-boxs comman-flex-center">
-                    <img src={calendar} alt="#" />
-                  </div>
-                  <div className="dash-content dash-count flex-grow-1">
-                    <h4>New Bills</h4>
-                    <h2>
-                      {" "}
-                      <CountUp delay={0.4} end={250} duration={0.6} />
-                    </h2>
-                    {/* <p>
-                      <span className="passive-view">
-                        <i className="feather-arrow-up-right me-1" >
-                          <FeatherIcon icon="arrow-up-right"/>
-                        </i>
-                        40%
-                      </span>{" "}
-                      vs last month
-                    </p> */}
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                <div className="dash-widget">
-                  <div className="dash-boxs comman-flex-center">
-                    <img src={profile_add} alt="#" />
-                  </div>
-                  <div className="dash-content dash-count">
-                    <h4>Generate Report</h4>
-                    <h2>
-                      <CountUp delay={0.4} end={140} duration={0.6} />
-                    </h2>
-                    {/* <p>
-                      <span className="passive-view">
-                        <i className="feather-arrow-up-right me-1">
-                          <FeatherIcon icon="arrow-up-right" />
-                          </i>
-                        20%
-                      </span>{" "}
-                      vs last month
-                    </p> */}
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                <div className="dash-widget">
-                  <div className="dash-boxs comman-flex-center">
-                    <img src={scissor} alt="#" />
-                  </div>
-                  <div className="dash-content dash-count">
-                    <h4>View Transactions</h4>
-                    <h2>
-                      <CountUp delay={0.4} end={56} duration={0.6} />
-                    </h2>
-                    {/* <p>
-                      <span className="negative-view">
-                        <i className="feather-arrow-down-right me-1">
-                          <FeatherIcon icon="arrow-down-right"/>
-                          </i>
-                        15%
-                      </span>{" "}
-                      vs last month
-                    </p> */}
-                  </div>
-                </div>
-              </div>
-              <div className="col-md-6 col-sm-6 col-lg-6 col-xl-3">
-                <div className="dash-widget">
-                  <div className="dash-boxs comman-flex-center">
-                    <img src={empty_wallet} alt="#" />
-                  </div>
-                  <div className="dash-content dash-count">
-                    <h4>Earnings</h4>
-                    <h2>
-                      $<CountUp delay={0.4} end={20250} duration={0.6} />
-                    </h2>
-                    {/* <p>
-                      <span className="passive-view">
-                        <i className="feather-arrow-up-right me-1">
-                          <FeatherIcon icon="arrow-up-right"/>
-                          </i>
-                        30%
-                      </span>{" "}
-                      vs last month
-                    </p> */}
-                  </div>
-                </div>
-              </div>
-            </div>
             <div className="row">
               <div className="col-sm-12">
                 <div className="card card-table show-entire">
@@ -262,7 +214,7 @@ const DoctorList = () => {
                       <div className="row align-items-center">
                         <div className="col">
                           <div className="doctor-table-blk">
-                            <h3>Recent Billings</h3>
+                            <h3>Leave Request</h3>
                             <div className="doctor-search-blk">
                               <div className="top-nav-search table-search-blk">
                                 <form>
@@ -272,22 +224,22 @@ const DoctorList = () => {
                                     placeholder="Search here"
                                   />
                                   <Link className="btn">
-                                    <img src={searchnormal} alt="#" />
+                                    <img src={searchnormal} alt="#"/>
                                   </Link>
                                 </form>
                               </div>
                               <div className="add-group">
                                 <Link
-                                  to="create"
+                                  to="/add-leave"
                                   className="btn btn-primary add-pluss ms-2"
                                 >
-                                  <img src={plusicon} alt="#" />
+                                  <img src={plusicon} alt="#"/>
                                 </Link>
                                 <Link
                                   to="#"
                                   className="btn btn-primary doctor-refresh ms-2"
                                 >
-                                  <img src={refreshicon} alt="#" />
+                                  <img src={refreshicon} alt="#"/>
                                 </Link>
                               </div>
                             </div>
@@ -295,20 +247,88 @@ const DoctorList = () => {
                         </div>
                         <div className="col-auto text-end float-end ms-auto download-grp">
                           <Link to="#" className=" me-2">
-                            <img src={pdficon} alt="#" />
+                            <img src={pdficon} alt="#"/>
                           </Link>
-                          <Link to="#" className=" me-2"></Link>
                           <Link to="#" className=" me-2">
-                            <img src={pdficon3} alt="#" />
+                            <img src={pdficon2} alt="#"/>
+                          </Link>
+                          <Link to="#" className=" me-2">
+                            <img src={pdficon3} alt="#"/>
                           </Link>
                           <Link to="#">
-                            <img src={pdficon4} alt="#" />
+                            <img src={pdficon4} alt="#"/>
                           </Link>
                         </div>
                       </div>
                     </div>
                     {/* /Table Header */}
-                    <div className="table-responsive doctor-list">
+                    <div className="staff-search-table">
+                      <form>
+                        <div className="row">
+                          <div className="col-12 col-md-6 col-xl-4">
+                            <div className="form-group local-forms">
+                              <label>Employee Name </label>
+                              <input className="form-control" type="text" />
+                            </div>
+                          </div>
+                          <div className="col-12 col-md-6 col-xl-4">
+                            <div className="form-group local-forms">
+                              <label>Leave Type </label>
+                              <Select
+                                defaultValue={selectedOption}
+                                onChange={setSelectedOption}
+                                options={options}
+                                menuPortalTarget={document.body}
+                                styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }}
+                              />
+                            </div>
+                          </div>
+                          <div className="col-12 col-md-6 col-xl-4">
+                            <div className="form-group local-forms">
+                              <label>Leave Status </label>
+                              <Select
+                                defaultValue={selectedOption}
+                                onChange={setSelectedOption}
+                                options={leave}
+                                menuPortalTarget={document.body}
+                                styles={{ menuPortal: base => ({ ...base, zIndex: 9999 }) }}
+                              />
+                            </div>
+                          </div>
+                          <div className="col-12 col-md-6 col-xl-4">
+                            <div className="form-group local-forms cal-icon">
+                              <label>From </label>
+                              <DatePicker
+                                className="form-control datetimepicker"
+                                onChange={onChange}
+                                suffixIcon={null}
+                              />
+                            </div>
+                          </div>
+                          <div className="col-12 col-md-6 col-xl-4">
+                            <div className="form-group local-forms cal-icon">
+                              <label>To </label>
+                              <DatePicker
+                                className="form-control datetimepicker"
+                                onChange={onChange}
+                                suffixIcon={null}
+                              />
+                            </div>
+                          </div>
+                          <div className="col-12 col-md-6 col-xl-4">
+                            <div className="doctor-submit">
+                              <button
+                                type="submit"
+                                className="btn btn-primary submit-list-form me-2"
+                              >
+                                Search
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div className="table-responsive">
                       <Table
                         pagination={{
                           total: datasource.length,
@@ -322,10 +342,10 @@ const DoctorList = () => {
                         dataSource={datasource}
                         rowSelection={rowSelection}
                         rowKey={(record) => record.id}
-                        style={{
-                          backgroundColor: "#f2f2f2", // Replace with your desired background color for the table
-                        }}
                       />
+                      <table className="table border-0 custom-table comman-table datatable mb-0">
+                        <tbody></tbody>
+                      </table>
                     </div>
                   </div>
                 </div>
@@ -593,15 +613,11 @@ const DoctorList = () => {
           <div className="modal-dialog modal-dialog-centered">
             <div className="modal-content">
               <div className="modal-body text-center">
-                <img src={imagesend} alt="#" width={50} height={46} />
+                <img src={imagesend} alt="#"width={50} height={46} />
                 <h3>Are you sure want to delete this ?</h3>
                 <div className="m-t-20">
                   {" "}
-                  <Link
-                    to="#"
-                    className="btn btn-white me-2"
-                    data-bs-dismiss="modal"
-                  >
+                  <Link to="#" className="btn btn-white me-2" data-bs-dismiss="modal">
                     Close
                   </Link>
                   <button type="submit" className="btn btn-danger">
@@ -611,39 +627,10 @@ const DoctorList = () => {
               </div>
             </div>
           </div>
-          <div
-            id="delete_patient"
-            className="modal fade delete-modal"
-            role="dialog"
-          >
-            <div className="modal-dialog modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-body text-center">
-                  <img src={imagesend} alt="#" width={50} height={46} />
-                  <h3>Are you sure want to delete this ?</h3>
-                  <div className="m-t-20">
-                    {" "}
-                    <Link
-                      to="#"
-                      className="btn btn-white me-2"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </Link>
-                    <button type="submit" className="btn btn-danger">
-                      Delete
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </>
-
-      <></>
+      </div>
     </>
   );
 };
 
-export default DoctorList;
+export default Leave;

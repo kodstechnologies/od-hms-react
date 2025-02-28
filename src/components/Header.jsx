@@ -60,7 +60,7 @@ const Header = () => {
         <div className="header-left">
           <Link to="/admin/dashboard" className="logo">
             <img src={logo} width={35} height={35} alt="" />{" "}
-            <span>Pre Clinic</span>
+            <span>Odisha HMIS</span>
           </Link>
         </div>
         <Link id="toggle_btn" to="#" onClick={handlesidebar}>
