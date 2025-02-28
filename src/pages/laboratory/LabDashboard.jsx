@@ -1,5 +1,7 @@
 import Header from "../layouts/header";
 import Sidebar from "../../components/Sidebar";
+import { Link } from "react-router-dom";
+import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 
 const LabDashboard = () => {
   return (
@@ -15,6 +17,17 @@ const LabDashboard = () => {
           {/* Page Header */}
           <div className="page-header">
             <div className="container-fluid p-4">
+              <div className="col-sm-12 mb-2">
+                <ul className="breadcrumb">
+                  <li className="breadcrumb-item">
+                    <Link to="/laboratory/dashboard">Laboratory </Link>
+                  </li>
+                  <li className="breadcrumb-item">
+                    <FeatherIcon icon="chevron-right" />
+                  </li>
+                  <li className="breadcrumb-item active">Dashboard</li>
+                </ul>
+              </div>
               {/* Status Cards */}
               <div className="row mb-4">
                 <div className="col-md-3">
@@ -207,7 +220,6 @@ const LabDashboard = () => {
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>

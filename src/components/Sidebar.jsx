@@ -108,10 +108,19 @@ const Sidebar = (props) => {
                           props?.activeClassName === "DietPlan" ? "active" : ""
                         }
                         to="/admin/diet-plan"
+                      ></Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "operative-info"
+                            ? "active"
+                            : ""
+                        }
+                        to="/admin/operative-info"
                       >
-                        
+                        Operative-info
                       </Link>
-                      
                     </li>
                   </ul>
                 </li>
@@ -212,18 +221,32 @@ const Sidebar = (props) => {
                         }
                         to="/token-board"
                       >
-                       Token Board
+                        Token Board
                       </Link>
+                      <li>
+                        <Link
+                          className={
+                            props?.activeClassName === "" ? "active" : ""
+                          }
+                          to="/bed-availability"
+                        >
+                          Bed Availability
+                        </Link>
+                      </li>
                     </li>
-
-
-
                   </ul>
                 </li>
 
                 {/* recption */}
                 <li className="submenu">
                   {/* <Link to="#" id="reception-dropmenu" onClick={(e) => handleClick(e, "reception-dropmenu", "reception-items")}></Link> */}
+                  <Link
+                    to="#"
+                    id="reception-dropmenu"
+                    onClick={(e) =>
+                      handleClick(e, "reception-dropmenu", "reception-items")
+                    }
+                  ></Link>
                   <Link
                     to="#"
                     id="reception-dropmenu"
@@ -234,7 +257,12 @@ const Sidebar = (props) => {
                     </span>{" "}
                     <span>Reception </span> <span className="menu-arrow" />
                   </Link>
-                  <ul style={{ display:sidebar === 'Reception' ? 'block' :  "none" }} className="reception-items">
+                  <ul
+                    style={{
+                      display: sidebar === "Reception" ? "block" : "none",
+                    }}
+                    className="reception-items"
+                  >
                     <li>
                       <Link
                         className={
@@ -481,7 +509,7 @@ const Sidebar = (props) => {
                         }
                         to="/laboratory/dashboard"
                       >
-                        Dashboard
+                        Sample Dashboard
                       </Link>
                     </li>
                     <li>
@@ -493,60 +521,62 @@ const Sidebar = (props) => {
                         }
                         to="/laboratory/collection"
                       >
-                        Collection
+                        Sample Collection
                       </Link>
                     </li>
 
                     <li>
                       <Link
                         className={
-                          props?.activeClassName === "send-receive"
+                          props?.activeClassName === "LabSendReceive"
                             ? "active"
                             : ""
                         }
                         to="/laboratory/send-receive"
                       >
-                        Send/Receive
+                        Sample Send/Receive
                       </Link>
                     </li>
                     <li>
                       <Link
                         className={
-                          props?.activeClassName === "processing"
+                          props?.activeClassName === "LabProcessing"
                             ? "active"
                             : ""
                         }
                         to="/laboratory/processing"
                       >
-                        Processing
+                        Sample Processing
                       </Link>
                     </li>
                     <li>
                       <Link
                         className={
-                          props?.activeClassName === "reporting" ? "active" : ""
+                          props?.activeClassName === "LabReporting"
+                            ? "active"
+                            : ""
                         }
                         to="/laboratory/reporting"
                       >
-                        Reporting
+                        Sample Reporting
                       </Link>
                     </li>
                     <li>
                       <Link
                         className={
-                          props?.activeClassName === "radiology-reporting"
+                          props?.activeClassName === "LabRadiologyReporting"
                             ? "active"
                             : ""
                         }
                         to="/laboratory/radiology-report"
                       >
-                        Radiology Reporting
+                        Sample Radiology Reporting
                       </Link>
                     </li>
                     <li>
                       <Link
                         className={
-                          props?.activeClassName === "histopathology"
+                          props?.activeClassName === "LabHistopathology"
                             ? "active"
                             : ""
                         }
@@ -558,33 +588,89 @@ const Sidebar = (props) => {
                     <li>
                       <Link
                         className={
-                          props?.activeClassName === "outsource"
+                          props?.activeClassName === "LabOutsource"
                             ? "active"
                             : ""
                         }
                         to="/laboratory/outsource"
                       >
-                        Outsource
+                        Sample Outsource
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "DoorStepSampleCollection"
+                            ? "active"
+                            : ""
+                        }
+                        to="/laboratory/doorstepsamplecollection"
+                      >
+                        Door-step Sample Collection
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "SampleLogistics"
+                            ? "active"
+                            : ""
+                        }
+                        to="/laboratory/sample-logistics"
+                      >
+                        Sample Logistics
                       </Link>
                     </li>
                   </ul>
                 </li>
 
-                <li className="submenu" >
-                  <Link to="#" id="ambulance-menu-item" onClick={(e) => {
-                    handleClick(e, "ambulance-menu-item", "ambulance-menu-items")
-                  }}>
+                <li className="submenu">
+                  <Link
+                    to="#"
+                    id="ambulance-menu-item"
+                    onClick={(e) => {
+                      handleClick(
+                        e,
+                        "ambulance-menu-item",
+                        "ambulance-menu-items"
+                      );
+                    }}
+                  >
                     <span className="menu-side">
                       <img src={dashboard} alt="" />
                     </span>{" "}
                     <span> Ambulance </span> <span className="menu-arrow" />
                   </Link>
-                  <ul style={{ display: sidebar === 'Ambulance' ? 'block' : "none" }} className='ambulance-menu-items'>
+                  <ul
+                    style={{
+                      display: sidebar === "Ambulance" ? "block" : "none",
+                    }}
+                    className="ambulance-menu-items"
+                  >
                     <li>
-                      <Link className={props?.activeClassName === 'AmbulanceDetails' ? 'active' : ''} to="/Ambulance/AmbulanceDetails">Ambulance Details</Link>
+                      <Link
+                        className={
+                          props?.activeClassName === "AmbulanceDetails"
+                            ? "active"
+                            : ""
+                        }
+                        to="/Ambulance/AmbulanceDetails"
+                      >
+                        Ambulance Details
+                      </Link>
                     </li>
                     <li>
-                      <Link className={props?.activeClassName === 'AmbulanceCall' ? 'active' : ''} to="/Ambulance/AmbulanceCall"> Ambulance Call</Link>
+                      <Link
+                        className={
+                          props?.activeClassName === "AmbulanceCall"
+                            ? "active"
+                            : ""
+                        }
+                        to="/Ambulance/AmbulanceCall"
+                      >
+                        {" "}
+                        Ambulance Call
+                      </Link>
                     </li>
                   </ul>
                 </li>
