@@ -7,7 +7,9 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import { useState } from "react";
 
 import { Eye, EyeOff } from "feather-icons-react/build/IconComponents";
-
+import {
+  logo,
+} from "../../imagepath";
 // import ReactPasswordToggleIcon from 'react-password-toggle-icon';
 
 
@@ -57,8 +59,12 @@ const Login = () => {
                   <div className="login-right">
                     <div className="login-right-wrap">
                       <div className="account-logo">
-                        <Link to="/admin/dashboard">
+                        {/* <Link to="/admin/dashboard">
                           <img src={loginlogo} alt="#" />
+                        </Link> */}
+                        <Link to="#" className="logo">
+                          <img src={logo} width={35} height={35} alt="" />{" "}
+                          <span>Odisha HMIS</span>
                         </Link>
                       </div>
                       <h2>Login</h2>
