@@ -223,11 +223,11 @@ const Sidebar = (props) => {
 
                 {/* recption */}
                 <li className="submenu">
-                  <Link to="#" id="reception-dropmenu" onClick={(e) => handleClick(e, "reception-dropmenu", "reception-items")}></Link>
+                  {/* <Link to="#" id="reception-dropmenu" onClick={(e) => handleClick(e, "reception-dropmenu", "reception-items")}></Link> */}
                   <Link
                     to="#"
-                    id="recdrop"
-                    onClick={(e) => handleClick(e, "recdrop", "recdrop2")}
+                    id="reception-dropmenu"
+                    onClick={(e) => handleClick(e, "reception-dropmenu", "reception-items")}
                   >
                     <span className="menu-side">
                       <img src={patients} alt="" />
@@ -270,13 +270,13 @@ const Sidebar = (props) => {
                     <li>
                       <Link
                         className={
-                          props?.activeClassName === "medicalrecord"
+                          props?.activeClassName === "equipment"
                             ? "active"
                             : ""
                         }
-                        to="/reception/medicalrecord"
+                        to="/reception/equipment"
                       >
-                        Medical Record Inventory
+                        Equipment
                       </Link>
                     </li>
                   </ul>

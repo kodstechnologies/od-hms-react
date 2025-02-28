@@ -162,16 +162,30 @@ const addEquipment = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-12 col-md-6 col-xl-6">
-                                                <div className="form-group local-forms">
+                                        <div className="col-12 col-sm-12">
+                                        <div className="form-group local-forms">
                                                     <label>
                                                     Supplier Name <span className="login-danger">*</span>
                                                     </label>
                                                     <input className="form-control" type="text" />
                                                 </div>
                                             </div>
-                                            
-                                        
+                                            <div className="col-12 col-md-6 col-xl-6">
+                                                <div className="form-group local-forms">
+                                                    <label>
+                                                        Equipments Name <span className="login-danger">*</span>
+                                                    </label>
+                                                    <input className="form-control" type="text" />
+                                                </div>
+                                            </div>
+                                            <div className="col-12 col-md-6 col-xl-6">
+                                                <div className="form-group local-forms">
+                                                    <label>
+                                                        Equipments Id <span className="login-danger">*</span>
+                                                    </label>
+                                                    <input className="form-control" type="text" />
+                                                </div>
+                                            </div>
                                     </form>
                                 </div>
                             </div>
