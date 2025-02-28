@@ -130,12 +130,12 @@ const Vitals = () => {
                                         <Input text='Spo2' unit='%' />
                                     </div>
                                     <div className="col-2">
-                                        <Input text='BSA' unit=''/>
+                                        <Input text='BSA'/>
                                     </div>
 
                                      {/* Four-Two */}
                                      <div className="col-4">
-                                        <Input text='eGFR' unit=''/>
+                                        <Input text='eGFR'/>
                                     </div>
                                     <div className="col-2">
                                         <Input text='RR' />
@@ -160,13 +160,13 @@ const Vitals = () => {
 
                                     {/* Two */}
                                     <div className="col-4">
-                                        <Input text='HOMA-IR' unit=''/>
+                                        <Input text='HOMA-IR'/>
                                     </div>
                                     <div className="col-4">
-                                        <Input text='Waist Hip Ratio' unit=''/>
+                                        <Input text='Waist Hip Ratio'/>
                                     </div>
                                     <div className="col-4">
-                                        <Input text='NAFLD fibrosis score' unit=''/>
+                                        <Input text='NAFLD fibrosis score'/>
                                     </div>
 
                                      {/* Three */}

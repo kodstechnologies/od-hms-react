@@ -63,6 +63,7 @@ import OperationRegistration from "./pages/admin/operationRegistration";
 import LabDashboard from "./pages/laboratory/LabDashboard";
 import LabCollection from "./pages/laboratory/LabCollection";
 import CreateLabCollection from "./pages/laboratory/CreateCollection";
+import OpdView from "./pages/FrontOffice/OpdView";
 
 function Approuter() {
   return (
@@ -173,6 +174,7 @@ function Approuter() {
           <Route path="/token-board/add" element={<AddToken />} />
 
           <Route path="/queue-management" element={<QueueManagement />} />
+          <Route path="/opd-view/:uhid" element={ <OpdView /> }/>
           <Route path="/vitals/:uhid" element={<Vitals />} />
         </Routes>
       </BrowserRouter>

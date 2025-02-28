@@ -32,7 +32,7 @@ const QueueManagement = () => {
   };
 
   const OpdViewRedirect = (record) => {
-
+    navigate(`/opd-view/${record.uhid}`);
   }
 
   const labelPrintRedirect = (record) => {
