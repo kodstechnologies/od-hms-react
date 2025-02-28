@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Table } from "antd";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import Header from "../layouts/header";
 import Sidebar from "../../components/Sidebar";
 import { plusicon, refreshicon, pdficon, pdficon3, pdficon4, searchnormal } from "../../components/imagepath";
+import Button from "../../components/ui_elements/Button";
 
 const BloodDonor = () => {
+    const navigate = useNavigate();
+  
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
   const onSelectChange = (newSelectedRowKeys) => {
@@ -28,28 +31,54 @@ const BloodDonor = () => {
     console.log("Edit row with ID: ", id);
     // Implement the edit logic here
   };
+  const handleAddBloodDonar= () => {
+    navigate("/blood/bloodDonor/add");
+  };
+
 
   const datasource = [
     {
       key: 1,
       slno: "1",
-      donorName: "John Doe",
+      donorName: "Harish kumar",
       age: 30,
       bloodGroup: "A+",
       gender: "Male",
       contactNo: "+1 23 456890",
-      fatherName: "Robert Doe",
+      fatherName: "Guna shekar",
       address: "123 Main St, City, Country",
     },
     {
       key: 2,
       slno: "2",
-      donorName: "Jane Smith",
+      donorName: "Hemanth Kumar",
       age: 28,
       bloodGroup: "B+",
       gender: "Female",
       contactNo: "+1 23 456891",
-      fatherName: "Thomas Smith",
+      fatherName: "Raja shekar",
+      address: "456 Elm St, City, Country",
+    },
+    {
+      key: 3,
+      slno: "3",
+      donorName: "hanumantha Kumar",
+      age: 28,
+      bloodGroup: "B+",
+      gender: "Female",
+      contactNo: "+1 23 456891",
+      fatherName: "Ruthu shekar",
+      address: "456 Elm St, City, Country",
+    },
+    {
+      key: 4,
+      slno: "4",
+      donorName: "Kumar",
+      age: 28,
+      bloodGroup: "B+",
+      gender: "Female",
+      contactNo: "+1 23 456891",
+      fatherName: "Raja shekar",
       address: "456 Elm St, City, Country",
     },
   ];
@@ -181,19 +210,10 @@ const BloodDonor = () => {
                                 </Link>
                               </form>
                             </div>
-                            <div className="add-group">
-                              <Link
-                                to="/blood/bloodDonor/add"
-                                className="btn btn-primary add-pluss ms-2"
-                              >
-                                <img src={plusicon} alt="#" />
-                              </Link>
-                              <Link
-                                to="#"
-                                className="btn btn-primary doctor-refresh ms-2"
-                              >
-                                <img src={refreshicon} alt="#" />
-                              </Link>
+                            <div className="text-end mt-6" style={{ marginLeft: "470px" }}>
+                              <Button onClick={handleAddBloodDonar}>
+                                Add Blood Donor
+                              </Button>
                             </div>
                           </div>
                         </div>

@@ -108,7 +108,10 @@ const Sidebar = (props) => {
                           props?.activeClassName === "DietPlan" ? "active" : ""
                         }
                         to="/admin/diet-plan"
-                      ></Link>
+                      >Dietplan
+                        
+                      </Link>
+                      
                     </li>
                     <li>
                       <Link
@@ -120,6 +123,7 @@ const Sidebar = (props) => {
                         to="/admin/operative-info"
                       >
                         Operative-info
+                          
                       </Link>
                     </li>
                   </ul>
@@ -234,6 +238,21 @@ const Sidebar = (props) => {
                         </Link>
                       </li>
                     </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "Appointment"
+                            ? "active"
+                            : ""
+                        }
+                        to="/appointment"
+                      >
+                      Appointment(Health Checkup)
+                      </Link>
+                    </li>
+
+
+
                   </ul>
                 </li>
 
@@ -401,6 +420,18 @@ const Sidebar = (props) => {
                         Consultation
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "DocterSchedule"
+                            ? "active"
+                            : ""
+                        }
+                        to="/doctor/doctor-schedule"
+                      >
+                        Docter Schedule
+                      </Link>
+                    </li>
                   </ul>
                 </li>
 
@@ -416,7 +447,7 @@ const Sidebar = (props) => {
                     <span className="menu-side">
                       <img src={dashboard} alt="" />
                     </span>{" "}
-                    <span> BloodBank </span> <span className="menu-arrow" />
+                    <span> Blood Bank </span> <span className="menu-arrow" />
                   </Link>
                   <ul
                     style={{
@@ -433,7 +464,7 @@ const Sidebar = (props) => {
                         }
                         to="/blood/bloodGroup"
                       >
-                        BloodGroup
+                        Blood Group
                       </Link>
                     </li>
                     <li>
@@ -445,7 +476,7 @@ const Sidebar = (props) => {
                         }
                         to="/blood/bloodDonor"
                       >
-                        BloodDonorDetails
+                        Blood Donor Details
                       </Link>
                     </li>
 
@@ -458,7 +489,7 @@ const Sidebar = (props) => {
                         }
                         to="/blood/bloodIssue"
                       >
-                        BloodIssueDetails
+                        Blood Issue Details
                       </Link>
                     </li>
                     <li>
@@ -470,7 +501,7 @@ const Sidebar = (props) => {
                         }
                         to="/blood/componentIssue"
                       >
-                        ComponentIssueDetails
+                        Component Issue Details
                       </Link>
                     </li>
                   </ul>

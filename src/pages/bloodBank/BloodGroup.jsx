@@ -51,10 +51,18 @@ const BloodGroup = () => {
       BloodInStock: "100 Units",
       IssuedBlood: "20 Units",
     },
+    
     {
-      key: 4,
-      slno: "4",
-      BloodCategory: "AB+",
+      key: 5,
+      slno: "5",
+      BloodCategory: "B-",
+      BloodInStock: "300 Units",
+      IssuedBlood: "30 Units",
+    },
+    {
+      key: 6,
+      slno: "6",
+      BloodCategory: "O-",
       BloodInStock: "300 Units",
       IssuedBlood: "30 Units",
     },

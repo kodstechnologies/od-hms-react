@@ -1,20 +1,25 @@
-/* eslint-disable react/jsx-no-duplicate-props */
-/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import { Table } from "antd";
-import { Link,useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import Header from "../layouts/header";
 import Sidebar from "../../components/Sidebar";
-import { plusicon, refreshicon, pdficon, pdficon3, pdficon4, searchnormal } from "../../components/imagepath";
+import {
+  searchnormal,
+  pdficon,
+  pdficon3,
+  pdficon4,
+} from "../../components/imagepath";
 import Button from "../../components/ui_elements/Button";
 
-const ComponentIssue = () => {
+const DoctorSchedule = () => {
+  const navigate = useNavigate();
+
+  // Row selection state
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-    const navigate = useNavigate();
 
   const onSelectChange = (newSelectedRowKeys) => {
-    console.log("selectedRowKeys changed: ", selectedRowKeys);
+    console.log("selectedRowKeys changed: ", newSelectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
   };
 
@@ -23,65 +28,47 @@ const ComponentIssue = () => {
     onChange: onSelectChange,
   };
 
-  const handleDelete = (id) => {
-    console.log("Delete row with ID: ", id);
-    // Implement the delete logic here
-  };
-
-  const handleEdit = (id) => {
-    console.log("Edit row with ID: ", id);
-    // Implement the edit logic here
-  };
-
-  const handleAddBloodComponent= () => {
-    navigate("/blood/componentIssue/add");
-  };
-
-  const datasource = [
+  // Sample data
+  const dataSource = [
     {
       key: 1,
       slno: "1",
-      donorName: "Murugesh",
-      uhid: "12345",
-      issueDate: "2025-02-26",
-      receivedTo: "Hospital A",
-      bloodGroup: "A+",
-      component: "Platelet",
-      gender: "Male",
-      bagNo: "A123",
-      volume: "1 Unit",
-      note: "Urgent",
+      doctorName: "Dr.Madan Gopal",
+      department: "Cardiology",
+      availableDays: "Mon, Wed, Fri",
+      availableTime: "9 AM - 12 PM",
+      status: "Active",
     },
     {
       key: 2,
       slno: "2",
-      donorName: "Ganesh",
-      uhid: "12346",
-      issueDate: "2025-02-25",
-      receivedTo: "Hospital B",
-      bloodGroup: "B+",
-      component: "Plasma",
-      gender: "Female",
-      bagNo: "B123",
-      volume: "2 Units",
-      note: "Routine",
+      doctorName: "Dr. Mohan Gupta",
+      department: "Neurology",
+      availableDays: "Tue, Thu",
+      availableTime: "10 AM - 2 PM",
+      status: "Inactive",
     },
     {
-      key: 3,
-      slno: "3",
-      donorName: "Ramesh",
-      uhid: "12346",
-      issueDate: "2025-02-25",
-      receivedTo: "Hospital B",
-      bloodGroup: "B+",
-      component: "Plasma",
-      gender: "Female",
-      bagNo: "B123",
-      volume: "2 Units",
-      note: "Routine",
-    },
+        key: 3,
+        slno: "3",
+        doctorName: "Dr.Manoj Ganesan",
+        department: "Dentist",
+        availableDays: "wed, Thu",
+        availableTime: "12 AM - 2 PM",
+        status: "Active",
+      },
+      {
+        key: 4,
+        slno: "4",
+        doctorName: "Dr.Madan Gowrye",
+        department: "Psycologist",
+        availableDays: "sat-sun",
+        availableTime: "9AM - 10 PM",
+        status: "Inactive",
+      },
   ];
 
+  // Define columns
   const columns = [
     {
       title: "No.",
@@ -89,54 +76,39 @@ const ComponentIssue = () => {
       sorter: (a, b) => a.slno - b.slno,
     },
     {
-      title: "Donor Name",
-      dataIndex: "donorName",
-      sorter: (a, b) => a.donorName.length - b.donorName.length,
+      title: "Doctor Name",
+      dataIndex: "doctorName",
+      sorter: (a, b) => a.doctorName.localeCompare(b.doctorName),
     },
     {
-      title: "UHID",
-      dataIndex: "uhid",
-      sorter: (a, b) => a.uhid.localeCompare(b.uhid),
+      title: "Department",
+      dataIndex: "department",
+      sorter: (a, b) => a.department.localeCompare(b.department),
     },
     {
-      title: "Issue Date",
-      dataIndex: "issueDate",
-      sorter: (a, b) => a.issueDate.localeCompare(b.issueDate),
+      title: "Available Days",
+      dataIndex: "availableDays",
+      sorter: (a, b) => a.availableDays.localeCompare(b.availableDays),
     },
     {
-      title: "Received To",
-      dataIndex: "receivedTo",
-      sorter: (a, b) => a.receivedTo.length - b.receivedTo.length,
+      title: "Available Time",
+      dataIndex: "availableTime",
+      sorter: (a, b) => a.availableTime.localeCompare(b.availableTime),
     },
     {
-      title: "Blood Group",
-      dataIndex: "bloodGroup",
-      sorter: (a, b) => a.bloodGroup.localeCompare(b.bloodGroup),
-    },
-    {
-      title: "Component",
-      dataIndex: "component",
-      sorter: (a, b) => a.component.localeCompare(b.component),
-    },
-    {
-      title: "Gender",
-      dataIndex: "gender",
-      sorter: (a, b) => a.gender.localeCompare(b.gender),
-    },
-    {
-      title: "Bag No.",
-      dataIndex: "bagNo",
-      sorter: (a, b) => a.bagNo.length - b.bagNo.length,
-    },
-    {
-      title: "Volume (Unit)",
-      dataIndex: "volume",
-      sorter: (a, b) => a.volume.localeCompare(b.volume),
-    },
-    {
-      title: "Note",
-      dataIndex: "note",
-      sorter: (a, b) => a.note.length - b.note.length,
+      title: "Status",
+      dataIndex: "status",
+      render: (text) => (
+        <>
+          {text === "Active" && (
+            <span className="custom-badge status-green">{text}</span>
+          )}
+          {text === "Inactive" && (
+            <span className="custom-badge status-pink">{text}</span>
+          )}
+        </>
+      ),
+      sorter: (a, b) => a.status.localeCompare(b.status),
     },
     {
       title: "Action",
@@ -153,7 +125,7 @@ const ComponentIssue = () => {
               <i className="fas fa-ellipsis-v" />
             </Link>
             <div className="dropdown-menu dropdown-menu-end">
-              <Link className="dropdown-item" to="/edit-component-issue">
+              <Link className="dropdown-item" to="/doctor/doctor-schedule-edit">
                 <i className="far fa-edit me-2" />
                 Edit
               </Link>
@@ -161,9 +133,10 @@ const ComponentIssue = () => {
                 className="dropdown-item"
                 to="#"
                 data-bs-toggle="modal"
-                data-bs-target="#delete_component_issue"
+                data-bs-target="#delete_doctor_schedule"
               >
-                <i className="fa fa-trash-alt m-r-5"></i> Delete
+                <i className="fa fa-trash-alt m-r-5" />
+                Delete
               </Link>
             </div>
           </div>
@@ -172,14 +145,16 @@ const ComponentIssue = () => {
     },
   ];
 
+  // Navigate to Add Schedule
+  const handleAddSchedule = () => {
+    navigate("/doctor/doctor-schedule-add");
+  };
+
   return (
     <>
       <Header />
-      <Sidebar
-        id="blood-menu-item"
-        id1="blood-menu-items"
-        activeClassName="ComponentIssue"
-      />
+      <Sidebar id="doctor-dropmenu" id1="doctor-items" activeClassName="DocterSchedule" />
+     
       <div className="page-wrapper">
         <div className="content">
           {/* Page Header */}
@@ -188,19 +163,21 @@ const ComponentIssue = () => {
               <div className="col-sm-12">
                 <ul className="breadcrumb">
                   <li className="breadcrumb-item">
-                    <Link to="#">Blood Bank </Link>
+                    <Link to="#">Doctor Management</Link>
                   </li>
                   <li className="breadcrumb-item">
                     <i className="feather-chevron-right">
                       <FeatherIcon icon="chevron-right" />
                     </i>
                   </li>
-                  <li className="breadcrumb-item active">Component Issue</li>
+                  <li className="breadcrumb-item active">Doctor Schedule</li>
                 </ul>
               </div>
             </div>
           </div>
           {/* /Page Header */}
+
+          {/* Table Section */}
           <div className="row">
             <div className="col-sm-12">
               <div className="card card-table show-entire">
@@ -210,7 +187,7 @@ const ComponentIssue = () => {
                     <div className="row align-items-center">
                       <div className="col">
                         <div className="doctor-table-blk">
-                          <h3>Component Issue List</h3>
+                          <h3>Doctor Schedule List</h3>
                           <div className="doctor-search-blk">
                             <div className="top-nav-search table-search-blk">
                               <form>
@@ -224,20 +201,22 @@ const ComponentIssue = () => {
                                 </Link>
                               </form>
                             </div>
-                            <div className="text-end mt-6" style={{ marginLeft: "390px" }}>
-                              <Button onClick={handleAddBloodComponent}>
-                                Add Blood Component
+                            <div
+                              className="text-end mt-6"
+                              style={{ marginLeft: "470px" }}
+                            >
+                              <Button onClick={handleAddSchedule}>
+                                Add Schedule
                               </Button>
                             </div>
                           </div>
                         </div>
                       </div>
                       <div className="col-auto text-end float-end ms-auto download-grp">
-                        <Link to="#" className=" me-2">
+                        <Link to="#" className="me-2">
                           <img src={pdficon} alt="#" />
                         </Link>
-                        <Link to="#" className=" me-2"></Link>
-                        <Link to="#" className=" me-2">
+                        <Link to="#" className="me-2">
                           <img src={pdficon3} alt="#" />
                         </Link>
                         <Link to="#">
@@ -251,16 +230,14 @@ const ComponentIssue = () => {
                     <Table
                       rowSelection={rowSelection}
                       columns={columns}
-                      dataSource={datasource}
+                      dataSource={dataSource}
                       rowKey={(record) => record.key}
                       pagination={{
-                        total: datasource.length,
+                        total: dataSource.length,
                         showTotal: (total, range) =>
                           `Showing ${range[0]} to ${range[1]} of ${total} entries`,
                       }}
-                      style={{
-                        backgroundColor: "#f2f2f2", // Replace with your desired background color for the table
-                      }}
+                      style={{ backgroundColor: "#f2f2f2" }}
                     />
                   </div>
                 </div>
@@ -270,16 +247,16 @@ const ComponentIssue = () => {
         </div>
       </div>
 
-      {/* Modal for Deleting Component Issue */}
+      {/* Modal for Deleting Doctor Schedule */}
       <div
-        id="delete_component_issue"
+        id="delete_doctor_schedule"
         className="modal fade delete-modal"
         role="dialog"
       >
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
             <div className="modal-body text-center">
-              <h3>Are you sure want to delete this Component Issue?</h3>
+              <h3>Are you sure you want to delete this schedule?</h3>
               <div className="m-t-20">
                 <Link
                   to="#"
@@ -300,4 +277,4 @@ const ComponentIssue = () => {
   );
 };
 
-export default ComponentIssue;
+export default DoctorSchedule;

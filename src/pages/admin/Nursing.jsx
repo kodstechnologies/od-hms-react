@@ -8,7 +8,8 @@ import { Table } from "antd";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import { plusicon, refreshicon, searchnormal } from "../../components/imagepath";
 import Button from "../../components/ui_elements/Button";
-const DietPlan = () => {
+
+const Nursing = () => {
   const navigate = useNavigate();
 
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
@@ -16,78 +17,55 @@ const DietPlan = () => {
   const data = [
     {
       key: "1",
-      patientName: "Ram Kumar",
+      patientName: "Shivaji",
       room: 201,
-      dietType: "Diabetic",
-      mealTime: "Breakfast",
-      status: "Delivered",
+      careType: "Acute Care",
+      visitTime: "09:00 AM",
+      nurseName: "Amurutha",
     },
     {
       key: "2",
-      patientName: "Raj Kumar",
+      patientName: "Salman",
       room: 305,
-      dietType: "Low Sodium",
-      mealTime: "Lunch",
-      status: "Preparing",
+      careType: "Chronic Care",
+      visitTime: "10:30 AM",
+      nurseName: "Ambika",
     },
     {
       key: "3",
-      patientName: "Ravi Kumar",
+      patientName: "Sharukhan",
       room: 103,
-      dietType: "Liquid",
-      mealTime: "Lunch",
-      status: "Scheduled",
+      careType: "Home Health Care",
+      visitTime: "02:00 PM",
+      nurseName: "Deepika",
     },
   ];
 
   const columns = [
     {
-      title: "Patient",
+      title: "Patient Name",
       dataIndex: "patientName",
       key: "patientName",
     },
     {
-      title: "Room",
+      title: "Room No",
       dataIndex: "room",
       key: "room",
     },
     {
-      title: "Diet Type",
-      dataIndex: "dietType",
-      key: "dietType",
+      title: "Care Type",
+      dataIndex: "careType",
+      key: "careType",
     },
     {
-      title: "Meal Time",
-      dataIndex: "mealTime",
-      key: "mealTime",
+      title: "Visit Time",
+      dataIndex: "visitTime",
+      key: "visitTime",
     },
     {
-      title: "Status",
-      dataIndex: "status",
-      key: "status",
-      render: (status) => (
-        <span
-          style={{
-            padding: "5px 10px",
-            borderRadius: "20px",
-            color:
-              status === "Delivered"
-                ? "green"
-                : status === "Preparing"
-                ? "orange"
-                : "blue",
-            backgroundColor:
-              status === "Delivered"
-                ? "rgba(0, 255, 0, 0.2)"
-                : status === "Preparing"
-                ? "rgba(255, 165, 0, 0.2)"
-                : "rgba(0, 0, 255, 0.2)",
-            fontWeight: "bold",
-          }}
-        >
-          {status}
-        </span>
-      ),
+      title: "Nurse Name",
+      dataIndex: "nurseName",
+      key: "nurseName",
     },
     {
       title: "Action",
@@ -104,7 +82,7 @@ const DietPlan = () => {
               <i className="fas fa-ellipsis-v" />
             </Link>
             <div className="dropdown-menu dropdown-menu-end">
-              <Link className="dropdown-item" to="/edit-diet-plan">
+              <Link className="dropdown-item" to="/edit-nursing-care">
                 <i className="far fa-edit me-2" />
                 Edit
               </Link>
@@ -112,7 +90,7 @@ const DietPlan = () => {
                 className="dropdown-item"
                 to="#"
                 data-bs-toggle="modal"
-                data-bs-target="#delete_diet_plan"
+                data-bs-target="#delete_nursing_care"
               >
                 <i className="fa fa-trash-alt m-r-5"></i> Delete
               </Link>
@@ -131,14 +109,14 @@ const DietPlan = () => {
     },
   };
 
-  const handleAddDiet = () => {
-    navigate("/admin/diet-plan/add");
+  const handleAddNursingCare = () => {
+    navigate("/admin/nursing-add");
   };
 
   return (
     <>
       <Header />
-      <Sidebar id="menu-item" id1="menu-items" activeClassName="DietPlan" />
+      <Sidebar id="menu-item" id1="menu-items" activeClassName="Nursing" />
       <div className="page-wrapper">
         <div className="content">
           {/* Page Header */}
@@ -147,21 +125,19 @@ const DietPlan = () => {
               <div className="col-sm-12">
                 <ul className="breadcrumb">
                   <li className="breadcrumb-item">
-                    <Link to="#">Diet Management</Link>
+                    <Link to="#">Nursing Management</Link>
                   </li>
                   <li className="breadcrumb-item">
                     <i className="feather-chevron-right">
                       <FeatherIcon icon="chevron-right" />
                     </i>
                   </li>
-                  <li className="breadcrumb-item active">Diet Plan</li>
+                  <li className="breadcrumb-item active">Nursing Care</li>
                 </ul>
               </div>
             </div>
           </div>
-          {/* /Page Header */}
 
-          {/* Section 1: Today's Diet Schedule */}
           <div className="row">
             <div className="col-sm-12">
               <div className="card card-table show-entire">
@@ -171,7 +147,7 @@ const DietPlan = () => {
                     <div className="row align-items-center">
                       <div className="col">
                         <div className="doctor-table-blk">
-                          <h3>Today's Diet Schedule</h3>
+                          <h3>Today's Nursing Schedule</h3>
                           <div className="doctor-search-blk">
                             <div className="top-nav-search table-search-blk">
                               <form>
@@ -185,19 +161,17 @@ const DietPlan = () => {
                                 </Link>
                               </form>
                             </div>
-                            <div className="text-end mt-6"style={{marginLeft:"550px"}}>
-                    <Button onClick={handleAddDiet}>
-                      Add Diet Plan
-                    </Button>
-                  </div>
-                            
                           </div>
-                          
                         </div>
                       </div>
                     </div>
                   </div>
                   {/* /Table Header */}
+                  <div className="text-end mt-6" style={{ marginLeft: "550px" }}>
+                    <Button onClick={handleAddNursingCare}>
+                      Add Nursing Care
+                    </Button>
+                  </div>
                   <div className="table-responsive doctor-list">
                     <Table
                       rowSelection={rowSelection}
@@ -219,58 +193,55 @@ const DietPlan = () => {
             </div>
           </div>
 
-          {/* Section 2: Regular Diet and Diabetic Diet in the same row */}
+          {/* Upcoming Tasks Section */}
           <div className="row mt-4">
-            {/* Regular Diet Section */}
             <div className="col-md-6">
-              <div
-                className="card"
-                style={{ backgroundColor: "rgb(184, 243, 201)" }}
-              >
+              <div className="card" style={{ backgroundColor: "#f3f8ff", padding: "15px" }}>
                 <div className="card-body">
-                  <div className="form-heading">
-                    <h4>Regular Diet</h4>
+                  <h5>Upcoming Tasks</h5>
+                  <div className="task-item" style={{ padding: "10px", margin: "10px 0", backgroundColor: "#FFFFED", borderRadius: "8px" }}>
+                    <p><strong>Medication Round</strong></p>
+                    <small>General Ward A</small>
+                    <span style={{ backgroundColor: "#FFEB3B", padding: "5px", borderRadius: "5px", fontWeight: "bold", float: "right" }}>In 15 mins</span>
                   </div>
-                  <p>
-                    <strong>Balanced nutrition</strong>
-                    <br />
-                    • No restrictions
-                    <br />
-                    • Regular portions
-                    <br />
-                    • All food groups included
-                  </p>
+                  <div className="task-item" style={{ padding: "10px", margin: "10px 0", backgroundColor: "#DEEFF5", borderRadius: "8px" }}>
+                    <p><strong>Patient Monitoring</strong></p>
+                    <small>ICU Ward</small>
+                    <span style={{ backgroundColor: "#42A5F5", padding: "5px", borderRadius: "5px", fontWeight: "bold", float: "right" }}>In 30 mins</span>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Diabetic Diet Section */}
+            {/* Staff Schedule Section */}
             <div className="col-md-6">
-              <div
-                className="card"
-                style={{ backgroundColor: "rgb(165, 200, 245)" }}
-              >
+              <div className="card" style={{ backgroundColor: "#E8F5E9", padding: "15px" }}>
                 <div className="card-body">
-                  <div className="form-heading">
-                    <h4>Diabetic Diet</h4>
+                  <h5>Staff Schedule</h5>
+                  <div className="schedule-item" style={{ padding: "10px", margin: "10px 0", backgroundColor: "#C8E6C9", borderRadius: "8px" }}>
+                    <p><strong>Morning Shift</strong></p>
+                    <small>6:00 AM - 2:00 PM</small>
+                    <span style={{ color: "green", fontWeight: "bold", float: "right" }}>8 Nurses</span>
                   </div>
-                  <p>
-                    <strong>Controlled carbohydrates</strong>
-                    <br />
-                    • Low sugar content
-                    <br />
-                    • Balanced meals
-                    <br />
-                    • Specific timing
-                  </p>
+                  <div className="schedule-item" style={{ padding: "10px", margin: "10px 0", backgroundColor: "#C8E6C9", borderRadius: "8px" }}>
+                    <p><strong>Afternoon Shift</strong></p>
+                    <small>2:00 PM - 10:00 PM</small>
+                    <span style={{ color: "green", fontWeight: "bold", float: "right" }}>10 Nurses</span>
+                  </div>
+                  <div className="schedule-item" style={{ padding: "10px", margin: "10px 0", backgroundColor: "#C8E6C9", borderRadius: "8px" }}>
+                    <p><strong>Night Shift</strong></p>
+                    <small>10:00 PM - 6:00 AM</small>
+                    <span style={{ color: "orange", fontWeight: "bold", float: "right" }}>6 Nurses</span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </>
   );
 };
 
-export default DietPlan;
+export default Nursing;
