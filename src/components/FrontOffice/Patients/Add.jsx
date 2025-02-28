@@ -10,7 +10,7 @@ const AddPatient = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [selectedTitle, setSelectedTitle] = useState(null);
   const [selectedRelation, setSelectedRelation] = useState(null);
-  
+
   const [title, setTitle] = useState([
     { value: 2, label: "Mr." },
     { value: 3, label: "Mrs." },
@@ -160,10 +160,6 @@ const AddPatient = () => {
                               }),
                             }}
                           />
-                          {/* <input
-                      className="form-control datetimepicker"
-                      type="text"
-                    /> */}
                         </div>
                       </div>
                       <div className="col-12">
