@@ -105,6 +105,16 @@ const Sidebar = (props) => {
                     <li>
                       <Link
                         className={
+                          props?.activeClassName === "doctors" ? "active" : ""
+                        }
+                        to="/admin/doctors"
+                      >
+                        Doctors
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
                           props?.activeClassName === "DietPlan" ? "active" : ""
                         }
                         to="/admin/diet-plan"
@@ -215,13 +225,24 @@ const Sidebar = (props) => {
                        Token Board
                       </Link>
                     </li>
-
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "Feedback"
+                            ? "active"
+                            : ""
+                        }
+                        to="/patient-feedback"
+                      >
+                       Patient Feedback
+                      </Link>
+                    </li>
 
 
                   </ul>
                 </li>
 
-                {/* recption */}
+                {/* reception */}
                 <li className="submenu">
                   {/* <Link to="#" id="reception-dropmenu" onClick={(e) => handleClick(e, "reception-dropmenu", "reception-items")}></Link> */}
                   <Link

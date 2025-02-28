@@ -15,6 +15,10 @@ import EditProfile from "./components/pages/login/EditProfile";
 import BlankPage from "./components/pages/login/BlankPage";
 import GalleryImage from "./components/pages/Gallery/Gallery";
 import Dashboard from "./pages/admin/dashboard";
+import Doctors from "./pages/admin/Doctors"
+import AddDoctor from "./pages/admin/AddDoctor"
+import ViewProfile from "./pages/admin/ViewProfile";
+import DoctorSetting from "./pages/admin/DoctorSetting";
 import Inventory from "./pages/pharmacy/inventory";
 import AddInventory from "./pages/pharmacy/addInventory";
 import FullLayout from "./pages/layouts/FullLayout";
@@ -22,6 +26,7 @@ import Consultation from "./pages/doctor/Consultation";
 import Schedule from "./pages/doctor/Schedule";
 import BillingAndcashiering from "./pages/reception/billingAndcashiering";
 import DischargeSummary from "./pages/reception/dischargeSummary";
+import AddDischargeForm from "./pages/reception/AddDischargeForm";
 import MedicationAdministration from "./pages/reception/medicationAdministration";
 import AddPatientInfo from "./pages/reception/addPatientInfo";
 import Equipment from "./pages/reception/equipment";
@@ -51,6 +56,8 @@ import AddAmbulanceCall from "./pages/Ambulance/AddAmbulanceCall";
 import AmbulanceCall from "./pages/Ambulance/AmbulanceCall";
 import TokenBoard from "./pages/FrontOffice/TokenBoard";
 import AddToken from "./pages/FrontOffice/AddToken";
+import PatientFeedback from "./pages/FrontOffice/PatientFeedback";
+import AddFeedback from "./pages/FrontOffice/AddFeedback";
 import DietPlan from "./pages/admin/DietPlan";
 import AddDietPlan from "./pages/admin/AddDietPlan";
 import AddInpatient from "./components/FrontOffice/Inpatient/Add";
@@ -85,6 +92,14 @@ function Approuter() {
 
           {/* admin */}
           <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="/admin/doctors" element={<Doctors/>}/>
+          <Route path="/admin/doctors/add-doctor" element={<AddDoctor/>}/>
+          <Route path="admin/doctors/view-profile" element={<ViewProfile/>}/>
+          <Route path="admin/doctors/view-profile/doctor-setting" element={<DoctorSetting/>}/>
+
+
+
+
           <Route path="/admin/diet-plan" element={<DietPlan />} />
           <Route path="/admin/diet-plan/add" element={<AddDietPlan />} />
 
@@ -125,10 +140,12 @@ function Approuter() {
           {/* reception */}
           <Route path="/reception/billing" element={<BillingAndcashiering />} />
           <Route path="/reception/discharge" element={<DischargeSummary />} />
+          <Route path="/reception/discharge/add-discharge-form" element={<AddDischargeForm />} />
+
           <Route path="/reception/medicaladminstration" element={<MedicationAdministration />} />
           <Route path="/reception/medicaladminstration/add-mar" element={<AddPatientInfo />} />
           <Route path="/reception/equipment" element={<Equipment/>} />
-          <Route path="/reception/equipment/add-equipment" element={<AddEquipment/>} />
+          <Route path="/reception/equipment/add-equipment" element={<AddDischargeForm/>} />
 
 
 
@@ -171,6 +188,10 @@ function Approuter() {
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/token-board" element={<TokenBoard />} />
           <Route path="/token-board/add" element={<AddToken />} />
+          <Route path="/patient-feedback" element={<PatientFeedback />} />
+          <Route path="/patient-feedback/add-feedback" element={<AddFeedback />} />
+
+
 
           <Route path="/queue-management" element={<QueueManagement />} />
           <Route path="/vitals/:uhid" element={<Vitals />} />
