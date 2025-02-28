@@ -58,7 +58,7 @@ const InPatient = () => {
       render: (text, record) => (
         <span className="text-red">{text ? "MLC" : "--"}</span>
       ),
-      sorter: (a, b) => a.MLC.length - b.MLC.length,
+      // sorter: (a, b) => a.MLC.length - b.MLC.length,
     },
     {
       title: "Bed",

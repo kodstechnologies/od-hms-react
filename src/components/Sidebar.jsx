@@ -118,10 +118,226 @@ const Sidebar = (props) => {
                           props?.activeClassName === "DietPlan" ? "active" : ""
                         }
                         to="/admin/diet-plan"
-                      >Dietplan
-                        
+                      >
+                        Dietplan
                       </Link>
-                      
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "inpatient" ? "active" : ""
+                        }
+                        to="/inpatient"
+                      >
+                        Inpatient
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "patients" ? "active" : ""
+                        }
+                        to="/patients"
+                      >
+                        Patients
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "appointments"
+                            ? "active"
+                            : ""
+                        }
+                        to="/appointments"
+                      >
+                        Appointments
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "emergency" ? "active" : ""
+                        }
+                        to="/emergency"
+                      >
+                        Emergency
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "inventory" ? "active" : ""
+                        }
+                        to="/pharmacy/inventory"
+                      >
+                        Inventory
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "prescriptions"
+                            ? "active"
+                            : ""
+                        }
+                        to="/pharmacy/prescriptions"
+                      >
+                        Prescriptions(RX)
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "LabDashboard"
+                            ? "active"
+                            : ""
+                        }
+                        to="/laboratory/dashboard"
+                      >
+                        Dashboard
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "LabCollection"
+                            ? "active"
+                            : ""
+                        }
+                        to="/laboratory/collection"
+                      >
+                        Collection
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "send-receive"
+                            ? "active"
+                            : ""
+                        }
+                        to="/laboratory/send-receive"
+                      >
+                        Send/Receive
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "processing"
+                            ? "active"
+                            : ""
+                        }
+                        to="/laboratory/processing"
+                      >
+                        Processing
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "reporting" ? "active" : ""
+                        }
+                        to="/laboratory/reporting"
+                      >
+                        Reporting
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "radiology-reporting"
+                            ? "active"
+                            : ""
+                        }
+                        to="/laboratory/radiology-report"
+                      >
+                        Radiology Reporting
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "histopathology"
+                            ? "active"
+                            : ""
+                        }
+                        to="/laboratory/histopathology"
+                      >
+                        Histopathology Workflows
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "outsource" ? "active" : ""
+                        }
+                        to="/laboratory/outsource"
+                      >
+                        Outsource
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "radiology-reporting"
+                            ? "active"
+                            : ""
+                        }
+                        to="/laboratory/radiology-report"
+                      >
+                        Radiology Reporting
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "BloodGroup"
+                            ? "active"
+                            : ""
+                        }
+                        to="/blood/bloodGroup"
+                      >
+                        BloodGroup
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "BloodDonor"
+                            ? "active"
+                            : ""
+                        }
+                        to="/blood/bloodDonor"
+                      >
+                        BloodDonorDetails
+                      </Link>
+                    </li>
+
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "BloodIssue"
+                            ? "active"
+                            : ""
+                        }
+                        to="/blood/bloodIssue"
+                      >
+                        BloodIssueDetails
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "ComponentIssue"
+                            ? "active"
+                            : ""
+                        }
+                        to="/blood/componentIssue"
+                      >
+                        ComponentIssueDetails
+                      </Link>
                     </li>
                     <li>
                       <Link
@@ -133,7 +349,6 @@ const Sidebar = (props) => {
                         to="/admin/operative-info"
                       >
                         Operative-info
-                          
                       </Link>
                     </li>
                     <li>
@@ -248,49 +463,12 @@ const Sidebar = (props) => {
                       >
                         Token Board
                       </Link>
-                      <li>
-                        <Link
-                          className={
-                            props?.activeClassName === "" ? "active" : ""
-                          }
-                          to="/bed-availability"
-                        >
-                          Bed Availability
-                        </Link>
-                      </li>
                     </li>
-                    <li>
-                      <Link
-                        className={
-                          props?.activeClassName === "Appointment"
-                            ? "active"
-                            : ""
-                        }
-                        to="/appointment"
-                      >
-                      Appointment(Health Checkup)
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={
-                          props?.activeClassName === "Feedback"
-                            ? "active"
-                            : ""
-                        }
-                        to="/patient-feedback"
-                      >
-                       Patient Feedback
-                      </Link>
-                    </li>
-
-
                   </ul>
                 </li>
 
                 {/* reception */}
                 <li className="submenu">
-                  {/* <Link to="#" id="reception-dropmenu" onClick={(e) => handleClick(e, "reception-dropmenu", "reception-items")}></Link> */}
                   <Link
                     to="#"
                     id="reception-dropmenu"
@@ -342,9 +520,7 @@ const Sidebar = (props) => {
                     <li>
                       <Link
                         className={
-                          props?.activeClassName === "equipment"
-                            ? "active"
-                            : ""
+                          props?.activeClassName === "equipment" ? "active" : ""
                         }
                         to="/reception/equipment"
                       >
@@ -529,6 +705,28 @@ const Sidebar = (props) => {
                         Component Issue Details
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "billing" ? "active" : ""
+                        }
+                        to="/reception/billing"
+                      >
+                        Billing And Cashiering
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "medicalrecord"
+                            ? "active"
+                            : ""
+                        }
+                        to="/reception/medicalrecord"
+                      >
+                        Medical Record Inventory
+                      </Link>
+                    </li>
                   </ul>
                 </li>
 
@@ -644,9 +842,7 @@ const Sidebar = (props) => {
                     <li>
                       <Link
                         className={
-                          props?.activeClassName === "LabOutsource"
-                            ? "active"
-                            : ""
+                          props?.activeClassName === "outsource" ? "active" : ""
                         }
                         to="/laboratory/outsource"
                       >
@@ -730,75 +926,6 @@ const Sidebar = (props) => {
                     </li>
                   </ul>
                 </li>
-
-                 
-                 {/* HR */}
-                 <li className="submenu">
-                  <Link
-                    to="#"
-                    id="hr-menu-item"
-                    onClick={(e) => {
-                      handleClick(
-                        e,
-                        "hr-menu-item",
-                        "hr-menu-items"
-                      );
-                    }}
-                  >
-                    <span className="menu-side">
-                      <img src={dashboard} alt="" />
-                    </span>{" "}
-                    <span> HRMS </span> <span className="menu-arrow" />
-                  </Link>
-                  <ul
-                    style={{
-                      display: sidebar === "HRMS" ? "block" : "none",
-                    }}
-                    className="hr-menu-items"
-                  >
-                    <li>
-                      <Link
-                        className={
-                          props?.activeClassName === "staff-list" ? "active" : ""
-                        }
-                        to="/hr/staff-list"
-                      >
-                        Staff List
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={
-                          props?.activeClassName === "leaves" ? "active" : ""
-                        }
-                        to="/hr/leaves"
-                      >
-                        Leaves
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={
-                          props?.activeClassName === "holidays" ? "active" : ""
-                        }
-                        to="/hr/holidays"
-                      >
-                        Holidays
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        className={
-                          props?.activeClassName === "attendance" ? "active" : ""
-                        }
-                        to="/hr/attendance"
-                      >
-                        Attendence
-                      </Link>
-                    </li>
-                  </ul>
-                </li>
-
               </ul>
 
               <div className="logout-btn">
