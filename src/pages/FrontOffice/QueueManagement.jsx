@@ -49,12 +49,12 @@ const QueueManagement = () => {
 
   const columns = [
     {
-      title: "Sl.Num",
+      title: "Sl.No",
       dataIndex: "serialNumber",
       sorter: (a, b) => a.serialNumber - b.serialNumber,
     },
     {
-      title: "UHID",
+      title: "Token No",
       dataIndex: "uhid",
       sorter: (a, b) => a.uhid.localeCompare(b.uhid),
     },

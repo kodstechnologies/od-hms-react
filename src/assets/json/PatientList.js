@@ -12,9 +12,6 @@ export default {
             appointments: [
                 { date: "2025-02-28", mode: "Walk-In", status: "Completed" },
                 { date: "2025-01-25", mode: "Walk-In", status: "Completed" },
-                { date: "2025-01-02", mode: "Walk-In", status: "Completed" },
-                { date: "2024-12-12", mode: "Walk-In", status: "Completed" },
-                { date: "2024-09-10", mode: "Online", status: "Completed" }
             ]
         },
         {

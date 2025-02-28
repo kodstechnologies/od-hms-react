@@ -100,7 +100,7 @@ const Vitals = () => {
                         </div>
                     </div>
                     <Card>
-                        <CardHeader title={`Vital Form - ${params.uhid}`} />
+                        <CardHeader title={`Vital Form - ${params.uhid ?? ''}`} />
                         <CardBody>
                             <form method="post">
                                 <div className="row">
