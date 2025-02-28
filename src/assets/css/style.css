@@ -11196,3 +11196,43 @@ tr.ant-table-row.ant-table-row-level-0.ant-table-row-selected,
   top: 26%;
 
 }
+
+
+.dash-icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* Small */
+.dash-icon-circle-sm {
+  width: 32px;
+  height: 32px;
+  padding: 6px;
+  font-size: 14px;
+}
+
+/* Medium */
+.dash-icon-circle-md {
+  width: 48px;
+  height: 48px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+/* Large */
+.dash-icon-circle-lg {
+  width: 64px;
+  height: 64px;
+  padding: 14px;
+  font-size: 24px;
+}
+
+/* Extra Large */
+.dash-icon-circle-xl {
+  width: 80px;
+  height: 80px;
+  padding: 18px;
+  font-size: 30px;
+}

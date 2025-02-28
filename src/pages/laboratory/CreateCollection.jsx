@@ -1,5 +1,7 @@
 import Header from "../layouts/header";
 import Sidebar from "../../components/Sidebar";
+import FeatherIcon from "feather-icons-react/build/FeatherIcon";
+import { Link } from "react-router-dom";
 
 const CreateLabCollection = () => {
   return (
@@ -15,6 +17,25 @@ const CreateLabCollection = () => {
           {/* Page Header */}
           <div className="page-header">
             <div className="container-fluid p-4">
+              <div className="col-sm-12  mb-4">
+                <ul className="breadcrumb">
+                  <li className="breadcrumb-item">
+                    <Link to="/laboratory">Laboratory </Link>
+                  </li>
+                  <li className="breadcrumb-item">
+                    <FeatherIcon icon="chevron-right" />
+                  </li>
+                  <li className="breadcrumb-item">
+                    <Link to="/laboratory/collection">
+                    Lab Collection
+                    </Link>
+                    </li>
+                  <li className="breadcrumb-item">
+                    <FeatherIcon icon="chevron-right" />
+                  </li>
+                  <li className="breadcrumb-item active">Create</li>
+                </ul>
+              </div>
               {/* Header Section */}
               <div className="mb-4">
                 <h2 className="fw-bold">Create Collection</h2>
@@ -53,14 +74,30 @@ const CreateLabCollection = () => {
 
                   <div className="row mb-3">
                     <div className="col-md-6">
-                      <label htmlFor="sampleType" className="form-label">
-                        Sample Type
+                      <label className="form-label">Assign Phlebotomist</label>
+                      <select className="form-select" required>
+                        <option value="">Select phlebotomist</option>
+                        <option>Dr. Sarah</option>
+                        <option>Dr. Michael</option>
+                        <option>Dr. Lisa</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="row mb-3">
+                    <div className="col-md-6">
+                      <label htmlFor="scanType" className="form-label">
+                        Scan Type
                       </label>
-                      <select className="form-select" id="sampleType">
-                        <option>Blood Sample</option>
-                        <option>Urine Sample</option>
-                        <option>Tissue Sample</option>
-                        <option>Swab Sample</option>
+                      <select className="form-select" id="scanType">
+                        <option>X-Ray</option>
+                        <option>MRI</option>
+                        <option>CT Scan</option>
+                        <option>Ultrasound</option>
+                        <option>PET Scan</option>
+                        <option>Mammography</option>
+                        <option>DEXA Scan (Bone Density Test)</option>
+                        <option>Fluoroscopy</option>
                       </select>
                     </div>
                     <div className="col-md-6">
@@ -113,6 +150,30 @@ const CreateLabCollection = () => {
                       />
                     </div>
                   </div>
+                  <div className="row mb-3">
+                    <div className="col-md-6">
+                      <label htmlFor="patientAge" className="form-label">
+                        Age
+                      </label>
+                      <input
+                        type="number"
+                        className="form-control"
+                        id="patientAge"
+                        min="0"
+                      />
+                    </div>
+                    <div className="col-md-6">
+                      <label htmlFor="patientGender" className="form-label">
+                        Gender
+                      </label>
+                      <select className="form-select" id="patientGender">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
 
                   <div className="mb-3">
                     <label htmlFor="specialInstructions" className="form-label">
@@ -123,6 +184,16 @@ const CreateLabCollection = () => {
                       id="specialInstructions"
                       rows="3"
                     ></textarea>
+                  </div>
+
+                  {/* Submit Buttons */}
+                  <div className="col-12">
+                    <button type="submit" className="btn btn-primary">
+                      Submit
+                    </button>
+                    <button type="button" className="btn btn-light ms-2">
+                      Cancel
+                    </button>
                   </div>
                 </div>
               </div>

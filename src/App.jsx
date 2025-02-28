@@ -63,6 +63,26 @@ import OperationRegistration from "./pages/admin/operationRegistration";
 import LabDashboard from "./pages/laboratory/LabDashboard";
 import LabCollection from "./pages/laboratory/LabCollection";
 import CreateLabCollection from "./pages/laboratory/CreateCollection";
+import LabSendReceive from "./pages/laboratory/LabSendReceive";
+import CreateSendReceive from "./pages/laboratory/CreateSendReceive";
+import LabProcessing from "./pages/laboratory/LabProcessing";
+import CreateProcessing from "./pages/laboratory/CreateProcessing";
+import ViewProcessing from "./pages/laboratory/ViewProcessing";
+import ViewProtocol from "./pages/laboratory/ViewProtocols";
+import LabReport from "./pages/laboratory/LabReport";
+import CreateReport from "./pages/laboratory/CreateReport";
+import ViewRecords from "./pages/laboratory/ViewRecords";
+import LabRadiologyReport from "./pages/laboratory/LabRadiologyReport";
+import CreateRadiologyReport from "./pages/laboratory/CreateRadiologyReport";
+import HistopathologyWorkflows from "./pages/laboratory/LabHistopathologyWf";
+import CreateH_workflow from "./pages/laboratory/CreateHistopathologyWf";
+import LabOutsource from "./pages/laboratory/LabOutsource";
+import CreateNewOutSource from "./pages/laboratory/CreateNewOutsource";
+import LabDoorStepSampleCollection from "./pages/laboratory/LabDoorStepSampleCollection";
+import CreateDoorStepSampleCollection from "./pages/laboratory/CreateDoorStepSampleCollection";
+import SampleLogistics from "./pages/laboratory/LabSampleLogistics";
+import CreateSampleLogistics from "./pages/laboratory/CreateSampleLogistics";
+import BedAvailability from "./pages/FrontOffice/BedAvailability";
 
 function Approuter() {
   return (
@@ -125,16 +145,19 @@ function Approuter() {
           {/* reception */}
           <Route path="/reception/billing" element={<BillingAndcashiering />} />
           <Route path="/reception/discharge" element={<DischargeSummary />} />
-          <Route path="/reception/medicaladminstration" element={<MedicationAdministration />} />
-          <Route path="/reception/medicaladminstration/add-mar" element={<AddPatientInfo />} />
-          <Route path="/reception/equipment" element={<Equipment/>} />
-          <Route path="/reception/equipment/add-equipment" element={<AddEquipment/>} />
-
-
-
-
-
-
+          <Route
+            path="/reception/medicaladminstration"
+            element={<MedicationAdministration />}
+          />
+          <Route
+            path="/reception/medicaladminstration/add-mar"
+            element={<AddPatientInfo />}
+          />
+          <Route path="/reception/equipment" element={<Equipment />} />
+          <Route
+            path="/reception/equipment/add-equipment"
+            element={<AddEquipment />}
+          />
 
           {/* Blood Bank */}
           <Route path="/blood/bloodGroup" element={<BloodGroup />} />
@@ -143,21 +166,99 @@ function Approuter() {
           <Route path="/blood/bloodIssue" element={<BloodIssue />} />
           <Route path="/blood/bloodIssue/add" element={<AddBloodIssue />} />
           <Route path="/blood/componentIssue" element={<ComponentIssue />} />
-          <Route path="/blood/componentIssue/add" element={<AddComponentIssue />} />
+          <Route
+            path="/blood/componentIssue/add"
+            element={<AddComponentIssue />}
+          />
 
           {/* Ambulance */}
 
-          <Route path="/Ambulance/AmbulanceDetails" element={<AmbulanceDetails />} />
-          <Route path="/Ambulance/AmbulanceDetails/add" element={<AddAmbulanceDetails />} />
+          <Route
+            path="/Ambulance/AmbulanceDetails"
+            element={<AmbulanceDetails />}
+          />
+          <Route
+            path="/Ambulance/AmbulanceDetails/add"
+            element={<AddAmbulanceDetails />}
+          />
           <Route path="/Ambulance/AmbulanceCall" element={<AmbulanceCall />} />
 
-          <Route path="/Ambulance/AmbulanceCall/add" element={<AddAmbulanceCall />} />
-
+          <Route
+            path="/Ambulance/AmbulanceCall/add"
+            element={<AddAmbulanceCall />}
+          />
 
           {/* laboratory */}
           <Route path="/laboratory/dashboard" element={<LabDashboard />} />
           <Route path="/laboratory/collection" element={<LabCollection />} />
-          <Route path="/laboratory/collection/create" element={<CreateLabCollection />} />
+          <Route
+            path="/laboratory/collection/create"
+            element={<CreateLabCollection />}
+          />
+          <Route path="/laboratory/send-receive" element={<LabSendReceive />} />
+          <Route
+            path="/laboratory/send-receive/create"
+            element={<CreateSendReceive />}
+          />
+          <Route path="/laboratory/processing" element={<LabProcessing />} />
+          <Route
+            path="/laboratory/processing/:id"
+            element={<ViewProcessing />}
+          />
+          <Route
+            path="/laboratory/processing/protocol"
+            element={<ViewProtocol />}
+          />
+          <Route
+            path="/laboratory/processing/create"
+            element={<CreateProcessing />}
+          />
+          <Route path="/laboratory/reporting" element={<LabReport />} />
+          <Route
+            path="/laboratory/reporting/record"
+            element={<ViewRecords />}
+          />
+          <Route
+            path="/laboratory/reporting/create"
+            element={<CreateReport />}
+          />
+          <Route
+            path="/laboratory/radiology-report"
+            element={<LabRadiologyReport />}
+          />
+          <Route
+            path="/laboratory/radiology-report/create"
+            element={<CreateRadiologyReport />}
+          />
+          <Route
+            path="/laboratory/histopathology"
+            element={<HistopathologyWorkflows />}
+          />
+          <Route
+            path="/laboratory/histopathology/create"
+            element={<CreateH_workflow />}
+          />
+          <Route path="/laboratory/outsource" element={<LabOutsource />} />
+          <Route
+            path="/laboratory/outsource/create"
+            element={<CreateNewOutSource />}
+          />
+          <Route
+            path="/laboratory/doorstepsamplecollection"
+            element={<LabDoorStepSampleCollection />}
+          />
+          <Route
+            path="/laboratory/doorstepsamplecollection/create"
+            element={<CreateDoorStepSampleCollection />}
+          />
+          <Route
+            path="/laboratory/sample-logistics"
+            element={<SampleLogistics />}
+          />
+          <Route
+            path="/laboratory/sample-logistics/create"
+            element={<CreateSampleLogistics />}
+          />
 
           {/* front office */}
           <Route path="/outpatient" element={<Outpatient />} />
@@ -171,6 +272,7 @@ function Approuter() {
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/token-board" element={<TokenBoard />} />
           <Route path="/token-board/add" element={<AddToken />} />
+          <Route path="/bed-availability" element={<BedAvailability />} />
 
           <Route path="/queue-management" element={<QueueManagement />} />
           <Route path="/vitals/:uhid" element={<Vitals />} />

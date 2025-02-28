@@ -48,29 +48,30 @@ const LabCollection = () => {
     },
   ];
 
-  const labCollectionData = [
-    {
-      labId: "LAB001",
-      patientName: "John Doe",
-      testName: "Blood Test",
-      collectionDate: "2024-02-20",
-      status: "Completed",
-    },
-    {
-      labId: "LAB002",
-      patientName: "Jane Smith",
-      testName: "X-Ray",
-      collectionDate: "2024-02-21",
-      status: "Pending",
-    },
-    {
-      labId: "LAB003",
-      patientName: "Alice Johnson",
-      testName: "MRI Scan",
-      collectionDate: "2024-02-19",
-      status: "In Progress",
-    },
-  ];
+const labCollectionData = [
+  {
+    labId: "LAB001",
+    patientName: "Rajesh Kumar",
+    testName: "Blood Test",
+    collectionDate: "2024-02-20",
+    status: "Completed",
+  },
+  {
+    labId: "LAB002",
+    patientName: "Priya Sharma",
+    testName: "X-Ray",
+    collectionDate: "2024-02-21",
+    status: "Pending",
+  },
+  {
+    labId: "LAB003",
+    patientName: "Anita Verma",
+    testName: "MRI Scan",
+    collectionDate: "2024-02-19",
+    status: "In Progress",
+  },
+];
+
 
   return (
     <>
