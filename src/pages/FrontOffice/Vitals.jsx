@@ -113,7 +113,7 @@ const Vitals = () => {
                                         <Input text='BMI' unit='' />
                                     </div>
                                     <div className="col-lg-4">
-                                        <Input text='BP Systalic' unit='Sitting' type='number' placeholder='systolic  /  diastoic' />
+                                        <Input text='BP Systalic' type='number' placeholder='systolic  /  diastoic' />
                                     </div>
                                     <div className="col-lg-2">
                                         <Input text='Hr' unit='/min' type='number' />
@@ -135,71 +135,71 @@ const Vitals = () => {
 
                                      {/* Four-Two */}
                                      <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='eGFR' unit=''/>
                                     </div>
                                     <div className="col-2">
-                                        <Input text='' unit=''/>
+                                        <Input text='RR' />
                                     </div>
                                     <div className="col-2">
-                                        <Input text='' unit=''/>
+                                        <Input text='HC' />
                                     </div>
                                     <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='General-rbs' unit='mg/dL'/>
                                     </div>
 
                                     {/* One */}
                                     <div className="col-4">
-                                        <Input text='' unit='' />
+                                        <Input text='Pefr' unit='L/min' />
                                     </div>
                                     <div className="col-4">
-                                        <Input text='' unit='' />
+                                        <Input text='Urine Output' />
                                     </div>
                                     <div className="col-4">
-                                        <Input text='' unit='' />
+                                        <Input text='Sugar Charting' />
                                     </div>
 
                                     {/* Two */}
                                     <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='HOMA-IR' unit=''/>
                                     </div>
                                     <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='Waist Hip Ratio' unit=''/>
                                     </div>
                                     <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='NAFLD fibrosis score' unit=''/>
                                     </div>
 
                                      {/* Three */}
                                      <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='Date added to wait list' type='date'/>
                                     </div>
                                     <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='Date of Birth' type='date'/>
                                     </div>
                                     <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='Serum Creatinine' />
                                     </div>
 
                                      {/* Four */}
                                      <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='Albumin'/>
                                     </div>
                                     <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='INR'/>
                                     </div>
                                     <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='Bilirubin'/>
                                     </div>
 
                                      {/* Five */}
                                      <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='Serum Sodium'/>
                                     </div>
                                     <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='Mid Parental Height' unit=' cm'/>
                                     </div>
                                     <div className="col-4">
-                                        <Input text='' unit=''/>
+                                        <Input text='Score2-Diabetes' unit=' %'/>
                                     </div>
                                 </div>
                             </form>

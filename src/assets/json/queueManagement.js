@@ -81,7 +81,7 @@ export const queueManagementData = [
       reason: "Routine checkup",
       followUp: "No",
       followUpPlan: "None",
-      status: "Inactive",
+      status: "Cancelled",
       billing: 250,
     },
   ];
