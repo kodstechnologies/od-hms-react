@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 // import "../../src/assets/js/app";
 // import { baricon1, imguser, logo, noteicon, noteicon1, searchnormal, settingicon01, user06 } from './imagepath';
@@ -21,8 +21,10 @@ const Header = () => {
 
   const handlesidebarmobilemenu = () => {
     document.body.classList.toggle("slide-nav");
-    document.getElementsByTagName("html")[0].classList.toggle('menu-opened');
-    document.getElementsByClassName("sidebar-overlay")[0].classList.toggle("opened");
+    document.getElementsByTagName("html")[0].classList.toggle("menu-opened");
+    document
+      .getElementsByClassName("sidebar-overlay")[0]
+      .classList.toggle("opened");
   };
 
   const openDrawer = () => {
@@ -64,7 +66,12 @@ const Header = () => {
         <Link id="toggle_btn" to="#" onClick={handlesidebar}>
           <img src={baricon} alt="" />
         </Link>
-        <Link id="mobile_btn" className="mobile_btn float-start" to="#" onClick={handlesidebarmobilemenu}>
+        <Link
+          id="mobile_btn"
+          className="mobile_btn float-start"
+          to="#"
+          onClick={handlesidebarmobilemenu}
+        >
           <img src={baricon1} alt="" />
         </Link>
         <div className="top-nav-search mob-view">
@@ -81,7 +88,7 @@ const Header = () => {
         </div>
         <ul className="nav user-menu float-end">
           <li className="nav-item dropdown d-none d-sm-block">
-            <Link
+            {/* <Link
               to="#"
               className="dropdown-toggle nav-link"
               data-bs-toggle="dropdown"
@@ -208,7 +215,7 @@ const Header = () => {
               <div className="topnav-dropdown-footer">
                 <Link to="/user-activity">View all Notifications</Link>
               </div>
-            </div>
+            </div> */}
           </li>
           <li className="nav-item dropdown d-none d-sm-block">
             <Link
@@ -227,7 +234,7 @@ const Header = () => {
               data-bs-toggle="dropdown"
             >
               <div className="user-names">
-                <h5>Liam Michael </h5>
+                <h5>Manohar Prasad </h5>
                 <span>Admin</span>
               </div>
               <span className="user-img">
@@ -364,7 +371,10 @@ const Header = () => {
                       <span className="avatar">C</span>
                     </div>
                     <div className="list-body">
-                      <span className="message-author"> Catherine Manseau </span>
+                      <span className="message-author">
+                        {" "}
+                        Catherine Manseau{" "}
+                      </span>
                       <span className="message-time">12:28 AM</span>
                       <div className="clearfix"></div>
                       <span className="message-content">

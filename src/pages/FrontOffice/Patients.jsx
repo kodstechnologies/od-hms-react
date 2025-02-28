@@ -109,15 +109,11 @@ const AddPatient = () => {
       ),
     },
   ];
-  
+
   return (
     <>
       <Header />
-      <Sidebar
-        id="frontoffice"
-        id1="frontoffices"
-        activeClassName="patients"
-      />
+      <Sidebar id="frontoffice" id1="frontoffices" activeClassName="patients" />
       <div className="page-wrapper">
         <div className="content">
           {/* Page Header */}
@@ -261,14 +257,14 @@ const AddPatient = () => {
                                 </Link>
                               </form>
                             </div>
-                            <div className="add-group">
-                              <Link
-                                to="/add-patient"
-                                className="btn btn-primary add-pluss ms-2"
-                              >
-                                <img src={plusicon} alt="#" />
-                              </Link>
-                            </div>
+                          </div>
+                          <div style={{ marginLeft: "auto" }}>
+                            <Link
+                              to="/add-patient"
+                              className="btn btn-primary add-pluss ms-2"
+                            >
+                              Add Patient
+                            </Link>
                           </div>
                         </div>
                       </div>
@@ -298,7 +294,6 @@ const AddPatient = () => {
         </div>
       </div>
     </>
-    
   );
 };
 

@@ -28,7 +28,7 @@ import Prescriptions from "./pages/pharmacy/prescriptions";
 import CreateInvoice from "./pages/pharmacy/createInvoice";
 import InvoiceDetails from "./pages/pharmacy/invoiceDetails";
 import Outpatient from "./pages/FrontOffice/outPatient";
-import InPatient from "./pages/FrontOffice/inPatient";
+import InPatient from "./pages/FrontOffice/InPatient";
 import Patients from "./pages/FrontOffice/Patients";
 import Appointments from "./pages/FrontOffice/Appointments";
 import Emergency from "./pages/FrontOffice/Emergency";
@@ -50,14 +50,14 @@ import TokenBoard from "./pages/FrontOffice/TokenBoard";
 import AddToken from "./pages/FrontOffice/AddToken";
 import DietPlan from "./pages/admin/DietPlan";
 import AddDietPlan from "./pages/admin/AddDietPlan";
+import AddInpatient from "./components/FrontOffice/Inpatient/Add";
+import DoctorVisit from "./components/FrontOffice/Inpatient/DoctorVisit";
 
 function Approuter() {
   return (
-
     <>
       <BrowserRouter basename="/">
         <Routes>
-
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgotpassword" element={<ForgotPassword />} />
@@ -72,7 +72,6 @@ function Approuter() {
           <Route path="/blankpage" element={<BlankPage />} />
           <Route path="/gallery" element={<GalleryImage />} />
 
-
           {/* admin */}
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/diet-plan" element={<DietPlan />} />
@@ -80,17 +79,23 @@ function Approuter() {
 
           <Route path="/admin/outpatient" element={<Outpatient />} />
 
-
           {/* pharmacy */}
           <Route path="/pharmacy/inventory" element={<Inventory />} />
           <Route path="/pharmacy/inventory/add" element={<AddInventory />} />
           <Route path="/pharmacy/inventory/add-stock" element={<AddStock />} />
-          <Route path="/pharmacy/inventory/stock-history" element={<StockHistory />} />
+          <Route
+            path="/pharmacy/inventory/stock-history"
+            element={<StockHistory />}
+          />
           <Route path="/pharmacy/prescriptions" element={<Prescriptions />} />
-          <Route path="/pharmacy/prescriptions/create" element={<CreateInvoice />} />
-          <Route path="/pharmacy/prescriptions/view" element={<InvoiceDetails />} />
-
-
+          <Route
+            path="/pharmacy/prescriptions/create"
+            element={<CreateInvoice />}
+          />
+          <Route
+            path="/pharmacy/prescriptions/view"
+            element={<InvoiceDetails />}
+          />
 
           {/* doctor */}
           <Route path="/doctor/schedule" element={<Schedule />}></Route>
@@ -122,11 +127,17 @@ function Approuter() {
 
 
 
+          <Route
+            path="/blood/componentIssue/add"
+            element={<AddComponentIssue />}
+          />
 
           {/* front office */}
           <Route path="/outpatient" element={<Outpatient />} />
           <Route path="/outpatient/add-opd" element={<AddOPD />} />
           <Route path="/inpatient" element={<InPatient />} />
+          <Route path="/inpatient/add" element={<AddInpatient />} />
+          <Route path="/inpatient/doctor-visit" element={<DoctorVisit />} />
           <Route path="/patients" element={<Patients />} />
           <Route path="/add-patient" element={<AddPatient />} />
           <Route path="/appointments" element={<Appointments />} />
