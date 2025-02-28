@@ -63,6 +63,10 @@ import OperationRegistration from "./pages/admin/operationRegistration";
 import LabDashboard from "./pages/laboratory/LabDashboard";
 import LabCollection from "./pages/laboratory/LabCollection";
 import CreateLabCollection from "./pages/laboratory/CreateCollection";
+import CreateNewVisit from "./components/FrontOffice/Inpatient/CreateNewVisit";
+import PatientBillAccount from "./components/FrontOffice/Inpatient/PatientBillAccount";
+import DischargeForm from "./pages/FrontOffice/DischargeForm";
+import SendOrder from "./pages/FrontOffice/SendOrder";
 
 function Approuter() {
   return (
@@ -125,16 +129,19 @@ function Approuter() {
           {/* reception */}
           <Route path="/reception/billing" element={<BillingAndcashiering />} />
           <Route path="/reception/discharge" element={<DischargeSummary />} />
-          <Route path="/reception/medicaladminstration" element={<MedicationAdministration />} />
-          <Route path="/reception/medicaladminstration/add-mar" element={<AddPatientInfo />} />
-          <Route path="/reception/equipment" element={<Equipment/>} />
-          <Route path="/reception/equipment/add-equipment" element={<AddEquipment/>} />
-
-
-
-
-
-
+          <Route
+            path="/reception/medicaladminstration"
+            element={<MedicationAdministration />}
+          />
+          <Route
+            path="/reception/medicaladminstration/add-mar"
+            element={<AddPatientInfo />}
+          />
+          <Route path="/reception/equipment" element={<Equipment />} />
+          <Route
+            path="/reception/equipment/add-equipment"
+            element={<AddEquipment />}
+          />
 
           {/* Blood Bank */}
           <Route path="/blood/bloodGroup" element={<BloodGroup />} />
@@ -143,21 +150,35 @@ function Approuter() {
           <Route path="/blood/bloodIssue" element={<BloodIssue />} />
           <Route path="/blood/bloodIssue/add" element={<AddBloodIssue />} />
           <Route path="/blood/componentIssue" element={<ComponentIssue />} />
-          <Route path="/blood/componentIssue/add" element={<AddComponentIssue />} />
+          <Route
+            path="/blood/componentIssue/add"
+            element={<AddComponentIssue />}
+          />
 
           {/* Ambulance */}
 
-          <Route path="/Ambulance/AmbulanceDetails" element={<AmbulanceDetails />} />
-          <Route path="/Ambulance/AmbulanceDetails/add" element={<AddAmbulanceDetails />} />
+          <Route
+            path="/Ambulance/AmbulanceDetails"
+            element={<AmbulanceDetails />}
+          />
+          <Route
+            path="/Ambulance/AmbulanceDetails/add"
+            element={<AddAmbulanceDetails />}
+          />
           <Route path="/Ambulance/AmbulanceCall" element={<AmbulanceCall />} />
 
-          <Route path="/Ambulance/AmbulanceCall/add" element={<AddAmbulanceCall />} />
-
+          <Route
+            path="/Ambulance/AmbulanceCall/add"
+            element={<AddAmbulanceCall />}
+          />
 
           {/* laboratory */}
           <Route path="/laboratory/dashboard" element={<LabDashboard />} />
           <Route path="/laboratory/collection" element={<LabCollection />} />
-          <Route path="/laboratory/collection/create" element={<CreateLabCollection />} />
+          <Route
+            path="/laboratory/collection/create"
+            element={<CreateLabCollection />}
+          />
 
           {/* front office */}
           <Route path="/outpatient" element={<Outpatient />} />
@@ -165,6 +186,17 @@ function Approuter() {
           <Route path="/inpatient" element={<InPatient />} />
           <Route path="/inpatient/add" element={<AddInpatient />} />
           <Route path="/inpatient/doctor-visit" element={<DoctorVisit />} />
+          <Route
+            path="/inpatient/doctor-visit/create-new-visit"
+            element={<CreateNewVisit />}
+          />
+          <Route
+            path="/inpatient/patient-bill-account"
+            element={<PatientBillAccount />}
+          />
+          <Route path="/inpatient/discharge-form" element={<DischargeForm />} />
+          <Route path="/inpatient/send-order" element={<SendOrder />} />
+          <Route path="/inpatient/vital-details" element={<Vitals />} />
           <Route path="/patients" element={<Patients />} />
           <Route path="/add-patient" element={<AddPatient />} />
           <Route path="/appointments" element={<Appointments />} />

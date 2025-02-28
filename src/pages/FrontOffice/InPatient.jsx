@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import FeatherIcon from "feather-icons-react";
 import { onShowSizeChange, itemRender } from "../../components/Pagination";
 
-import { plusicon, searchnormal } from "../../components/imagepath";
+import { searchnormal } from "../../components/imagepath";
 import CountUp from "react-countup";
 import InpatientList from "../../assets/json/InpatientList";
 
@@ -113,19 +113,20 @@ const InPatient = () => {
                 <i className="fas fa-ellipsis-v" />
               </Link>
               <div className="dropdown-menu dropdown-menu-end">
-                <Link
-                  className="dropdown-item"
-                  to="#"
-                  data-bs-toggle="modal"
-                  data-bs-target="#delete_patient"
-                >
-                  <i className="fa fa-trash-alt m-r-5"></i> View Details
+                <Link className="dropdown-item" to="patient-bill-account">
+                  Patient Bill Account
                 </Link>
-                <Link
-                  className="dropdown-item"
-                  to="doctor-visit"
-                >
+                <Link className="dropdown-item" to="doctor-visit">
                   Doctor Visit
+                </Link>
+                <Link className="dropdown-item" to="discharge-form">
+                  Discharge Form
+                </Link>
+                <Link className="dropdown-item" to="send-order">
+                  Send Order
+                </Link>
+                <Link className="dropdown-item" to="vital-details">
+                  Vital Details
                 </Link>
               </div>
             </div>

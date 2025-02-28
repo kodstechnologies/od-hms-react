@@ -319,7 +319,7 @@ const AddInpatient = () => {
                       <div className="col-12 col-md-6 col-xl-4">
                         <div className="form-group local-forms">
                           <label>
-                            Expected Length Of Stay{" "}
+                            Expected Length Of Stay
                             <span className="login-danger">*</span>
                           </label>
                           <input className="form-control" type="number" />
