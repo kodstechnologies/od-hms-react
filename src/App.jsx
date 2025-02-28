@@ -32,7 +32,6 @@ import InPatient from "./pages/FrontOffice/InPatient";
 import Patients from "./pages/FrontOffice/Patients";
 import Appointments from "./pages/FrontOffice/Appointments";
 import Emergency from "./pages/FrontOffice/Emergency";
-import Query from "./pages/FrontOffice/Query";
 import AddPatient from "./components/FrontOffice/Patients/Add";
 import AddOPD from "./components/FrontOffice/Outpatient/Add";
 import BloodGroup from "./pages/bloodBank/BloodGroup";
@@ -52,6 +51,8 @@ import DietPlan from "./pages/admin/DietPlan";
 import AddDietPlan from "./pages/admin/AddDietPlan";
 import AddInpatient from "./components/FrontOffice/Inpatient/Add";
 import DoctorVisit from "./components/FrontOffice/Inpatient/DoctorVisit";
+import QueueManagement from "./pages/FrontOffice/QueueManagement";
+import Vitals from "./pages/FrontOffice/Vitals";
 
 function Approuter() {
   return (
@@ -88,14 +89,8 @@ function Approuter() {
             element={<StockHistory />}
           />
           <Route path="/pharmacy/prescriptions" element={<Prescriptions />} />
-          <Route
-            path="/pharmacy/prescriptions/create"
-            element={<CreateInvoice />}
-          />
-          <Route
-            path="/pharmacy/prescriptions/view"
-            element={<InvoiceDetails />}
-          />
+          <Route path="/pharmacy/prescriptions/create" element={<CreateInvoice />} />
+          <Route path="/pharmacy/prescriptions/view" element={<InvoiceDetails />} />
 
           {/* doctor */}
           <Route path="/doctor/schedule" element={<Schedule />}></Route>
@@ -142,10 +137,11 @@ function Approuter() {
           <Route path="/add-patient" element={<AddPatient />} />
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/emergency" element={<Emergency />} />
-          <Route path="/queue-management" element={<Query />} />
           <Route path="/token-board" element={<TokenBoard />} />
           <Route path="/token-board/add" element={<AddToken />} />
 
+          <Route path="/queue-management" element={<QueueManagement />} />
+          <Route path="/vitals/:uhid" element={<Vitals />} />
         </Routes>
       </BrowserRouter>
       <div className="sidebar-overlay"></div>

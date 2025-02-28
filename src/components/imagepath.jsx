@@ -272,6 +272,10 @@ export { default as report_icon2 } from "../assets/img/icons/report-icon-02.svg"
 export { default as report_icon3 } from "../assets/img/icons/report-icon-03.svg";
 export { default as report_icon4 } from "../assets/img/icons/report-icon-04.svg";
 
+//doctor 
+export { default as doctor_consultation_video_1 } from "../assets/img/doctor/consultation-video1.jpg"
+export { default as doctor_consultation_video_2 } from "../assets/img/doctor/consultation-video2.jpg"
+
 
 
 
