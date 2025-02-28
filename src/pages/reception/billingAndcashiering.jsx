@@ -222,8 +222,8 @@ const DoctorList = () => {
     <>
       <Header />
       <Sidebar
-        id="recdrop"
-        id1="recdrop2"
+        id="reception-dropmenu"
+        id1="reception-items"
         activeClassName="billing"
       />
       <>
