@@ -223,15 +223,15 @@ const dischargeSummary = () => {
   ]
   // console.log("datasrc:", datasource);
   // console.log("Columns:", columns);
-//   console.log(datasource);
-// console.log(columns);
+  //   console.log(datasource);
+  // console.log(columns);
   return (
     <>
       <Header />
       <Sidebar
         id="reception-dropmenu"
         id1="reception-items"
-        activeClassName=""
+        activeClassName="discharge"
       />
       <div className="page-wrapper">
         <div className="content">
@@ -371,7 +371,7 @@ const dischargeSummary = () => {
                                 </Link>
                               </form>
                             </div>
-                            <div className="add-group">
+                            {/* <div className="add-group">
                               <Link
                                 to="/add-doctor"
                                 className="btn btn-primary add-pluss ms-2"
@@ -384,12 +384,12 @@ const dischargeSummary = () => {
                               >
                                 <img src={refreshicon} alt="#" />
                               </Link>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>
                       <div className="col-auto text-end float-end ms-auto download-grp">
-                        <Link to="#" className=" me-2">
+                        {/* <Link to="#" className=" me-2">
                           <img src={pdficon} alt="#" />
                         </Link>
                         <Link to="#" className=" me-2">
@@ -399,6 +399,14 @@ const dischargeSummary = () => {
                         </Link>
                         <Link to="#">
                           <img src={pdficon4} alt="#" />
+                        </Link> */}
+                        <Link
+                          to="add-discharge-form"
+                          className="btn btn-primary add-pluss ms-2"
+
+                        >
+                          <span>Add Discharge Form</span>
+                          {/* <img src={plusicon} alt="#" /> */}
                         </Link>
                       </div>
                     </div>
@@ -406,22 +414,22 @@ const dischargeSummary = () => {
                   {/* /Table Header */}
                   <div className="table-responsive doctor-list">
 
-              <Table
-                        pagination={{
-                          total: datasource.length,
-                          showTotal: (total, range) =>
-                            `Showing ${range[0]} to ${range[1]} of ${total} entries`,
-                          //showSizeChanger: true,
-                          onShowSizeChange: onShowSizeChange,
-                          itemRender: itemRender,
-                        }}
-                        columns={columns}
-                        dataSource={datasource}
+                    <Table
+                      pagination={{
+                        total: datasource.length,
+                        showTotal: (total, range) =>
+                          `Showing ${range[0]} to ${range[1]} of ${total} entries`,
+                        //showSizeChanger: true,
+                        onShowSizeChange: onShowSizeChange,
+                        itemRender: itemRender,
+                      }}
+                      columns={columns}
+                      dataSource={datasource}
 
-                        rowSelection={rowSelection}
-                        rowKey={(record) => record.id}
-                      />
-              </div>
+                      rowSelection={rowSelection}
+                      rowKey={(record) => record.id}
+                    />
+                  </div>
 
                 </div>
               </div>
