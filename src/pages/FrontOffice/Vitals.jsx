@@ -6,8 +6,9 @@ import FeatherIcon from 'feather-icons-react/build/FeatherIcon';
 import Card from '../../components/ui_elements/card/Card';
 import CardBody from '../../components/ui_elements/card/CardBody';
 import CardHeader from '../../components/ui_elements/card/CardHeader';
+import Button from '../../components/ui_elements/Button';
 
-const Input = ({ text, unit, type='text', placeholder = '' }) => {
+const Input = ({ text, unit, type = 'text', placeholder = '' }) => {
     return (
         <div className="form-group local-forms"
             style={{ position: 'relative', width: '' }}>
@@ -77,7 +78,7 @@ const Vitals = () => {
                 activeClassName="queue-management"
             />
             <div className="page-wrapper">
-                <div className="content">
+                <div className="content" style={{ paddingBottom: '1rem' }}>
                     {/* Page Header */}
                     <div className="page-header">
                         <div className="row">
@@ -99,108 +100,111 @@ const Vitals = () => {
                         </div>
                     </div>
                     <Card>
-                        <CardHeader title={`    Vital Form - ${params.uhid}`} />
+                        <CardHeader title={`Vital Form - ${params.uhid ?? ''}`} />
                         <CardBody>
-                            <form action="" method="post">
+                            <form method="post">
                                 <div className="row">
-                                    <div className="col-lg-2">
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-2">
                                         <Input text='W' unit='kg' type='number' />
                                     </div>
-                                    <div className="col-lg-2">
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-2">
                                         <Input text='H' unit='cm' type='number' />
                                     </div>
-                                    <div className="col-lg-2">
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-2">
                                         <Input text='BMI' unit='' />
                                     </div>
-                                    <div className="col-lg-4">
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
                                         <Input text='BP Systalic' type='number' placeholder='systolic  /  diastoic' />
                                     </div>
-                                    <div className="col-lg-2">
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-2">
                                         <Input text='Hr' unit='/min' type='number' />
                                     </div>
 
-                                     {/* Four -One */}
-                                     <div className="col-4">
-                                        <Input text='Temperature' unit='°F'/>
+                                    {/* Four -One */}
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='Temperature' unit='°F' />
                                     </div>
-                                    <div className="col-4">
-                                        <Input text='Spot Blood Sugar' unit='mg/dL' type='test'/>
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='Spot Blood Sugar' unit='mg/dL' type='test' />
                                     </div>
-                                    <div className="col-2">
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-2">
                                         <Input text='Spo2' unit='%' />
                                     </div>
-                                    <div className="col-2">
-                                        <Input text='BSA'/>
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-2">
+                                        <Input text='BSA' />
                                     </div>
 
-                                     {/* Four-Two */}
-                                     <div className="col-4">
-                                        <Input text='eGFR'/>
+                                    {/* Four-Two */}
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='eGFR' />
                                     </div>
-                                    <div className="col-2">
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-2">
                                         <Input text='RR' />
                                     </div>
-                                    <div className="col-2">
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-2">
                                         <Input text='HC' />
                                     </div>
-                                    <div className="col-4">
-                                        <Input text='General-rbs' unit='mg/dL'/>
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='General-rbs' unit='mg/dL' />
                                     </div>
 
                                     {/* One */}
-                                    <div className="col-4">
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
                                         <Input text='Pefr' unit='L/min' />
                                     </div>
-                                    <div className="col-4">
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
                                         <Input text='Urine Output' />
                                     </div>
-                                    <div className="col-4">
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
                                         <Input text='Sugar Charting' />
                                     </div>
 
                                     {/* Two */}
-                                    <div className="col-4">
-                                        <Input text='HOMA-IR'/>
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='HOMA-IR' />
                                     </div>
-                                    <div className="col-4">
-                                        <Input text='Waist Hip Ratio'/>
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='Waist Hip Ratio' />
                                     </div>
-                                    <div className="col-4">
-                                        <Input text='NAFLD fibrosis score'/>
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='NAFLD fibrosis score' />
                                     </div>
 
-                                     {/* Three */}
-                                     <div className="col-4">
-                                        <Input text='Date added to wait list' type='date'/>
+                                    {/* Three */}
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='Date added to wait list' type='date' />
                                     </div>
-                                    <div className="col-4">
-                                        <Input text='Date of Birth' type='date'/>
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='Date of Birth' type='date' />
                                     </div>
-                                    <div className="col-4">
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
                                         <Input text='Serum Creatinine' />
                                     </div>
 
-                                     {/* Four */}
-                                     <div className="col-4">
-                                        <Input text='Albumin'/>
+                                    {/* Four */}
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='Albumin' />
                                     </div>
-                                    <div className="col-4">
-                                        <Input text='INR'/>
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='INR' />
                                     </div>
-                                    <div className="col-4">
-                                        <Input text='Bilirubin'/>
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='Bilirubin' />
                                     </div>
 
-                                     {/* Five */}
-                                     <div className="col-4">
-                                        <Input text='Serum Sodium'/>
+                                    {/* Five */}
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='Serum Sodium' />
                                     </div>
-                                    <div className="col-4">
-                                        <Input text='Mid Parental Height' unit=' cm'/>
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='Mid Parental Height' unit=' cm' />
                                     </div>
-                                    <div className="col-4">
-                                        <Input text='Score2-Diabetes' unit=' %'/>
+                                    <div className="col-12 col-sm-12 col-md-6 col-lg-4">
+                                        <Input text='Score2-Diabetes' unit=' %' />
                                     </div>
+                                </div>
+                                <div className='text-end'>
+                                    <Button ></Button>
                                 </div>
                             </form>
                         </CardBody>

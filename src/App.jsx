@@ -102,6 +102,7 @@ import Appointment from "./pages/Appointment/Appointment";
 import AddAppointments from "./pages/Appointment/AddAppointments";
 import Nursing from "./pages/admin/Nursing";
 import AddNursingCare from "./pages/admin/AddNursingCare";
+import OpdView from "./pages/FrontOffice/OpdView";
 
 function Approuter() {
   return (
@@ -319,6 +320,7 @@ function Approuter() {
 
 
           <Route path="/queue-management" element={<QueueManagement />} />
+          <Route path="/opd-view/:uhid" element={ <OpdView /> }/>
           <Route path="/vitals/:uhid" element={<Vitals />} />
 
 

@@ -32,7 +32,7 @@ const QueueManagement = () => {
   };
 
   const OpdViewRedirect = (record) => {
-
+    navigate(`/opd-view/${record.uhid}`);
   }
 
   const labelPrintRedirect = (record) => {
@@ -49,12 +49,12 @@ const QueueManagement = () => {
 
   const columns = [
     {
-      title: "Sl.Num",
+      title: "Sl.No",
       dataIndex: "serialNumber",
       sorter: (a, b) => a.serialNumber - b.serialNumber,
     },
     {
-      title: "UHID",
+      title: "Token No",
       dataIndex: "uhid",
       sorter: (a, b) => a.uhid.localeCompare(b.uhid),
     },
@@ -119,7 +119,7 @@ const QueueManagement = () => {
       render: (text, record) => { 
         let color = 'grey';
         if( text == 'Active') color = 'green';
-        else if( text == 'Inactive') color='red';
+        else if( text == 'Cancelled') color='red';
         else if( text == 'Pending') color='orange';
         else if( text == 'Confirmed') color='purple';
         else if( text == 'Completed') color='green';
@@ -136,9 +136,7 @@ const QueueManagement = () => {
       dataIndex: "",
       render: (text, record) => {
         return <>
-          <Button onClick={ () => labelPrintRedirect(record) }>
-            <p style={{ fontSize: '12px' }}>Label Print</p>
-          </Button>
+          <Button onClick={ () => labelPrintRedirect(record) }>Label Print</Button>
           <Button onClick={ () => OpdViewRedirect(record) }>OPD View</Button>
           <Button onClick={ () => vitalPageRedirect(record) }>Vital</Button>
           <Button onClick={ () => billingRedirect(record) }>Billing</Button>
