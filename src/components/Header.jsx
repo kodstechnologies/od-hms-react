@@ -248,19 +248,19 @@ const Header = () => {
               <Link className="dropdown-item" to="/edit-profile">
                 Edit Profile
               </Link>
-              <Link className="dropdown-item" to="/settings">
+              {/* <Link className="dropdown-item" to="/settings">
                 Settings
-              </Link>
+              </Link> */}
               <Link className="dropdown-item" to="/login">
                 Logout
               </Link>
             </div>
           </li>
-          <li className="nav-item ">
+          {/* <li className="nav-item ">
             <Link to="/settings" className="hasnotifications nav-link">
               <img src={settingicon01} alt="" />{" "}
             </Link>
-          </li>
+          </li> */}
         </ul>
         <div className="dropdown mobile-user-menu float-end">
           <Link
@@ -278,9 +278,9 @@ const Header = () => {
             <Link className="dropdown-item" to="edit-profile.html">
               Edit Profile
             </Link>
-            <Link className="dropdown-item" to="/settings">
+            {/* <Link className="dropdown-item" to="/settings">
               Settings
-            </Link>
+            </Link> */}
             <Link className="dropdown-item" to="/login">
               Logout
             </Link>

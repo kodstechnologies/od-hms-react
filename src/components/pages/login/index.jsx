@@ -102,7 +102,7 @@ const Login = () => {
                               <span className="checkmark" />
                             </label>
                           </div>
-                          <Link to="/forgotpassword">Forgot Password?</Link>
+                          {/* <Link to="/forgotpassword">Forgot Password?</Link> */}
                         </div>
                         <div className="form-group login-btn">
                           <Link to="/admin/dashboard"
@@ -115,9 +115,9 @@ const Login = () => {
                       </form>
                       {/* /Form */}
                       <div className="next-sign">
-                        <p className="account-subtitle">
+                        {/* <p className="account-subtitle">
                           Need an account? <Link to="/signup">Sign Up</Link>
-                        </p>
+                        </p> */}
                         {/* Social Login */}
                         <div className="social-login">
                           <Link to="#">

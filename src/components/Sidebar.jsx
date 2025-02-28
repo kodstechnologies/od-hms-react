@@ -136,6 +136,17 @@ const Sidebar = (props) => {
                           
                       </Link>
                     </li>
+                    <li>
+                      <Link
+                        className={
+                          props?.activeClassName === "Nursing" ? "active" : ""
+                        }
+                        to="/admin/nursing"
+                      >Nursing
+                        
+                      </Link>
+                      
+                    </li>
                   </ul>
                 </li>
                 {/* FRONT OFFICE */}
@@ -280,13 +291,6 @@ const Sidebar = (props) => {
                 {/* reception */}
                 <li className="submenu">
                   {/* <Link to="#" id="reception-dropmenu" onClick={(e) => handleClick(e, "reception-dropmenu", "reception-items")}></Link> */}
-                  <Link
-                    to="#"
-                    id="reception-dropmenu"
-                    onClick={(e) =>
-                      handleClick(e, "reception-dropmenu", "reception-items")
-                    }
-                  ></Link>
                   <Link
                     to="#"
                     id="reception-dropmenu"
