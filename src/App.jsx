@@ -63,6 +63,13 @@ import OperationRegistration from "./pages/admin/operationRegistration";
 import LabDashboard from "./pages/laboratory/LabDashboard";
 import LabCollection from "./pages/laboratory/LabCollection";
 import CreateLabCollection from "./pages/laboratory/CreateCollection";
+import DoctorSchedule from "./pages/docterSchedule/DoctorSchedule";
+import AddDoctorSchedule from "./pages/docterSchedule/AddDoctorSchedule";
+import EditDoctorSchedule from "./pages/docterSchedule/EditDoctorSchedule";
+import Appointment from "./pages/Appointment/Appointment";
+import AddAppointments from "./pages/Appointment/AddAppointments";
+import Nursing from "./pages/admin/Nursing";
+import AddNursingCare from "./pages/admin/AddNursingCare";
 
 function Approuter() {
   return (
@@ -87,6 +94,10 @@ function Approuter() {
           <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="/admin/diet-plan" element={<DietPlan />} />
           <Route path="/admin/diet-plan/add" element={<AddDietPlan />} />
+          <Route path="/admin/nursing" element={<Nursing />} />
+          <Route path="/admin/nursing-add" element={<AddNursingCare />} />
+
+
 
           <Route path="/admin/outpatient" element={<Outpatient />} />
           <Route path="/admin/outpatient" element={<Outpatient />} />
@@ -121,6 +132,11 @@ function Approuter() {
           {/* doctor */}
           <Route path="/doctor/schedule" element={<Schedule />}></Route>
           <Route path="/doctor/consultation" element={<Consultation />}></Route>
+          <Route path="/doctor/doctor-schedule" element={<DoctorSchedule/>}></Route>
+          <Route path="/doctor/doctor-schedule-add" element={<AddDoctorSchedule/>}></Route>
+          <Route path="/doctor/doctor-schedule-edit" element={<EditDoctorSchedule/>}></Route>
+
+
 
           {/* reception */}
           <Route path="/reception/billing" element={<BillingAndcashiering />} />
@@ -171,6 +187,10 @@ function Approuter() {
           <Route path="/emergency" element={<Emergency />} />
           <Route path="/token-board" element={<TokenBoard />} />
           <Route path="/token-board/add" element={<AddToken />} />
+          <Route path="/appointment" element={<Appointment />} />
+          <Route path="/appointment-add" element={<AddAppointments />} />
+
+
 
           <Route path="/queue-management" element={<QueueManagement />} />
           <Route path="/vitals/:uhid" element={<Vitals />} />

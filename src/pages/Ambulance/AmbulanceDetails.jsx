@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { Table } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import Header from "../layouts/header";
 import Sidebar from "../../components/Sidebar";
 import { plusicon, refreshicon, pdficon, pdficon3, pdficon4, searchnormal } from "../../components/imagepath";
+import Button from "../../components/ui_elements/Button";
 
 const AmbulanceDetails = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
-
+  const navigate = useNavigate();
   const onSelectChange = (newSelectedRowKeys) => {
     console.log("selectedRowKeys changed: ", selectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
@@ -28,12 +29,15 @@ const AmbulanceDetails = () => {
     console.log("Edit row with ID: ", id);
     // Implement the edit logic here
   };
+  const handleAddAmbulance = () => {
+    navigate("/Ambulance/AmbulanceDetails/add");
+  };
 
   const datasource = [
     {
       key: 1,
       vehicleNumber: "AB123CD",
-      driverName: "John Doe",
+      driverName: "Tharun kumare",
       driverContact: "+1 23 456789",
       driverLicence: "DL1234567",
       vehicleModel: "Toyota Hiace",
@@ -45,7 +49,7 @@ const AmbulanceDetails = () => {
     {
       key: 2,
       vehicleNumber: "XY456ZT",
-      driverName: "Jane Smith",
+      driverName: "Tharak Kumar",
       driverContact: "+1 23 456790",
       driverLicence: "DL7654321",
       vehicleModel: "Ford Transit",
@@ -188,19 +192,10 @@ const AmbulanceDetails = () => {
                                 </Link>
                               </form>
                             </div>
-                            <div className="add-group">
-                              <Link
-                                to="/Ambulance/AmbulanceDetails/add"
-                                className="btn btn-primary add-pluss ms-2"
-                              >
-                                <img src={plusicon} alt="#" />
-                              </Link>
-                              <Link
-                                to="#"
-                                className="btn btn-primary doctor-refresh ms-2"
-                              >
-                                <img src={refreshicon} alt="#" />
-                              </Link>
+                            <div className="text-end mt-6" style={{ marginLeft: "420px" }}>
+                              <Button onClick={handleAddAmbulance}>
+                                Add Ambulance
+                              </Button>
                             </div>
                           </div>
                         </div>

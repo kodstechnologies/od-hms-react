@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Table } from "antd";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import Header from "../layouts/header";
 import Sidebar from "../../components/Sidebar";
 import { plusicon, refreshicon, pdficon, pdficon3, pdficon4, searchnormal } from "../../components/imagepath";
+import Button from "../../components/ui_elements/Button";
 
 const AmbulanceCall = () => {
+    const navigate = useNavigate();
+  
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
 
   const onSelectChange = (newSelectedRowKeys) => {
@@ -29,10 +32,14 @@ const AmbulanceCall = () => {
     // Implement the edit logic here
   };
 
+  const handleAddAmbulanceCall = () => {
+    navigate("/Ambulance/AmbulanceCall/add");
+  };
+
   const datasource = [
     {
       key: 1,
-      patientName: "Alice Johnson",
+      patientName: "Ramaya Krishna",
       vehicleModel: "Toyota Hiace",
       driverName: "John Doe",
       driverContact: "+1 23 456789",
@@ -42,7 +49,7 @@ const AmbulanceCall = () => {
     },
     {
       key: 2,
-      patientName: "Bob Williams",
+      patientName: "Divya Krishna",
       vehicleModel: "Ford Transit",
       driverName: "Jane Smith",
       driverContact: "+1 23 456790",
@@ -174,20 +181,11 @@ const AmbulanceCall = () => {
                                 </Link>
                               </form>
                             </div>
-                            <div className="add-group">
-                              <Link
-                                to="/Ambulance/AmbulanceCall/add"
-                                className="btn btn-primary add-pluss ms-2"
-                              >
-                                <img src={plusicon} alt="#" />
-                              </Link>
-                              <Link
-                                to="#"
-                                className="btn btn-primary doctor-refresh ms-2"
-                              >
-                                <img src={refreshicon} alt="#" />
-                              </Link>
-                            </div>
+                            <div className="text-end mt-6"style={{marginLeft:"420px"}}>
+                    <Button onClick={handleAddAmbulanceCall}>
+                      Add Ambulance Call
+                    </Button>
+                  </div>
                           </div>
                         </div>
                       </div>

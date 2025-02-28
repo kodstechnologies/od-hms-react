@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { Table } from "antd";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import Header from "../layouts/header";
 import Sidebar from "../../components/Sidebar";
 import { plusicon, refreshicon, pdficon, pdficon3, pdficon4, searchnormal } from "../../components/imagepath";
+import Button from "../../components/ui_elements/Button";
 
 const BloodIssue = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+  const navigate = useNavigate();
 
   const onSelectChange = (newSelectedRowKeys) => {
     console.log("selectedRowKeys changed: ", selectedRowKeys);
@@ -28,12 +30,16 @@ const BloodIssue = () => {
     console.log("Edit row with ID: ", id);
     // Implement the edit logic here
   };
+  const handleAddBloodIssue= () => {
+    navigate("/blood/bloodIssue/add");
+  };
+
 
   const datasource = [
     {
       key: 1,
       slno: "1",
-      donorName: "John Doe",
+      donorName: "Manoj Kumar",
       uhid: "12345",
       issueDate: "2025-02-26",
       receivedTo: "Hospital A",
@@ -45,7 +51,7 @@ const BloodIssue = () => {
     {
       key: 2,
       slno: "2",
-      donorName: "Jane Smith",
+      donorName: "Madan Kumar",
       uhid: "12346",
       issueDate: "2025-02-25",
       receivedTo: "Hospital B",
@@ -188,19 +194,10 @@ const BloodIssue = () => {
                                 </Link>
                               </form>
                             </div>
-                            <div className="add-group">
-                              <Link
-                                to="/blood/bloodIssue/add"
-                                className="btn btn-primary add-pluss ms-2"
-                              >
-                                <img src={plusicon} alt="#" />
-                              </Link>
-                              <Link
-                                to="#"
-                                className="btn btn-primary doctor-refresh ms-2"
-                              >
-                                <img src={refreshicon} alt="#" />
-                              </Link>
+                            <div className="text-end mt-6" style={{ marginLeft: "480px" }}>
+                              <Button onClick={handleAddBloodIssue}>
+                                Add Blood Issue
+                              </Button>
                             </div>
                           </div>
                         </div>

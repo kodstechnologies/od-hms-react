@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { Table, Dropdown, Menu, Button } from "antd";
+import { Table, Dropdown, Menu } from "antd";
 import { Link } from "react-router-dom";
 import Header from "../layouts/header";
 import Sidebar from "../../components/Sidebar";
+import Button from "../../components/ui_elements/Button";
+
 
 const TokenBoard = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
@@ -26,21 +28,21 @@ const TokenBoard = () => {
       key: 1,
       roomName: "OPD - 1",
       token: "T1234",
-      patientName: "John Doe",
+      patientName: "Bala Ganga",
       floor: "1",
     },
     {
       key: 2,
       roomName: "OPD - 2",
       token: "T1235",
-      patientName: "Jane Smith",
+      patientName: "Bala Muruga",
       floor: "2",
     },
     {
       key: 3,
       roomName: "OPD - 3",
       token: "T1236",
-      patientName: "Michael Brown",
+      patientName: "Bala Krishnan",
       floor: "3",
     },
   ];
@@ -93,7 +95,7 @@ const TokenBoard = () => {
   return (
     <>
       <Header />
-      <Sidebar id="frontoffice" activeClassName="Tokenboard" />
+      <Sidebar id="frontoffice" id1="frontoffices" activeClassName="Tokenboard" />
       <div className="page-wrapper">
         <div className="content">
           <div className="page-header">
@@ -118,15 +120,9 @@ const TokenBoard = () => {
                     Floor: {floorFilter} <i className="feather-chevron-down"></i>
                   </Link>
                 </Dropdown>
-                <Link to="/token-board/add">
+                <Link to="/token-board/add" style={{marginLeft:"20px"}}>
                   <Button
-                    type="primary"
-                    style={{
-                      marginLeft: "10px",
-                      fontSize: "16px",
-                      backgroundColor: "#2C3E50",
-                      borderColor: "#2C3E50",
-                    }}
+                    
                   > 
                     Add Token
                   </Button>
