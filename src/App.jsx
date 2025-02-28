@@ -110,6 +110,9 @@ import AddAppointments from "./pages/Appointment/AddAppointments";
 import Nursing from "./pages/admin/Nursing";
 import AddNursingCare from "./pages/admin/AddNursingCare";
 import OpdView from "./pages/FrontOffice/OpdView";
+import DonorDetailsPreview from "./pages/reception/DonorDetailPreview";
+import CreateDonor from "./pages/reception/CreateDonor";
+import OrganDonorPreview from "./pages/reception/OrganDonorPreview";
 
 function Approuter() {
   return (
@@ -190,6 +193,9 @@ function Approuter() {
           <Route path="/reception/billing" element={<BillingAndcashiering />} />
           <Route path="/reception/billing/create" element={<CreateBill />} />
           <Route path="/reception/discharge" element={<DischargeSummary />} />
+          <Route path="/reception/donor" element={<DonorDetailsPreview />} />
+          <Route path="/reception/donor/preview" element={<OrganDonorPreview />} />
+          <Route path="/reception/donor/create" element={<CreateDonor />} />
           <Route
             path="/reception/medicaladminstration"
             element={<MedicationAdministration />}
