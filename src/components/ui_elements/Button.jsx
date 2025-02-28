@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ({ color='primary', sx, onClick, children }) => {
+const Button = ({ color='primary', sx, onClick, children='Submit' }) => {
   return (
     <button
     type="submit"

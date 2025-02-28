@@ -86,9 +86,16 @@ const AppointmentOpdBox = ({ title, badges, setThing }) => {
 const SufferingDetails = () => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [options, setOptions] = useState([
-        { value: 1, label: "Select City" },
-        { value: 2, label: "Alaska" },
-        { value: 3, label: "California" },
+        { value: '1h', label: "1 Hours" },
+        { value: '8h', label: "8 Hours" },
+        { value: '12h', label: "12 Hours" },
+        { value: '1d', label: "1 Day" },
+        { value: '2d', label: "2 Days" },
+        { value: '3d', label: "3 Days" },
+        { value: '4d', label: "4 Days" },
+        { value: '5d', label: "5 Days" },
+        { value: '6d', label: "6 Days" },
+        { value: '1w', label: "1 Week" },
     ]);
     return (
         <div className="form-group w-100">
