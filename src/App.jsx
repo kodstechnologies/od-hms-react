@@ -57,6 +57,12 @@ import AddInpatient from "./components/FrontOffice/Inpatient/Add";
 import DoctorVisit from "./components/FrontOffice/Inpatient/DoctorVisit";
 import QueueManagement from "./pages/FrontOffice/QueueManagement";
 import Vitals from "./pages/FrontOffice/Vitals";
+import OperativeInformation from "./pages/admin/OperativeInfo";
+import OTEditor from "./pages/admin/OtEdit";
+import OperationRegistration from "./pages/admin/operationRegistration";
+import LabDashboard from "./pages/laboratory/LabDashboard";
+import LabCollection from "./pages/laboratory/LabCollection";
+import CreateLabCollection from "./pages/laboratory/CreateCollection";
 
 function Approuter() {
   return (
@@ -83,6 +89,16 @@ function Approuter() {
           <Route path="/admin/diet-plan/add" element={<AddDietPlan />} />
 
           <Route path="/admin/outpatient" element={<Outpatient />} />
+          <Route path="/admin/outpatient" element={<Outpatient />} />
+          <Route
+            path="/admin/operative-info"
+            element={<OperativeInformation />}
+          />
+          <Route path="/admin/operative-info/ot-edit" element={<OTEditor />} />
+          <Route
+            path="/admin/operative-info/register"
+            element={<OperationRegistration />}
+          />
 
           {/* pharmacy */}
           <Route path="/pharmacy/inventory" element={<Inventory />} />
@@ -93,8 +109,14 @@ function Approuter() {
             element={<StockHistory />}
           />
           <Route path="/pharmacy/prescriptions" element={<Prescriptions />} />
-          <Route path="/pharmacy/prescriptions/create" element={<CreateInvoice />} />
-          <Route path="/pharmacy/prescriptions/view" element={<InvoiceDetails />} />
+          <Route
+            path="/pharmacy/prescriptions/create"
+            element={<CreateInvoice />}
+          />
+          <Route
+            path="/pharmacy/prescriptions/view"
+            element={<InvoiceDetails />}
+          />
 
           {/* doctor */}
           <Route path="/doctor/schedule" element={<Schedule />}></Route>
@@ -132,14 +154,10 @@ function Approuter() {
           <Route path="/Ambulance/AmbulanceCall/add" element={<AddAmbulanceCall />} />
 
 
-
-
-
-
-          <Route
-            path="/blood/componentIssue/add"
-            element={<AddComponentIssue />}
-          />
+          {/* laboratory */}
+          <Route path="/laboratory/dashboard" element={<LabDashboard />} />
+          <Route path="/laboratory/collection" element={<LabCollection />} />
+          <Route path="/laboratory/collection/create" element={<CreateLabCollection />} />
 
           {/* front office */}
           <Route path="/outpatient" element={<Outpatient />} />
