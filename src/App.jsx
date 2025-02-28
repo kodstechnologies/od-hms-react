@@ -67,6 +67,7 @@ import CreateNewVisit from "./components/FrontOffice/Inpatient/CreateNewVisit";
 import PatientBillAccount from "./components/FrontOffice/Inpatient/PatientBillAccount";
 import DischargeForm from "./pages/FrontOffice/DischargeForm";
 import SendOrder from "./pages/FrontOffice/SendOrder";
+import VitalManagement from "./pages/FrontOffice/VitalManagement";
 
 function Approuter() {
   return (
@@ -196,7 +197,7 @@ function Approuter() {
           />
           <Route path="/inpatient/discharge-form" element={<DischargeForm />} />
           <Route path="/inpatient/send-order" element={<SendOrder />} />
-          <Route path="/inpatient/vital-details" element={<Vitals />} />
+          <Route path="/inpatient/vital-details" element={<VitalManagement />} />
           <Route path="/patients" element={<Patients />} />
           <Route path="/add-patient" element={<AddPatient />} />
           <Route path="/appointments" element={<Appointments />} />

@@ -128,6 +128,9 @@ const InPatient = () => {
                 <Link className="dropdown-item" to="vital-details">
                   Vital Details
                 </Link>
+                <Link className="dropdown-item" to="/admin/operative-info">
+                  Operative Information
+                </Link>
               </div>
             </div>
           </div>
