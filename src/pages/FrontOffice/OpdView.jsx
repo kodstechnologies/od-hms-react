@@ -18,7 +18,7 @@ import CustomBadge from '../../components/ui_elements/CustomBadge'
 import AppointmentsList from '../../components/FrontOffice/QueueManagement/OpdView/AppointmentsList'
 import Vitals from './Vitals'
 import Prescriptions from '../../components/simplepages/pharmacy/Prescriptions'
-import { doctor_consultation_video_2 } from '../../components/imagepath'
+import { doctor_consultation_video_1, doctor_consultation_video_2 } from '../../components/imagepath'
 
 const Input = ({ text, unit, type = 'text', placeholder = '' }) => {
     return (
