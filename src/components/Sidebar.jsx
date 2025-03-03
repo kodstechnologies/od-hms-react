@@ -464,6 +464,16 @@ const Sidebar = (props) => {
                         Token Board
                       </Link>
                     </li>
+                    <li>
+                        <Link
+                          className={
+                            props?.activeClassName === "" ? "active" : ""
+                          }
+                          to="/bed-availability"
+                        >
+                          Bed Availability
+                        </Link>
+                      </li>
                   </ul>
                 </li>
 

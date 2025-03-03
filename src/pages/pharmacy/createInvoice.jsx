@@ -559,7 +559,7 @@ const CreateInvoice = () => {
                             <div className="invoice-total-box">
                               <div className="invoice-total-inner">
                                 <p>
-                                  Taxable Amount <span>$21</span>
+                                  Taxable Amount <span>₹21</span>
                                 </p>
                                 <p>
                                   Round Off
@@ -574,7 +574,7 @@ const CreateInvoice = () => {
                                   >
                                     checkbox
                                   </label>
-                                  <span>$54</span>
+                                  <span>₹54</span>
                                 </p>
                                 <div className="links-info-one">
                                   <div className="links-info"></div>
@@ -601,7 +601,7 @@ const CreateInvoice = () => {
                                             </i>
                                             Service Charges
                                           </Link>
-                                          <span>$4</span>
+                                          <span>₹4</span>
                                         </div>
                                       </div>
                                     );
@@ -640,7 +640,7 @@ const CreateInvoice = () => {
                                               </i>
                                               Offer New
                                             </Link>
-                                            <span>$4 %</span>
+                                            <span>₹4 %</span>
                                           </div>
                                         </div>
                                       );
@@ -658,7 +658,7 @@ const CreateInvoice = () => {
                               </div>
                               <div className="invoice-total-footer">
                                 <h4>
-                                  Total Amount <span>$ 894.00</span>
+                                  Total Amount <span>₹ 894.00</span>
                                 </h4>
                               </div>
                             </div>

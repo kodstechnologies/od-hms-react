@@ -15,7 +15,7 @@ export const employeedata = [
     Email: "example@gmail.com",
     JoiningDate: "01.05.2020",
     Role: "Nurse",
-    Salary: "$1000",
+    Salary: "₹1000",
     status: "Generate Slip",
   },
   {
@@ -25,7 +25,7 @@ export const employeedata = [
     Email: "example@email.com",
     JoiningDate: "03.05.2020",
     Role: "Accountant",
-    Salary: "$2000",
+    Salary: "₹2000",
     status: "Generate Slip",
   },
   {
@@ -35,7 +35,7 @@ export const employeedata = [
     Email: "example@email.com",
     JoiningDate: "04.05.2020",
     Role: "Pharmacist",
-    Salary: "$1500",
+    Salary: "₹1500",
     status: "Generate Slip",
   },
   {
@@ -45,7 +45,7 @@ export const employeedata = [
     Email: "example@email.com",
     JoiningDate: "06.06.2020",
     Role: "Pharmacist",
-    Salary: "$1000",
+    Salary: "₹1000",
     status: "Generate Slip",
   },
   {
@@ -55,7 +55,7 @@ export const employeedata = [
     Email: "example@email.com",
     JoiningDate: "13.05.2020",
     Role: "Accountant",
-    Salary: "$5000",
+    Salary: "₹5000",
     status: "Generate Slip",
   },
   {
@@ -65,7 +65,7 @@ export const employeedata = [
     Email: "example@email.com",
     JoiningDate: "11.12.2020",
     Role: "Pharmacist",
-    Salary: "$2000",
+    Salary: "₹2000",
     status: "Generate Slip",
   },
   {
@@ -75,7 +75,7 @@ export const employeedata = [
     Email: "example@email.com",
     JoiningDate: "01.05.2020",
     Role: "Accountant",
-    Salary: "$1000",
+    Salary: "₹1000",
     status: "Generate Slip",
   },
   {
@@ -85,7 +85,7 @@ export const employeedata = [
     Email: "example@email.com",
     JoiningDate: "01.05.2020",
     Role: "Nurse",
-    Salary: "$2000",
+    Salary: "₹2000",
     status: "Generate Slip",
   },
 ];
@@ -99,7 +99,7 @@ export const ExpenseReportData = [
     Purchase_by: "Andrea Lalema",
     Paid_by: "Paypal",
     Data: "04.10.2022",
-    Amount: "$1000",
+    Amount: "₹1000",
     status: "Approved",
   },
   {
@@ -110,7 +110,7 @@ export const ExpenseReportData = [
     Purchase_by: "William Stephin",
     Paid_by: "Cheque",
     Data: "08.10.2022",
-    Amount: "$2000",
+    Amount: "₹2000",
     status: "Declined",
   },
   {
@@ -121,7 +121,7 @@ export const ExpenseReportData = [
     Purchase_by: "Smith Bruklin",
     Paid_by: "Paypal",
     Data: "04.10.2022",
-    Amount: "$1500",
+    Amount: "₹1500",
     status: "New",
   },
   {
@@ -132,7 +132,7 @@ export const ExpenseReportData = [
     Purchase_by: "Bernardo James",
     Paid_by: "Paypal",
     Data: "04.10.2022",
-    Amount: "$1000",
+    Amount: "₹1000",
     status: "Rejected",
   },
   {
@@ -143,7 +143,7 @@ export const ExpenseReportData = [
     Purchase_by: "Cristina Groves",
     Paid_by: "Debit Card",
     Data: "03.10.2022",
-    Amount: "$5000",
+    Amount: "₹5000",
     status: "Approved",
   },
   {
@@ -154,7 +154,7 @@ export const ExpenseReportData = [
     Purchase_by: "Mark Hay Smith",
     Paid_by: "Paypal",
     Data: "04.10.2022",
-    Amount: "$2000",
+    Amount: "₹2000",
     status: "Approved",
   },
   {
@@ -165,7 +165,7 @@ export const ExpenseReportData = [
     Purchase_by: "Andrea Lalema",
     Paid_by: "Cheque",
     Data: "06.10.2022",
-    Amount: "$1000",
+    Amount: "₹1000",
     status: "New",
   },
   {
@@ -176,7 +176,7 @@ export const ExpenseReportData = [
     Purchase_by: "Smith Bruklin",
     Paid_by: "Debit Card",
     Data: "04.10.2022",
-    Amount: "$2000",
+    Amount: "₹2000",
     status: "Approved",
   },
 ];
@@ -189,7 +189,7 @@ export const invoicereportdata = [
     Client: "Andrea Lalema",
     Created_Date: "04.10.2022",
     Due_Date: "04.10.2023",
-    Amount: "$1000",
+    Amount: "₹1000",
     Status: "Paid",
   },
 ];
@@ -201,7 +201,7 @@ export const invoice_list_data = [
     Created_on: "16 Mar 2022",
     Img: blogimg2,
     Invoice_to: "Barbara Moore",
-    Amount: "$1000",
+    Amount: "₹1000",
     Due_data: "23 Mar 2022",
     Last_Invoice: "23 Mar 2022",
     Next_Invoice: "28 Mar 2022",
@@ -218,7 +218,7 @@ export const invoice_list_data = [
     Created_on: "14 Mar 2022",
     Img: blogimg6,
     Invoice_to: "Karlene Chaidez",
-    Amount: "$2000",
+    Amount: "₹2000",
     Due_data: "08 Mar 2022",
     Last_Invoice: "18 Mar 2022",
     Next_Invoice: "20 Mar 2022",
@@ -235,7 +235,7 @@ export const invoice_list_data = [
     Created_on: "7 Mar 2022",
     Img: blogimg4,
     Invoice_to: "Russell Copeland",
-    Amount: "$1500",
+    Amount: "₹1500",
     Due_data: "04 Mar 2022",
     Last_Invoice: "10 Mar 2022",
     Next_Invoice: "18 Mar 2022",
@@ -252,7 +252,7 @@ export const invoice_list_data = [
     Created_on: "24 Mar 2022",
     Img: blogimg12,
     Invoice_to: "Joseph Collins",
-    Amount: "$1000",
+    Amount: "₹1000",
     Due_data: "04 Mar 2022",
     Last_Invoice: "15 Mar 2022",
     Next_Invoice: "22 Mar 2022",
@@ -269,7 +269,7 @@ export const invoice_list_data = [
     Created_on: "17 Mar 2022",
     Img: blogimg10,
     Invoice_to: "Jennifer Floyd",
-    Amount: "$5000",
+    Amount: "₹5000",
     Due_data: "03 Mar 2022",
     Last_Invoice: "20 Mar 2022",
     Next_Invoice: "31 Mar 2022",
@@ -289,7 +289,7 @@ export const tabledata = [
     Office: "Edinburgh",
     Age: 61,
     Startdate: "2011/04/25",
-    Salary: "$320,800",
+    Salary: "₹320,800",
   },
   {
     id: 2,
@@ -298,7 +298,7 @@ export const tabledata = [
     Office: "Tokyo",
     Age: 63,
     Startdate: "2011/07/25",
-    Salary: "$170,750",
+    Salary: "₹170,750",
   },
   {
     id: 3,
@@ -307,7 +307,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 66,
     Startdate: "2009/01/12",
-    Salary: "$86,000",
+    Salary: "₹86,000",
   },
   {
     id: 4,
@@ -316,7 +316,7 @@ export const tabledata = [
     Office: "Edinburgh",
     Age: 22,
     Startdate: "2012/03/29",
-    Salary: "$433,060",
+    Salary: "₹433,060",
   },
   {
     id: 5,
@@ -325,7 +325,7 @@ export const tabledata = [
     Office: "Tokyo",
     Age: 33,
     Startdate: "2008/11/28",
-    Salary: "$162,700",
+    Salary: "₹162,700",
   },
   {
     id: 6,
@@ -334,7 +334,7 @@ export const tabledata = [
     Office: "New York",
     Age: 61,
     Startdate: "2012/12/02",
-    Salary: "$372,000",
+    Salary: "₹372,000",
   },
   {
     id: 7,
@@ -343,7 +343,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 59,
     Startdate: "2012/08/06",
-    Salary: "$137,500",
+    Salary: "₹137,500",
   },
   {
     id: 8,
@@ -352,7 +352,7 @@ export const tabledata = [
     Office: "Tokyo",
     Age: 55,
     Startdate: "2010/10/14",
-    Salary: "$327,900",
+    Salary: "₹327,900",
   },
   {
     id: 9,
@@ -361,7 +361,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 39,
     Startdate: "2009/09/15",
-    Salary: "$205,500",
+    Salary: "₹205,500",
   },
   {
     id: 10,
@@ -370,7 +370,7 @@ export const tabledata = [
     Office: "Edinburgh",
     Age: 23,
     Startdate: "2008/12/13",
-    Salary: "$103,600",
+    Salary: "₹103,600",
   },
   {
     id: 11,
@@ -379,7 +379,7 @@ export const tabledata = [
     Office: "London",
     Age: 30,
     Startdate: "2008/12/19",
-    Salary: "$90,560",
+    Salary: "₹90,560",
   },
   {
     id: 12,
@@ -388,7 +388,7 @@ export const tabledata = [
     Office: "Edinburgh",
     Age: 22,
     Startdate: "2013/03/03",
-    Salary: "$342,000",
+    Salary: "₹342,000",
   },
   {
     id: 13,
@@ -397,7 +397,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 36,
     Startdate: "2008/10/16",
-    Salary: "$470,600",
+    Salary: "₹470,600",
   },
   {
     id: 14,
@@ -406,7 +406,7 @@ export const tabledata = [
     Office: "London",
     Age: 43,
     Startdate: "2012/12/18",
-    Salary: "$313,500",
+    Salary: "₹313,500",
   },
   {
     id: 15,
@@ -415,7 +415,7 @@ export const tabledata = [
     Office: "London",
     Age: 19,
     Startdate: "2010/03/17",
-    Salary: "$385,750",
+    Salary: "₹385,750",
   },
   {
     id: 16,
@@ -424,7 +424,7 @@ export const tabledata = [
     Office: "London",
     Age: 66,
     Startdate: "2012/11/27",
-    Salary: "$198,500",
+    Salary: "₹198,500",
   },
   {
     id: 17,
@@ -433,7 +433,7 @@ export const tabledata = [
     Office: "New York",
     Age: 64,
     Startdate: "2010/06/09",
-    Salary: "$725,000",
+    Salary: "₹725,000",
   },
   {
     id: 18,
@@ -442,7 +442,7 @@ export const tabledata = [
     Office: "New York",
     Age: 59,
     Startdate: "2009/04/10",
-    Salary: "$237,500",
+    Salary: "₹237,500",
   },
   {
     id: 19,
@@ -451,7 +451,7 @@ export const tabledata = [
     Office: "London",
     Age: 41,
     Startdate: "2012/10/13",
-    Salary: "$132,000",
+    Salary: "₹132,000",
   },
   {
     id: 20,
@@ -460,7 +460,7 @@ export const tabledata = [
     Office: "Edinburgh",
     Age: 35,
     Startdate: "2012/09/26",
-    Salary: "$217,500",
+    Salary: "₹217,500",
   },
   {
     id: 21,
@@ -469,7 +469,7 @@ export const tabledata = [
     Office: "New York",
     Age: 30,
     Startdate: "2011/09/03",
-    Salary: "$345,000",
+    Salary: "₹345,000",
   },
   {
     id: 22,
@@ -478,7 +478,7 @@ export const tabledata = [
     Office: "New York",
     Age: 40,
     Startdate: "2009/06/25",
-    Salary: "$675,000",
+    Salary: "₹675,000",
   },
   {
     id: 23,
@@ -487,7 +487,7 @@ export const tabledata = [
     Office: "New York",
     Age: 21,
     Startdate: "2011/12/12",
-    Salary: "$106,450",
+    Salary: "₹106,450",
   },
   {
     id: 24,
@@ -496,7 +496,7 @@ export const tabledata = [
     Office: "Sidney",
     Age: 23,
     Startdate: "2010/09/20",
-    Salary: "$85,600",
+    Salary: "₹85,600",
   },
   {
     id: 25,
@@ -505,7 +505,7 @@ export const tabledata = [
     Office: "London",
     Age: 47,
     Startdate: "2009/10/09",
-    Salary: "$1,200,000",
+    Salary: "₹1,200,000",
   },
   {
     id: 26,
@@ -514,7 +514,7 @@ export const tabledata = [
     Office: "Edinburgh",
     Age: 42,
     Startdate: "2010/12/22",
-    Salary: "$92,575",
+    Salary: "₹92,575",
   },
   {
     id: 27,
@@ -523,7 +523,7 @@ export const tabledata = [
     Office: "Singapore",
     Age: 28,
     Startdate: "2010/11/14",
-    Salary: "$357,650",
+    Salary: "₹357,650",
   },
   {
     id: 28,
@@ -532,7 +532,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 28,
     Startdate: "2011/06/07",
-    Salary: "$206,850",
+    Salary: "₹206,850",
   },
   {
     id: 29,
@@ -541,7 +541,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 48,
     Startdate: "2010/03/11",
-    Salary: "$850,000",
+    Salary: "₹850,000",
   },
   {
     id: 30,
@@ -550,7 +550,7 @@ export const tabledata = [
     Office: "Tokyo",
     Age: 20,
     Startdate: "2011/08/14",
-    Salary: "$163,000",
+    Salary: "₹163,000",
   },
   {
     id: 31,
@@ -559,7 +559,7 @@ export const tabledata = [
     Office: "Sidney",
     Age: 37,
     Startdate: "2011/06/02",
-    Salary: "$95,400",
+    Salary: "₹95,400",
   },
   {
     id: 32,
@@ -568,7 +568,7 @@ export const tabledata = [
     Office: "London",
     Age: 53,
     Startdate: "2009/10/22",
-    Salary: "$114,500",
+    Salary: "₹114,500",
   },
   {
     id: 33,
@@ -577,7 +577,7 @@ export const tabledata = [
     Office: "London",
     Age: 27,
     Startdate: "2011/05/07",
-    Salary: "$145,000",
+    Salary: "₹145,000",
   },
   {
     id: 34,
@@ -586,7 +586,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 22,
     Startdate: "2008/10/26",
-    Salary: "$235,500",
+    Salary: "₹235,500",
   },
   {
     id: 35,
@@ -595,7 +595,7 @@ export const tabledata = [
     Office: "Edinburgh",
     Age: 46,
     Startdate: "2011/03/09",
-    Salary: "$324,050",
+    Salary: "₹324,050",
   },
   {
     id: 36,
@@ -604,7 +604,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 47,
     Startdate: "2009/12/09",
-    Salary: "$85,675",
+    Salary: "₹85,675",
   },
   {
     id: 37,
@@ -613,7 +613,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 51,
     Startdate: "2008/12/16",
-    Salary: "$164,500",
+    Salary: "₹164,500",
   },
   {
     id: 38,
@@ -622,7 +622,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 41,
     Startdate: "2010/02/12",
-    Salary: "$109,850",
+    Salary: "₹109,850",
   },
   {
     id: 39,
@@ -631,7 +631,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 62,
     Startdate: "2009/02/14",
-    Salary: "$452,500",
+    Salary: "₹452,500",
   },
   {
     id: 40,
@@ -640,7 +640,7 @@ export const tabledata = [
     Office: "London",
     Age: 37,
     Startdate: "2008/12/11",
-    Salary: "$136,200",
+    Salary: "₹136,200",
   },
   {
     id: 41,
@@ -649,7 +649,7 @@ export const tabledata = [
     Office: "New York",
     Age: 65,
     Startdate: "2008/09/26",
-    Salary: "$645,750",
+    Salary: "₹645,750",
   },
   {
     id: 42,
@@ -658,7 +658,7 @@ export const tabledata = [
     Office: "Singapore",
     Age: 64,
     Startdate: "2011/02/03",
-    Salary: "$234,500",
+    Salary: "₹234,500",
   },
   {
     id: 43,
@@ -667,7 +667,7 @@ export const tabledata = [
     Office: "London",
     Age: 38,
     Startdate: "2011/05/03",
-    Salary: "$163,500",
+    Salary: "₹163,500",
   },
   {
     id: 44,
@@ -676,7 +676,7 @@ export const tabledata = [
     Office: "Tokyo",
     Age: 37,
     Startdate: "2009/08/19",
-    Salary: "$139,575",
+    Salary: "₹139,575",
   },
   {
     id: 45,
@@ -685,7 +685,7 @@ export const tabledata = [
     Office: "New York",
     Age: 61,
     Startdate: "2013/08/11",
-    Salary: "$98,540",
+    Salary: "₹98,540",
   },
   {
     id: 46,
@@ -694,7 +694,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 47,
     Startdate: "2009/07/07",
-    Salary: "$87,500",
+    Salary: "₹87,500",
   },
   {
     id: 47,
@@ -703,7 +703,7 @@ export const tabledata = [
     Office: "Singapore",
     Age: 64,
     Startdate: "2012/04/09",
-    Salary: "$138,575",
+    Salary: "₹138,575",
   },
   {
     id: 48,
@@ -712,7 +712,7 @@ export const tabledata = [
     Office: "New York",
     Age: 63,
     Startdate: "2010/01/04",
-    Salary: "$125,250",
+    Salary: "₹125,250",
   },
   {
     id: 49,
@@ -721,7 +721,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 56,
     Startdate: "2012/06/01",
-    Salary: "$115,000",
+    Salary: "₹115,000",
   },
   {
     id: 50,
@@ -730,7 +730,7 @@ export const tabledata = [
     Office: "Edinburgh",
     Age: 43,
     Startdate: "2013/02/01",
-    Salary: "$75,650",
+    Salary: "₹75,650",
   },
   {
     id: 51,
@@ -739,7 +739,7 @@ export const tabledata = [
     Office: "New York",
     Age: 46,
     Startdate: "2011/12/06",
-    Salary: "$145,600",
+    Salary: "₹145,600",
   },
   {
     id: 52,
@@ -748,7 +748,7 @@ export const tabledata = [
     Office: "London",
     Age: 47,
     Startdate: "2011/03/21",
-    Salary: "$356,250",
+    Salary: "₹356,250",
   },
   {
     id: 53,
@@ -757,7 +757,7 @@ export const tabledata = [
     Office: "London",
     Age: 21,
     Startdate: "2009/02/27",
-    Salary: "$103,500",
+    Salary: "₹103,500",
   },
   {
     id: 54,
@@ -766,7 +766,7 @@ export const tabledata = [
     Office: "San Francisco",
     Age: 30,
     Startdate: "2010/07/14",
-    Salary: "$86,500",
+    Salary: "₹86,500",
   },
   {
     id: 55,
@@ -775,7 +775,7 @@ export const tabledata = [
     Office: "Edinburgh",
     Age: 51,
     Startdate: "2008/11/13",
-    Salary: "$183,000",
+    Salary: "₹183,000",
   },
   {
     id: 56,
@@ -784,7 +784,7 @@ export const tabledata = [
     Office: "Singapore",
     Age: 29,
     Startdate: "2011/06/27",
-    Salary: "$183,000",
+    Salary: "₹183,000",
   },
   {
     id: 57,
@@ -793,7 +793,7 @@ export const tabledata = [
     Office: "New York",
     Age: 27,
     Startdate: "2011/01/25",
-    Salary: "$112,000",
+    Salary: "₹112,000",
   },
 ];
 

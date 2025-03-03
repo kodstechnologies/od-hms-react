@@ -153,7 +153,7 @@ const Dashboard = () => {
                 <div className="dash-content dash-count">
                   <h4>Earnings</h4>
                   <h2>
-                    $<CountUp delay={0.4} end={20250} duration={0.6} />
+                    ₹<CountUp delay={0.4} end={20250} duration={0.6} />
                   </h2>
                   <p>
                     <span className="passive-view">

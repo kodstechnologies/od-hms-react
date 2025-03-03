@@ -64,7 +64,7 @@ const Invoice_Preview = () => {
                                                         <div className="invoice-info invoice-info-one border-0">
                                                             <p>Issue Date : 27 Jul 2022</p>
                                                             <p>Due Date : 27 Aug 2022</p>
-                                                            <p>Due Amount : $ 1,54,22 </p>
+                                                            <p>Due Amount : ₹ 1,54,22 </p>
                                                             <p>Recurring Invoice : 15 Months</p>
                                                             <p className="mb-0">PO Number : 54515454</p>
                                                         </div>
@@ -92,26 +92,26 @@ const Invoice_Preview = () => {
                                                                     <tr>
                                                                         <td>Dell Laptop</td>
                                                                         <td>Laptop</td>
-                                                                        <td>$1,110</td>
+                                                                        <td>₹1,110</td>
                                                                         <td>2</td>
                                                                         <td>2%</td>
-                                                                        <td className="text-end">$400</td>
+                                                                        <td className="text-end">₹400</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>HP Laptop</td>
                                                                         <td>Laptop</td>
-                                                                        <td>$1,500</td>
+                                                                        <td>₹1,500</td>
                                                                         <td>3</td>
                                                                         <td>6%</td>
-                                                                        <td className="text-end">$3,000</td>
+                                                                        <td className="text-end">₹3,000</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td>Apple Ipad</td>
                                                                         <td>Ipad</td>
-                                                                        <td>$11,500</td>
+                                                                        <td>₹11,500</td>
                                                                         <td>1</td>
                                                                         <td>10%</td>
-                                                                        <td className="text-end">$11,000</td>
+                                                                        <td className="text-end">₹11,000</td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>
@@ -133,13 +133,13 @@ const Invoice_Preview = () => {
                                                     <div className="invoice-total-card">
                                                         <div className="invoice-total-box">
                                                             <div className="invoice-total-inner">
-                                                                <p>Taxable <span>$6,660.00</span></p>
-                                                                <p>Additional Charges <span>$6,660.00</span></p>
-                                                                <p>Discount <span>$3,300.00</span></p>
-                                                                <p className="mb-0">Sub total <span>$3,300.00</span></p>
+                                                                <p>Taxable <span>₹6,660.00</span></p>
+                                                                <p>Additional Charges <span>₹6,660.00</span></p>
+                                                                <p>Discount <span>₹3,300.00</span></p>
+                                                                <p className="mb-0">Sub total <span>₹3,300.00</span></p>
                                                             </div>
                                                             <div className="invoice-total-footer">
-                                                                <h4>Total Amount <span>$143,300.00</span></h4>
+                                                                <h4>Total Amount <span>₹143,300.00</span></h4>
                                                             </div>
                                                         </div>
                                                     </div>
