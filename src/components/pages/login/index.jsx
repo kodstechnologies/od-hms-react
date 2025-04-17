@@ -34,7 +34,6 @@ const Login = () => {
   // </i>
   return (
     <>
-
       {/* Main Wrapper */}
       <div className="main-wrapper login-body">
         <div className="container-fluid px-0">
@@ -43,11 +42,7 @@ const Login = () => {
             <div className="col-lg-6 login-wrap">
               <div className="login-sec">
                 <div className="log-img">
-                  <img
-                    className="img-fluid"
-                    src={login02}
-                    alt="#"
-                  />
+                  <img className="img-fluid" src={login02} alt="#" />
                 </div>
               </div>
             </div>
@@ -64,12 +59,12 @@ const Login = () => {
                         </Link> */}
                         <Link to="#" className="logo">
                           <img src={logo} width={35} height={35} alt="" />{" "}
-                          <span>Odisha HMIS</span>
+                          <span>Ramaiah HMIS</span>
                         </Link>
                       </div>
                       <h2>Login</h2>
                       {/* Form */}
-                      <form >
+                      <form>
                         <div className="form-group">
                           <label>
                             Email <span className="login-danger">*</span>
@@ -81,17 +76,21 @@ const Login = () => {
                             Password <span className="login-danger">*</span>
                           </label>
                           <input
-                          type={passwordVisible ? 'password' : ''}
-                          className="form-control pass-input"
-                          value={password}
-                          onChange={(e) => setPassword(e.target.value)}
-                        />
-                        <span
-                          className="toggle-password"
-                          onClick={togglePasswordVisibility}
-                        >
-                          {passwordVisible ? <EyeOff className="react-feather-custom" /> : <Eye className="react-feather-custom" />}
-                        </span>
+                            type={passwordVisible ? "password" : ""}
+                            className="form-control pass-input"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                          />
+                          <span
+                            className="toggle-password"
+                            onClick={togglePasswordVisibility}
+                          >
+                            {passwordVisible ? (
+                              <EyeOff className="react-feather-custom" />
+                            ) : (
+                              <Eye className="react-feather-custom" />
+                            )}
+                          </span>
                         </div>
                         <div className="forgotpass">
                           <div className="remember-me">
@@ -105,9 +104,9 @@ const Login = () => {
                           {/* <Link to="/forgotpassword">Forgot Password?</Link> */}
                         </div>
                         <div className="form-group login-btn">
-                          <Link to="/admin/dashboard"
+                          <Link
+                            to="/admin/dashboard"
                             className="btn btn-primary btn-block"
-
                           >
                             Login
                           </Link>
@@ -121,13 +120,13 @@ const Login = () => {
                         {/* Social Login */}
                         <div className="social-login">
                           <Link to="#">
-                            <img src={loginicon01} alt="#"/>
+                            <img src={loginicon01} alt="#" />
                           </Link>
                           <Link to="#">
-                            <img src={loginicon02}alt="#" />
+                            <img src={loginicon02} alt="#" />
                           </Link>
                           <Link to="#">
-                            <img src={loginicon03}  alt="#"/>
+                            <img src={loginicon03} alt="#" />
                           </Link>
                         </div>
                         {/* /Social Login */}
